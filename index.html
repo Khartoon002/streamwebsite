@@ -1,0 +1,279 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06110b" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>Stream — Start, Grow, and Track Your Progress</title>
+  <meta name="description" content="Stream is a modern platform to start, register, and access your dashboard with a clean black-and-green experience. Create your account in minutes." />
+  <meta name="keywords" content="Stream, Stream registration, Stream signup, Stream platform, Stream dashboard, Stream how to register" />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Stream — Start, Grow, and Track Your Progress" />
+  <meta property="og:description" content="Create your Stream account in minutes. Clean black-and-green UI. Easy registration steps." />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/assets/stream-logo.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stream — Start, Grow, and Track Your Progress" />
+  <meta name="twitter:description" content="Create your Stream account in minutes. Clean black-and-green UI. Easy registration steps." />
+  <meta name="twitter:image" content="https://example.com/assets/stream-logo.png" />
+
+  <!-- Fonts (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- JSON-LD: Organization + Website + WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://example.com/#organization",
+        "name":"Stream",
+        "url":"https://example.com/",
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://example.com/assets/stream-logo.png"
+        },
+        "sameAs":[]
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://example.com/#website",
+        "url":"https://example.com/",
+        "name":"Stream",
+        "publisher":{"@id":"https://example.com/#organization"},
+        "inLanguage":"en",
+        "potentialAction":{
+          "@type":"SearchAction",
+          "target":"https://example.com/?q={search_term_string}",
+          "query-input":"required name=search_term_string"
+        }
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://example.com/#webpage",
+        "url":"https://example.com/",
+        "name":"Stream — Start, Grow, and Track Your Progress",
+        "isPartOf":{"@id":"https://example.com/#website"},
+        "about":{"@id":"https://example.com/#organization"},
+        "inLanguage":"en",
+        "description":"Stream is a modern platform to start, register, and access your dashboard with a clean black-and-green experience.",
+        "breadcrumb":{
+          "@type":"BreadcrumbList",
+          "itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://example.com/"}
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="./index.html" aria-label="Stream home">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="./assets/stream-logo.png" alt="" />
+        </span>
+        <span class="brand__name">Stream</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav__link" href="./how-to-register.html">How to Register</a>
+        <a class="nav__link" href="./signup.html">Sign Up</a>
+        <a class="nav__cta" href="./signup.html">Get Started</a>
+      </nav>
+
+      <button class="iconbtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="iconbtn__bars"></span>
+      </button>
+    </div>
+
+    <div class="mobilemenu" id="mobileMenu" hidden>
+      <div class="container mobilemenu__inner">
+        <a href="./how-to-register.html">How to Register</a>
+        <a href="./signup.html">Sign Up</a>
+        <a class="btn btn--solid" href="./signup.html">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="pill">
+            <span class="dot"></span>
+            Black + Green • Fast • Clean
+          </div>
+
+          <h1 class="h1">
+            Build your journey on <span class="glow">Stream</span>.
+            Register in minutes. Stay in control.
+          </h1>
+
+          <p class="lead">
+            A modern experience designed for clarity: quick signup, easy onboarding,
+            and a smooth path to your dashboard.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="./signup.html">Create Account</a>
+            <a class="btn btn--ghost" href="./how-to-register.html">See Registration Steps</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__k">2–3 mins</div>
+              <div class="stat__t">Average setup time</div>
+            </div>
+            <div class="stat">
+              <div class="stat__k">Secure</div>
+              <div class="stat__t">Modern UI patterns</div>
+            </div>
+            <div class="stat">
+              <div class="stat__k">Mobile-first</div>
+              <div class="stat__t">Smooth on phones</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card">
+          <div class="glasscard">
+            <div class="glasscard__head">
+              <div class="badge">Live Preview</div>
+              <div class="spark"></div>
+            </div>
+
+            <div class="glasscard__body">
+              <div class="mini">
+                <div class="mini__row">
+                  <div class="mini__label">Status</div>
+                  <div class="mini__value ok">Ready</div>
+                </div>
+                <div class="mini__row">
+                  <div class="mini__label">Next step</div>
+                  <div class="mini__value">Create your account</div>
+                </div>
+              </div>
+
+              <div class="timeline">
+                <div class="step done">
+                  <div class="step__dot"></div>
+                  <div class="step__txt">
+                    <div class="step__t">Open signup</div>
+                    <div class="step__d">Enter basic details</div>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step__dot"></div>
+                  <div class="step__txt">
+                    <div class="step__t">Verify email</div>
+                    <div class="step__d">Confirm your address</div>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step__dot"></div>
+                  <div class="step__txt">
+                    <div class="step__t">Finish onboarding</div>
+                    <div class="step__d">Access your dashboard</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glasscard__cta">
+                <a class="btn btn--solid wfull" href="./signup.html">Start Now</a>
+                <p class="tiny">No clutter. Just a clean Stream flow.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__waves" aria-hidden="true"></div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">What you get</h2>
+          <p class="muted">A simple onboarding flow that feels premium and easy to follow.</p>
+        </div>
+
+        <div class="grid3">
+          <article class="feature">
+            <div class="feature__icon">⚡</div>
+            <h3>Fast onboarding</h3>
+            <p>Clear steps from signup to dashboard — designed to reduce confusion and increase completion.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">🛡️</div>
+            <h3>Trust signals</h3>
+            <p>Clean UI patterns that make users feel safe: confirmations, hints, and transparent actions.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">📱</div>
+            <h3>Mobile-first</h3>
+            <p>Looks sharp on iPhone and Android, with accessible contrast and tap-friendly controls.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <div>
+          <h2 class="h2">Ready to register on Stream?</h2>
+          <p class="muted">Create your account now, or view the step-by-step registration guide.</p>
+        </div>
+        <div class="cta__actions">
+          <a class="btn btn--solid" href="./signup.html">Sign Up</a>
+          <a class="btn btn--ghost" href="./how-to-register.html">How to Register</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__brand">
+          <img src="./assets/stream-logo.png" alt="" />
+          <span>Stream</span>
+        </div>
+        <p class="tiny">© <span id="year"></span> Stream. All rights reserved.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="./how-to-register.html">How to Register</a>
+        <a href="./signup.html">Sign Up</a>
+        <a href="./index.html">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

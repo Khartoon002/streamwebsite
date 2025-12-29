@@ -1,0 +1,201 @@
+<!-- signup.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06110b" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>Sign Up — Stream</title>
+  <meta name="description" content="Create your Stream account. Complete signup with name, email, and password, then proceed to the registration steps." />
+  <meta name="keywords" content="Stream signup, Stream register, create Stream account, Stream registration" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/signup.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sign Up — Stream" />
+  <meta property="og:description" content="Create your Stream account in minutes." />
+  <meta property="og:url" content="https://example.com/signup.html" />
+  <meta property="og:image" content="https://example.com/assets/stream-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sign Up — Stream" />
+  <meta name="twitter:description" content="Create your Stream account in minutes." />
+  <meta name="twitter:image" content="https://example.com/assets/stream-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://example.com/#organization",
+        "name":"Stream",
+        "url":"https://example.com/",
+        "logo":{"@type":"ImageObject","url":"https://example.com/assets/stream-logo.png"}
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://example.com/signup.html#webpage",
+        "url":"https://example.com/signup.html",
+        "name":"Sign Up — Stream",
+        "isPartOf":{"@id":"https://example.com/#website"},
+        "about":{"@id":"https://example.com/#organization"},
+        "inLanguage":"en",
+        "description":"Create your Stream account."
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://example.com/signup.html#breadcrumb",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://example.com/"},
+          {"@type":"ListItem","position":2,"name":"Sign Up","item":"https://example.com/signup.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="./index.html" aria-label="Stream home">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="./assets/stream-logo.png" alt="" />
+        </span>
+        <span class="brand__name">Stream</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav__link" href="./how-to-register.html">How to Register</a>
+        <a class="nav__link" href="./index.html">Home</a>
+        <a class="nav__cta" href="./how-to-register.html">Registration Guide</a>
+      </nav>
+
+      <button class="iconbtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="iconbtn__bars"></span>
+      </button>
+    </div>
+
+    <div class="mobilemenu" id="mobileMenu" hidden>
+      <div class="container mobilemenu__inner">
+        <a href="./how-to-register.html">How to Register</a>
+        <a href="./index.html">Home</a>
+        <a class="btn btn--solid" href="./how-to-register.html">Registration Guide</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth">
+    <div class="container auth__grid">
+      <section class="auth__panel">
+        <div class="pill"><span class="dot"></span> Secure signup</div>
+        <h1 class="h1">Create your Stream account</h1>
+        <p class="muted">Fill in your details. After signup, you’ll get the exact steps to complete registration.</p>
+
+        <form class="form" id="signupForm" novalidate>
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="e.g., David SImpson" required minlength="2" />
+            <small class="hint">Use your real name for smoother verification.</small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            <small class="hint">We’ll send a confirmation link here.</small>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="pw">
+              <input id="password" name="password" type="password" autocomplete="new-password" placeholder="Create a strong password" required minlength="8" />
+              <button class="pw__toggle" type="button" id="togglePw" aria-label="Show password">Show</button>
+            </div>
+            <div class="meter" aria-hidden="true">
+              <div class="meter__bar" id="pwBar"></div>
+            </div>
+            <small class="hint" id="pwHint">Use 8+ characters, mix letters + numbers.</small>
+          </div>
+
+          <div class="field">
+            <label class="check">
+              <input type="checkbox" id="terms" required />
+              <span>I agree to the Terms and Privacy.</span>
+            </label>
+          </div>
+
+          <button class="btn btn--solid wfull" type="submit">Create account</button>
+
+          <div class="note" id="formMsg" role="status" aria-live="polite"></div>
+
+          <p class="tiny">
+            Already registered? <a href="./how-to-register.html">View how to complete registration</a>.
+          </p>
+        </form>
+      </section>
+
+      <aside class="auth__aside">
+        <div class="glasscard glasscard--tall">
+          <div class="glasscard__head">
+            <div class="badge">Why Stream</div>
+            <div class="spark"></div>
+          </div>
+
+          <div class="glasscard__body">
+            <ul class="list">
+              <li><span class="tick">✓</span> Clean black & green interface</li>
+              <li><span class="tick">✓</span> Easy steps to register</li>
+              <li><span class="tick">✓</span> Mobile-first experience</li>
+              <li><span class="tick">✓</span> Clear confirmations & prompts</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <div class="mini">
+              <div class="mini__row">
+                <div class="mini__label">Next</div>
+                <div class="mini__value">Registration steps page</div>
+              </div>
+              <div class="mini__row">
+                <div class="mini__label">Tip</div>
+                <div class="mini__value">Use an active email</div>
+              </div>
+            </div>
+
+            <a class="btn btn--ghost wfull" href="./how-to-register.html">How to Register</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__brand">
+          <img src="./assets/stream-logo.png" alt="" />
+          <span>Stream</span>
+        </div>
+        <p class="tiny">© <span id="year"></span> Stream. All rights reserved.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="./index.html">Home</a>
+        <a href="./how-to-register.html">How to Register</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

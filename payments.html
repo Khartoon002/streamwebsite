@@ -1,0 +1,954 @@
+<!-- payments.html (STREAM version) -->
+<!doctype html>
+<html lang="en">
+<head>
+  <style>
+    body { transition: opacity ease-in 0.2s; }
+    body[unresolved] { opacity: 0; display: block; overflow: hidden; position: relative; }
+  </style>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06110b" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>Stream — Payment (Nigeria + Foreign)</title>
+  <meta name="description" content="Choose your Stream country, select your package, then (for Nigeria) choose OPay or Normal Bank. Pay and submit proof on WhatsApp with a prefilled message." />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://example.com/payments.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Stream — Payment (Nigeria + Foreign)" />
+  <meta property="og:description" content="Choose country, package, payment method (Nigeria), pay and submit proof on WhatsApp." />
+  <meta property="og:url" content="https://example.com/payments.html" />
+  <meta property="og:image" content="https://example.com/assets/stream-logo.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stream — Payment (Nigeria + Foreign)" />
+  <meta name="twitter:description" content="Choose country, package, payment method (Nigeria), pay and submit proof on WhatsApp." />
+  <meta name="twitter:image" content="https://example.com/assets/stream-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD (WebPage + Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://example.com/#organization",
+        "name":"Stream",
+        "url":"https://example.com/",
+        "logo":{"@type":"ImageObject","url":"https://example.com/assets/stream-logo.png"}
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://example.com/payments.html#webpage",
+        "url":"https://example.com/payments.html",
+        "name":"Stream — Payment (Nigeria + Foreign)",
+        "isPartOf":{"@id":"https://example.com/#website"},
+        "about":{"@id":"https://example.com/#organization"},
+        "inLanguage":"en",
+        "description":"Choose your Stream country, select package, then (Nigeria) choose OPay or Normal Bank, pay and submit proof via WhatsApp."
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://example.com/payments.html#breadcrumb",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://example.com/"},
+          {"@type":"ListItem","position":2,"name":"Payments","item":"https://example.com/payments.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#040a07;
+      --panel: rgba(255,255,255,.05);
+      --panel2: rgba(255,255,255,.03);
+      --stroke: rgba(52,255,150,.18);
+      --stroke2: rgba(52,255,150,.28);
+      --text:#eafff2;
+      --muted: rgba(234,255,242,.74);
+      --muted2: rgba(234,255,242,.55);
+      --green:#34ff96;
+      --green2:#12d870;
+      --radius:26px;
+      --shadow: 0 30px 90px rgba(0,0,0,.75);
+      --shadow2: 0 18px 60px rgba(0,0,0,.6);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(52,255,150,.12), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(18,216,112,.10), transparent 60%),
+        radial-gradient(1200px 900px at 50% 115%, rgba(52,255,150,.08), transparent 60%),
+        linear-gradient(180deg,#020309,var(--bg));
+      color:var(--text);
+      overflow-x:hidden;
+      -webkit-tap-highlight-color: transparent;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* mouse glow follower (disabled on touch via JS) */
+    .glow{
+      position:fixed;
+      width:520px;height:520px;
+      transform:translate(-50%,-50%);
+      pointer-events:none;
+      background:radial-gradient(circle,
+        rgba(52,255,150,.28),
+        rgba(18,216,112,.14),
+        transparent 65%);
+      filter:blur(18px);
+      mix-blend-mode:screen;
+      opacity:0;
+      transition:opacity .25s ease;
+      z-index:0;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: clamp(16px, 4vw, 28px);
+      position:relative;
+      z-index:1;
+    }
+
+    .card{
+      width:min(720px,100%);
+      text-align:center;
+      padding: clamp(14px, 3.5vw, 22px);
+      border-radius: clamp(18px, 4.4vw, var(--radius));
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      border:1px solid var(--stroke);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-60px;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      opacity:.08;
+      transform: rotate(9deg);
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
+
+    .logo{
+      width: min(240px, 70%);
+      max-width: 240px;
+      aspect-ratio:1/1;
+      border-radius: clamp(14px, 3.8vw, 22px);
+      border:1px solid rgba(52,255,150,.18);
+      margin:0 auto clamp(10px, 2.6vw, 14px);
+      display:block;
+      object-fit:cover;
+      box-shadow: var(--shadow2);
+      background: rgba(0,0,0,.25);
+    }
+
+    h1{
+      font-size: clamp(18px, 4.6vw, 22px);
+      font-weight:900;
+      margin: clamp(6px, 2vw, 10px) 0 6px;
+      letter-spacing:.1px;
+      line-height:1.15;
+    }
+    .subtitle{
+      font-size: clamp(12px, 3.2vw, 13px);
+      color:var(--muted);
+      max-width: 66ch;
+      margin:0 auto;
+      line-height:1.55;
+    }
+
+    .links{
+      margin-top: clamp(14px, 3vw, 18px);
+      display:flex;
+      flex-direction:column;
+      gap: clamp(10px, 2.6vw, 14px);
+      text-align:left;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: clamp(12px, 3.2vw, 16px);
+      border-radius: clamp(16px, 4vw, 20px);
+      text-decoration:none;
+      color:var(--text);
+      background:rgba(0,0,0,.38);
+      border:1px solid rgba(52,255,150,.16);
+      position:relative;
+      overflow:hidden;
+      transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease, background .16s ease;
+      cursor:pointer;
+      user-select:none;
+      touch-action: manipulation;
+    }
+
+    .btn::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(240px 240px at var(--mx,50%) var(--my,50%),
+        rgba(52,255,150,.48),
+        transparent 60%);
+      opacity:0;
+      transition:opacity .18s ease;
+      pointer-events:none;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(52,255,150,.55);
+      box-shadow:0 14px 40px rgba(52,255,150,.14);
+      background:rgba(0,0,0,.42);
+    }
+    .btn:hover::after{opacity:1}
+
+    .left{display:flex;gap:12px;align-items:center;min-width:0}
+    .ico{
+      width: clamp(42px, 11vw, 46px);
+      height: clamp(42px, 11vw, 46px);
+      border-radius: clamp(14px, 4vw, 16px);
+      display:grid;
+      place-items:center;
+      font-size: clamp(18px, 4.8vw, 20px);
+      background:linear-gradient(135deg,rgba(52,255,150,.18),rgba(18,216,112,.10));
+      border:1px solid rgba(52,255,150,.18);
+      flex:0 0 auto;
+    }
+    .labelwrap{min-width:0}
+    .label{
+      font-weight:900;
+      font-size: clamp(13px, 3.6vw, 14px);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .note{
+      font-size: clamp(11.5px, 3.1vw, 12px);
+      color:var(--muted2);
+      margin-top:2px;
+      line-height:1.4;
+      display:-webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow:hidden;
+    }
+    .arrow{ opacity:.9; flex:0 0 auto; font-size: 16px; }
+
+    /* Modal */
+    .modal{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:flex-end; /* mobile: bottom sheet feel */
+      justify-content:center;
+      padding: clamp(10px, 3vw, 18px);
+      background: rgba(0,0,0,.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index:9999;
+    }
+    .modal.show{display:flex;}
+
+    .modalCard{
+      width:min(760px, 100%);
+      border-radius: clamp(18px, 4.4vw, 22px);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border:1px solid rgba(52,255,150,.16);
+      box-shadow: 0 30px 90px rgba(0,0,0,.72);
+      overflow:hidden;
+      position:relative;
+      max-height: calc(100svh - 24px);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .modalHead{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: clamp(12px, 3vw, 14px) clamp(12px, 3.2vw, 16px);
+      border-bottom:1px solid rgba(52,255,150,.10);
+      flex:0 0 auto;
+    }
+    .modalTitle{
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size: clamp(13.5px, 3.7vw, 15px);
+    }
+    .xbtn{
+      border:none;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(52,255,150,.16);
+      color:var(--text);
+      border-radius:12px;
+      padding: 10px 12px;
+      cursor:pointer;
+      font-family:inherit;
+      font-size:12px;
+      touch-action: manipulation;
+    }
+
+    .modalBody{
+      padding: clamp(12px, 3.2vw, 16px);
+      overflow:auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .grid2{display:grid;grid-template-columns:1fr;gap: clamp(10px, 2.8vw, 12px)}
+    @media (min-width: 820px){ .modal{align-items:center;} .grid2{grid-template-columns:1fr 1fr;} }
+
+    .pickCard{
+      border-radius: clamp(16px, 4vw, 18px);
+      border:1px solid rgba(52,255,150,.16);
+      background: rgba(0,0,0,.32);
+      padding: clamp(12px, 3.2vw, 14px);
+      cursor:pointer;
+      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+      position:relative;
+      overflow:hidden;
+      touch-action: manipulation;
+    }
+    .pickCard:hover{
+      transform: translateY(-1px);
+      border-color: rgba(52,255,150,.55);
+      box-shadow: 0 12px 40px rgba(52,255,150,.12);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:11px;
+      border:1px solid rgba(52,255,150,.18);
+      background: rgba(52,255,150,.10);
+      white-space:nowrap;
+    }
+    .price{
+      margin-top:10px;
+      font-weight:900;
+      font-size: clamp(18px, 4.8vw, 20px);
+      letter-spacing:-.2px;
+      line-height:1.15;
+    }
+    .small{
+      margin-top:6px;
+      color: var(--muted2);
+      font-size: clamp(11.5px, 3.1vw, 12px);
+      line-height:1.45;
+    }
+
+    .row{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      padding: clamp(11px, 3.2vw, 12px);
+      border-radius: clamp(14px, 3.8vw, 16px);
+      border:1px solid rgba(52,255,150,.14);
+      background: rgba(0,0,0,.26);
+      flex-wrap:wrap;
+    }
+    .row .k{color:rgba(234,255,242,.70);font-size: clamp(11px, 3vw, 12px)}
+    .row .v{
+      font-weight:900;
+      font-size: clamp(12.5px, 3.6vw, 14px);
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+    }
+
+    .copyBtn{
+      border:none;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(52,255,150,.16);
+      color:var(--text);
+      border-radius:12px;
+      padding: 10px 12px;
+      cursor:pointer;
+      font-family:inherit;
+      font-size:12px;
+      flex:0 0 auto;
+      touch-action: manipulation;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: clamp(12px, 3vw, 14px);
+    }
+    .cta{
+      flex:1 1 220px;
+      border:none;
+      border-radius: clamp(16px, 4vw, 18px);
+      padding: 14px 14px;
+      font-weight:900;
+      font-size: clamp(13px, 3.6vw, 14px);
+      cursor:pointer;
+      color:#04110a;
+      background: linear-gradient(135deg, rgba(52,255,150,.95), rgba(18,216,112,.80));
+      box-shadow: 0 18px 50px rgba(52,255,150,.18);
+      font-family:inherit;
+      text-align:center;
+      touch-action: manipulation;
+    }
+    .ghost{
+      flex:1 1 220px;
+      border-radius: clamp(16px, 4vw, 18px);
+      border:1px solid rgba(52,255,150,.16);
+      background: rgba(0,0,0,.28);
+      color:var(--text);
+      padding: 14px 14px;
+      font-weight:900;
+      font-size: clamp(13px, 3.6vw, 14px);
+      cursor:pointer;
+      font-family:inherit;
+      text-align:center;
+      touch-action: manipulation;
+    }
+
+    .count{
+      font-weight:900;
+      color: rgba(52,255,150,.95);
+      font-size:12px;
+      margin-top:6px;
+    }
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      transform: translateX(-50%) translateY(14px);
+      opacity:0;
+      pointer-events:none;
+      padding:10px 12px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.62);
+      border: 1px solid rgba(52,255,150,.18);
+      color:var(--text);
+      font-size:12px;
+      backdrop-filter: blur(12px);
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 10010;
+      max-width: calc(100vw - 24px);
+      text-align:center;
+    }
+    .toast.show{opacity:1;transform: translateX(-50%) translateY(0px)}
+
+    @media (hover: none){
+      .btn:hover{transform:none; box-shadow:none;}
+      .btn:hover::after{opacity:0;}
+      .pickCard:hover{transform:none; box-shadow:none;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glow" id="glow"></div>
+
+  <main class="wrap">
+    <section class="card">
+      <!-- CHANGE THIS TO YOUR STREAM LOGO PATH -->
+      <img class="logo" src="./assets/stream-logo.png" alt="Stream Logo" loading="eager" />
+
+      <h1>Stream Payment (Nigeria + Foreign)</h1>
+      <p class="subtitle">
+        Click below to choose your <b>country</b>, select your <b>package</b>, then (for Nigeria) choose <b>OPay</b> or <b>Normal Bank</b>.
+        After payment, click <b>Submit Payment Proof</b> to open WhatsApp with a prefilled message to <b>07087108201</b>.
+      </p>
+
+      <div class="links">
+        <div class="btn" id="startBtn" role="button" tabindex="0" aria-label="Start payment">
+          <div class="left">
+            <div class="ico">💳</div>
+            <div class="labelwrap">
+              <div class="label">Start Payment</div>
+              <div class="note">Country → Package → (Nigeria: OPay/Bank) → Pay → Submit proof (WhatsApp)</div>
+            </div>
+          </div>
+          <div class="arrow">↗</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- COUNTRY -->
+  <div class="modal" id="countryModal" aria-hidden="true">
+    <div class="modalCard">
+      <div class="modalHead">
+        <div class="modalTitle">Select Your Country</div>
+        <button class="xbtn" id="closeCountry">Close</button>
+      </div>
+      <div class="modalBody">
+        <div class="grid2" id="countryGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKAGE -->
+  <div class="modal" id="packageModal" aria-hidden="true">
+    <div class="modalCard">
+      <div class="modalHead">
+        <div class="modalTitle">Select Package</div>
+        <button class="xbtn" id="closePackage">Close</button>
+      </div>
+      <div class="modalBody">
+        <div class="small" style="margin-bottom:10px;">Country: <b id="selCountryLabel">—</b></div>
+        <div class="grid2" id="packageGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT METHOD (Nigeria only) -->
+  <div class="modal" id="methodModal" aria-hidden="true">
+    <div class="modalCard">
+      <div class="modalHead">
+        <div class="modalTitle">Choose Payment Method (Nigeria)</div>
+        <button class="xbtn" id="closeMethod">Close</button>
+      </div>
+      <div class="modalBody">
+        <div class="small" style="margin-bottom:10px;">
+          Package: <b id="selPkgLabel">—</b> • Amount: <b id="selAmtLabel">—</b>
+        </div>
+        <div class="grid2">
+          <div class="pickCard" id="pickOpay">
+            <span class="tag">🟩 OPay</span>
+            <div class="price">OPay Users Only</div>
+            <div class="small">Tap to use OPay payment details.</div>
+          </div>
+          <div class="pickCard" id="pickBank">
+            <span class="tag">🏦 Normal Bank</span>
+            <div class="price">Other Banks Transfer</div>
+            <div class="small">Tap to use normal bank transfer details.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT DETAILS -->
+  <div class="modal" id="payModal" aria-hidden="true">
+    <div class="modalCard">
+      <div class="modalHead">
+        <div class="modalTitle">Payment Details</div>
+        <button class="xbtn" id="closePay">Close</button>
+      </div>
+      <div class="modalBody">
+        <div class="small" style="margin-bottom:10px;">
+          Country: <b id="pfCountry">—</b> • Package: <b id="pfPackage">—</b> • Amount: <b id="pfAmount">—</b>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="k">Payment channel</div>
+            <div class="v" id="pfChannel">—</div>
+          </div>
+          <button class="copyBtn" data-copy="#pfChannel">Copy</button>
+        </div>
+
+        <div style="height:10px"></div>
+
+        <div class="row">
+          <div>
+            <div class="k">Account / Wallet number</div>
+            <div class="v" id="pfAcctNo">—</div>
+          </div>
+          <button class="copyBtn" data-copy="#pfAcctNo">Copy</button>
+        </div>
+
+        <div style="height:10px"></div>
+
+        <div class="row">
+          <div>
+            <div class="k">Account / Wallet name</div>
+            <div class="v" id="pfAcctName">—</div>
+          </div>
+          <button class="copyBtn" data-copy="#pfAcctName">Copy</button>
+        </div>
+
+        <div style="height:10px"></div>
+
+        <div class="row">
+          <div style="min-width: 240px; flex: 1 1 240px;">
+            <div class="k">Important note</div>
+            <div class="v" id="pfNote" style="font-weight:700;">After payment, submit proof on WhatsApp to 07087108201.</div>
+            <div class="count" id="countdownTimer">01:00:00</div>
+          </div>
+        </div>
+
+        <div class="ctaRow">
+          <button class="cta" id="submitProof">Submit Payment Proof (WhatsApp)</button>
+          <button class="ghost" id="copyAll">Copy All Details</button>
+        </div>
+
+        <div class="small" style="margin-top:10px; text-align:center;">
+          After payment, send a screenshot of your payment slip and your sender name for confirmation.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Copied ✅</div>
+
+  <script>
+    /**********************
+     * STREAM DATA (EDIT THESE)
+     **********************/
+    const DATA = {
+      proofPhone: "07087108201",
+      brand: "Stream",
+      countries: [
+        {
+          key: "NG",
+          label: "🇳🇬 Nigeria",
+          packages: {
+            Starter: { amountText: "₦10,000" },
+            Pro:     { amountText: "₦15,000" }
+          },
+          paymentMethods: {
+            opay: {
+              channel: "OPay Bank",
+              acctNo: "1807561116",
+              acctName: "Clinton Uchenna Spino",
+              note: "Bank: Kredi Money Mfb Ltd (OPay users only)."
+            },
+            bank: {
+              channel: "Other Banks Transfer",
+              acctNo: "6054080105",
+              acctName: "Spino Clinton",
+              note: "Bank: Moniepoint (normal transfer)."
+            }
+          }
+        },
+        {
+          key: "GH",
+          label: "🇬🇭 Ghana",
+          packages: { Starter:{ amountText:"170GHS" }, Pro:{ amountText:"250GHS" } },
+          payment: { channel:"MTN", acctNo:"0531148002", acctName:"Daniel Amoah", note:"" }
+        },
+        {
+          key: "ZA",
+          label: "🇿🇦 South Africa",
+          packages: { Starter:{ amountText:"R270" }, Pro:{ amountText:"R370" } },
+          payment: {
+            channel:"FNB",
+            acctNo:"63096232756",
+            acctName:"Tegha digital (pty)Ltd",
+            note:"Use IMMEDIATE TRANSACTION option to ensure payment is processed instantly and without delay."
+          }
+        },
+        {
+          key: "KE",
+          label: "🇰🇪 Kenya",
+          packages: { Starter:{ amountText:"2000KES" }, Pro:{ amountText:"2700KES" } },
+          payment: { channel:"AIRTEL MONEY", acctNo:"0107494918", acctName:"Mohamed Hadid", note:"" }
+        },
+        {
+          key: "UG",
+          label: "🇺🇬 Uganda",
+          packages: { Starter:{ amountText:"52,000UGX" }, Pro:{ amountText:"72,000UGX" } },
+          payment: { channel:"AIRTEL UGANDA", acctNo:"+256753668856", acctName:"Eriab Wakabi", note:"" }
+        }
+      ]
+    };
+
+    let selectedCountry = null;
+    let selectedPackage = null;
+    let selectedMethodKey = null;
+
+    const $ = (q) => document.querySelector(q);
+    const toast = $("#toast");
+
+    function showToast(msg){
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(()=>toast.classList.remove("show"), 1300);
+    }
+
+    async function copyText(text){
+      try { await navigator.clipboard.writeText(text); showToast("Copied ✅"); }
+      catch{
+        const t = document.createElement("textarea");
+        t.value = text; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove();
+        showToast("Copied ✅");
+      }
+    }
+
+    function openModal(id){
+      const el = $(id);
+      el.classList.add("show");
+      el.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+    }
+    function closeModal(id){
+      const el = $(id);
+      el.classList.remove("show");
+      el.setAttribute("aria-hidden","true");
+      document.body.style.overflow = "";
+    }
+
+    function attachButtonGlow(el){
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--mx", ((e.clientX - r.left)/r.width)*100 + "%");
+        el.style.setProperty("--my", ((e.clientY - r.top)/r.height)*100 + "%");
+      });
+    }
+
+    /**********************
+     * Glow follower (disable on touch)
+     **********************/
+    const glow = $("#glow");
+    const isTouch = matchMedia("(hover: none)").matches || "ontouchstart" in window;
+
+    if (!isTouch){
+      let x = innerWidth/2, y = innerHeight/2, tx = x, ty = y;
+      addEventListener("mousemove", (e) => { tx = e.clientX; ty = e.clientY; glow.style.opacity = 1; });
+      addEventListener("mouseleave", () => glow.style.opacity = 0);
+      (function loop(){
+        x += (tx - x) * 0.12;
+        y += (ty - y) * 0.12;
+        glow.style.left = x + "px";
+        glow.style.top  = y + "px";
+        requestAnimationFrame(loop);
+      })();
+    } else {
+      glow.style.display = "none";
+    }
+
+    /**********************
+     * Render
+     **********************/
+    const countryGrid = $("#countryGrid");
+    const packageGrid = $("#packageGrid");
+
+    function renderCountries(){
+      countryGrid.innerHTML = "";
+      DATA.countries.forEach(c => {
+        const div = document.createElement("div");
+        div.className = "pickCard";
+        div.innerHTML = `
+          <span class="tag">${c.label} ${DATA.brand} DETAILS</span>
+          <div class="price">${c.label}</div>
+          <div class="small">Tap to choose your package and see payment details.</div>
+        `;
+        attachButtonGlow(div);
+        div.addEventListener("click", () => {
+          selectedCountry = c;
+          selectedPackage = null;
+          selectedMethodKey = null;
+
+          $("#selCountryLabel").textContent = c.label;
+          closeModal("#countryModal");
+          renderPackagesForCountry(c);
+          openModal("#packageModal");
+        });
+        countryGrid.appendChild(div);
+      });
+    }
+
+    function renderPackagesForCountry(country){
+      packageGrid.innerHTML = "";
+      const pk = country.packages || {};
+      Object.keys(pk).forEach(planName => {
+        const plan = pk[planName];
+        const div = document.createElement("div");
+        div.className = "pickCard";
+        div.innerHTML = `
+          <span class="tag">✨ ${DATA.brand} ${planName}</span>
+          <div class="price">${plan.amountText}</div>
+          <div class="small">Tap to continue.</div>
+        `;
+        attachButtonGlow(div);
+        div.addEventListener("click", () => {
+          selectedPackage = planName;
+          closeModal("#packageModal");
+
+          if (country.key === "NG" && country.paymentMethods){
+            $("#selPkgLabel").textContent = DATA.brand + " " + planName;
+            $("#selAmtLabel").textContent = plan.amountText;
+            openModal("#methodModal");
+          } else {
+            fillPaymentModal(country, planName, null);
+            openModal("#payModal");
+            startCountdown(3600);
+          }
+        });
+        packageGrid.appendChild(div);
+      });
+    }
+
+    function getPaymentConfig(country, methodKey){
+      if (country.key === "NG" && country.paymentMethods){
+        return country.paymentMethods[methodKey || "bank"];
+      }
+      return country.payment;
+    }
+
+    function buildPrefilledMessage(country, planName, payCfg){
+      const amountText = country.packages[planName]?.amountText || "—";
+      return `Hello, please confirm my ${DATA.brand} payment.
+
+Country: ${country.label}
+Package: ${DATA.brand} ${planName}
+Amount: ${amountText}
+
+Payment Details Used:
+Channel: ${payCfg.channel}
+Account / Wallet: ${payCfg.acctNo}
+Account / Wallet Name: ${payCfg.acctName}${payCfg.note ? `
+
+Note: ${payCfg.note}` : ""}
+
+I am about to upload my proof of payment now (screenshot) and my sender name.`;
+    }
+
+    function fillPaymentModal(country, planName, methodKey){
+      const pay = getPaymentConfig(country, methodKey);
+      const amountText = country.packages[planName]?.amountText || "—";
+
+      $("#pfCountry").textContent = country.label;
+      $("#pfPackage").textContent = DATA.brand + " " + planName;
+      $("#pfAmount").textContent = amountText;
+
+      $("#pfChannel").textContent = pay.channel || "—";
+      $("#pfAcctNo").textContent = pay.acctNo || "—";
+      $("#pfAcctName").textContent = pay.acctName || "—";
+
+      const note = [pay.note || "", `After payment, click "Submit Payment Proof" to message ${DATA.proofPhone} on WhatsApp.`]
+        .filter(Boolean).join(" ");
+      $("#pfNote").textContent = note;
+
+      $("#copyAll").onclick = () => {
+        const lines = [];
+        lines.push(`${country.label} ${DATA.brand.toUpperCase()} DETAILS`);
+        lines.push("");
+        Object.keys(country.packages).forEach(k => {
+          lines.push(`• ${DATA.brand} ${k} = ${country.packages[k]?.amountText || "—"}`);
+        });
+        lines.push("");
+        lines.push("PAYMENT DETAILS");
+        lines.push(`🛜 ${pay.channel}`);
+        lines.push(`📍 ${pay.acctNo}`);
+        lines.push(`👥 ${pay.acctName}`);
+        if (pay.note) lines.push(`\nℹ ${pay.note}`);
+        lines.push(`\nAfter Payment: Send proof (screenshot) + sender name to ${DATA.proofPhone} on WhatsApp.`);
+        copyText(lines.join("\n"));
+      };
+
+      $("#submitProof").onclick = () => {
+        const msg = buildPrefilledMessage(country, planName, pay);
+        const waDigits = DATA.proofPhone.replace(/\D/g,"");
+        const to = waDigits.startsWith("0") ? ("234" + waDigits.slice(1)) : waDigits;
+        window.location.href = "https://wa.me/" + to + "?text=" + encodeURIComponent(msg);
+      };
+    }
+
+    /**********************
+     * Events
+     **********************/
+    $("#startBtn").addEventListener("click", () => openModal("#countryModal"));
+    $("#startBtn").addEventListener("keydown", (e) => { if (e.key==="Enter"||e.key===" ") openModal("#countryModal"); });
+
+    $("#closeCountry").addEventListener("click", () => closeModal("#countryModal"));
+    $("#closePackage").addEventListener("click", () => closeModal("#packageModal"));
+    $("#closeMethod").addEventListener("click", () => closeModal("#methodModal"));
+    $("#closePay").addEventListener("click", () => closeModal("#payModal"));
+
+    ["#countryModal","#packageModal","#methodModal","#payModal"].forEach(id => {
+      const m = $(id);
+      m.addEventListener("click", (e) => { if (e.target === m) closeModal(id); });
+    });
+
+    document.addEventListener("click", (e) => {
+      const b = e.target.closest(".copyBtn");
+      if (!b) return;
+      const sel = b.getAttribute("data-copy");
+      const target = document.querySelector(sel);
+      if (!target) return;
+      copyText((target.textContent || "").trim());
+    });
+
+    $("#pickOpay").addEventListener("click", () => {
+      selectedMethodKey = "opay";
+      closeModal("#methodModal");
+      fillPaymentModal(selectedCountry, selectedPackage, selectedMethodKey);
+      openModal("#payModal");
+      startCountdown(3600);
+    });
+    $("#pickBank").addEventListener("click", () => {
+      selectedMethodKey = "bank";
+      closeModal("#methodModal");
+      fillPaymentModal(selectedCountry, selectedPackage, selectedMethodKey);
+      openModal("#payModal");
+      startCountdown(3600);
+    });
+
+    document.querySelectorAll(".btn").forEach(attachButtonGlow);
+
+    /**********************
+     * Countdown
+     **********************/
+    let countdownTimer = null;
+    function startCountdown(seconds){
+      const el = $("#countdownTimer");
+      if (!el) return;
+      let remaining = seconds;
+      if (countdownTimer) clearInterval(countdownTimer);
+
+      el.style.color = ""; // reset
+      function tick(){
+        const h = String(Math.floor(remaining / 3600)).padStart(2,'0');
+        const m = String(Math.floor((remaining % 3600) / 60)).padStart(2,'0');
+        const s = String(Math.floor(remaining % 60)).padStart(2,'0');
+        el.textContent = `${h}:${m}:${s}`;
+
+        if (remaining <= 0){
+          clearInterval(countdownTimer);
+          el.textContent = "Expired";
+          el.style.color = "rgba(255,77,109,.95)";
+          return;
+        }
+        remaining--;
+      }
+      tick();
+      countdownTimer = setInterval(tick, 1000);
+    }
+
+    /**********************
+     * Init
+     **********************/
+    renderCountries();
+  </script>
+</body>
+</html>
