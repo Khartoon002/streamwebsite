@@ -1,279 +1,1461 @@
-<!-- index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#06110b" />
-  <meta name="color-scheme" content="dark" />
-
-  <title>Stream — Start, Grow, and Track Your Progress</title>
-  <meta name="description" content="Stream is a modern platform to start, register, and access your dashboard with a clean black-and-green experience. Create your account in minutes." />
-  <meta name="keywords" content="Stream, Stream registration, Stream signup, Stream platform, Stream dashboard, Stream how to register" />
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <link rel="canonical" href="https://example.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Stream — Start, Grow, and Track Your Progress" />
-  <meta property="og:description" content="Create your Stream account in minutes. Clean black-and-green UI. Easy registration steps." />
-  <meta property="og:url" content="https://example.com/" />
-  <meta property="og:image" content="https://example.com/assets/stream-logo.png" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stream — Start, Grow, and Track Your Progress" />
-  <meta name="twitter:description" content="Create your Stream account in minutes. Clean black-and-green UI. Easy registration steps." />
-  <meta name="twitter:image" content="https://example.com/assets/stream-logo.png" />
-
-  <!-- Fonts (optional) -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stream — Dark Green Glass Platform</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./css/styles.css" />
-
-  <!-- JSON-LD: Organization + Website + WebPage -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://example.com/#organization",
-        "name":"Stream",
-        "url":"https://example.com/",
-        "logo":{
-          "@type":"ImageObject",
-          "url":"https://example.com/assets/stream-logo.png"
-        },
-        "sameAs":[]
-      },
-      {
-        "@type":"WebSite",
-        "@id":"https://example.com/#website",
-        "url":"https://example.com/",
-        "name":"Stream",
-        "publisher":{"@id":"https://example.com/#organization"},
-        "inLanguage":"en",
-        "potentialAction":{
-          "@type":"SearchAction",
-          "target":"https://example.com/?q={search_term_string}",
-          "query-input":"required name=search_term_string"
-        }
-      },
-      {
-        "@type":"WebPage",
-        "@id":"https://example.com/#webpage",
-        "url":"https://example.com/",
-        "name":"Stream — Start, Grow, and Track Your Progress",
-        "isPartOf":{"@id":"https://example.com/#website"},
-        "about":{"@id":"https://example.com/#organization"},
-        "inLanguage":"en",
-        "description":"Stream is a modern platform to start, register, and access your dashboard with a clean black-and-green experience.",
-        "breadcrumb":{
-          "@type":"BreadcrumbList",
-          "itemListElement":[
-            {"@type":"ListItem","position":1,"name":"Home","item":"https://example.com/"}
-          ]
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#34ff96',
+            brand2: '#12d870',
+            ink: '#06110b',
+            ink2: '#040a07',
+            glass: 'rgba(10, 24, 16, .55)',
+            glass2: 'rgba(8, 18, 12, .78)'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
+            display: ['Montserrat', 'Poppins', 'sans-serif']
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+            'fade-in': 'fade-in 0.5s ease-out',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' }
+            },
+            'pulse-glow': {
+              '0%, 100%': { boxShadow: '0 0 0 rgba(52,255,150,0)' },
+              '50%': { boxShadow: '0 0 40px rgba(52,255,150,0.24)' }
+            },
+            'fade-in': {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          }
         }
       }
-    ]
-  }
+    }
   </script>
+  
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --bg-primary: #040a07;
+      --bg-secondary: #06110b;
+      --brand-primary: #34ff96;
+      --brand-secondary: #12d870;
+      --text-primary: #eafff2;
+      --text-secondary: rgba(234, 255, 242, .75);
+      --glass-primary: rgba(10, 24, 16, .55);
+      --glass-secondary: rgba(8, 18, 12, .78);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-primary);
+      background: 
+        radial-gradient(1200px 700px at 10% 0%, rgba(52,255,150,.18), transparent 60%),
+        radial-gradient(900px 600px at 100% 30%, rgba(18,216,112,.12), transparent 55%),
+        radial-gradient(1200px 700px at 30% 100%, rgba(52,255,150,.08), transparent 55%),
+        linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 40%, var(--bg-primary) 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(10, 24, 16, 0.3);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--brand-primary), var(--brand-secondary));
+      border-radius: 5px;
+    }
+
+    /* Glass Effect */
+    .glass {
+      background: var(--glass-primary);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .glass-strong {
+      background: var(--glass-secondary);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(52, 255, 150, 0.15);
+      border-radius: 20px;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-in {
+      animation: slideIn 0.6s ease-out forwards;
+    }
+
+    /* Section Spacing */
+    section {
+      padding: 5rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 6rem 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      section {
+        padding: 8rem 2rem;
+      }
+    }
+
+    /* Container */
+    .container-custom {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 1.5rem;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      color: #07110b;
+      padding: 0.875rem 1.75rem;
+      border-radius: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(52, 255, 150, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(52, 255, 150, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      padding: 0.875rem 1.75rem;
+      border-radius: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Card Styles */
+    .card {
+      background: var(--glass-primary);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(52, 255, 150, 0.3);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Navigation */
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--brand-primary);
+      background: rgba(52, 255, 150, 0.1);
+    }
+
+    /* Hero Video */
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    /* Carousel */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      flex: 0 0 100%;
+      min-width: 100%;
+      padding: 1rem;
+    }
+
+    /* Image Styling */
+    .stream-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+    }
+
+    .stream-bg {
+      background: linear-gradient(135deg, rgba(52, 255, 150, 0.1), rgba(18, 216, 112, 0.05));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .packages-grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .download-grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .faq-grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .mobile-hidden {
+        display: none;
+      }
+    }
+
+    /* Accessibility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Focus Styles */
+    *:focus {
+      outline: 2px solid var(--brand-primary);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
+<body class="bg-black text-white">
+  <!-- Scroll Progress -->
+  <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand to-brand2 z-50" style="width: 0%;"></div>
 
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="./index.html" aria-label="Stream home">
-        <span class="brand__mark" aria-hidden="true">
-          <img src="./assets/stream-logo.png" alt="" />
-        </span>
-        <span class="brand__name">Stream</span>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-40 glass py-4">
+    <div class="container-custom flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand to-brand2 flex items-center justify-center">
+          <i class="fas fa-play text-ink text-lg"></i>
+        </div>
+        <div>
+          <h1 class="font-display font-bold text-xl">Stream</h1>
+          <p class="text-xs text-brand opacity-80">Dark • Glass • Green</p>
+        </div>
       </a>
 
-      <nav class="nav">
-        <a class="nav__link" href="./how-to-register.html">How to Register</a>
-        <a class="nav__link" href="./signup.html">Sign Up</a>
-        <a class="nav__cta" href="./signup.html">Get Started</a>
-      </nav>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#showcase" class="nav-link">Showcase</a>
+        <a href="#packages" class="nav-link">Packages</a>
+        <a href="#download" class="nav-link">Download</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="/how-to-register.html" class="btn-primary animate-pulse-glow">
+          <i class="fas fa-user-plus"></i>
+          Register
+        </a>
+      </div>
 
-      <button class="iconbtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="iconbtn__bars"></span>
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuButton" class="md:hidden btn-secondary">
+        <i class="fas fa-bars"></i>
+        <span class="ml-2">Menu</span>
       </button>
     </div>
 
-    <div class="mobilemenu" id="mobileMenu" hidden>
-      <div class="container mobilemenu__inner">
-        <a href="./how-to-register.html">How to Register</a>
-        <a href="./signup.html">Sign Up</a>
-        <a class="btn btn--solid" href="./signup.html">Get Started</a>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden glass-strong mt-4 p-6 rounded-xl">
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <a href="#features" class="btn-secondary text-center">
+          <i class="fas fa-sparkles"></i>
+          Features
+        </a>
+        <a href="#showcase" class="btn-secondary text-center">
+          <i class="fas fa-images"></i>
+          Showcase
+        </a>
+        <a href="#packages" class="btn-secondary text-center">
+          <i class="fas fa-box"></i>
+          Packages
+        </a>
+        <a href="#download" class="btn-secondary text-center">
+          <i class="fas fa-download"></i>
+          Download
+        </a>
+      </div>
+      <div class="flex gap-3">
+        <a href="/how-to-register.html" class="btn-primary flex-1 text-center">
+          <i class="fas fa-user-plus"></i>
+          Register
+        </a>
+        <a href="#faq" class="btn-secondary flex-1 text-center">
+          <i class="fas fa-question"></i>
+          FAQ
+        </a>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <div class="pill">
-            <span class="dot"></span>
-            Black + Green • Fast • Clean
+  <!-- Hero Section -->
+  <section class="pt-24 pb-12 md:pt-32 md:pb-20 relative overflow-hidden">
+    <!-- Background Video -->
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/stream-logo.png">
+      <source src="/video/miamor-hero.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="hero-grid grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="animate-slide-in">
+          <div class="inline-flex items-center gap-2 bg-white/5 rounded-full px-4 py-2 mb-6">
+            <div class="w-2 h-2 rounded-full bg-brand animate-pulse"></div>
+            <span class="text-sm">New UI • Dark Glass • Green Neon</span>
           </div>
-
-          <h1 class="h1">
-            Build your journey on <span class="glow">Stream</span>.
-            Register in minutes. Stay in control.
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
+            Stream — where 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand2">connection</span>
+            meets premium experience
           </h1>
-
-          <p class="lead">
-            A modern experience designed for clarity: quick signup, easy onboarding,
-            and a smooth path to your dashboard.
+          
+          <p class="text-lg text-gray-300 mb-8">
+            A full landing-page revamp: dark green glassmorphism, smoother animations, modern sections, 
+            and a new carousel showcase. Keep your existing links, just a new premium UI layer.
           </p>
-
-          <div class="hero__actions">
-            <a class="btn btn--solid" href="./signup.html">Create Account</a>
-            <a class="btn btn--ghost" href="./how-to-register.html">See Registration Steps</a>
+          
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a href="/how-to-register.html" class="btn-primary">
+              <i class="fas fa-user-plus"></i>
+              Register on Stream
+            </a>
+            <a href="#showcase" class="btn-secondary">
+              <i class="fas fa-images"></i>
+              See Showcase
+            </a>
           </div>
-
-          <div class="stats">
-            <div class="stat">
-              <div class="stat__k">2–3 mins</div>
-              <div class="stat__t">Average setup time</div>
-            </div>
-            <div class="stat">
-              <div class="stat__k">Secure</div>
-              <div class="stat__t">Modern UI patterns</div>
-            </div>
-            <div class="stat">
-              <div class="stat__k">Mobile-first</div>
-              <div class="stat__t">Smooth on phones</div>
-            </div>
+          
+          <div class="flex flex-wrap gap-3">
+            <span class="glass px-4 py-2 rounded-full text-sm">
+              <i class="fas fa-shield-alt text-brand mr-2"></i>
+              Glass UI
+            </span>
+            <span class="glass px-4 py-2 rounded-full text-sm">
+              <i class="fas fa-bolt text-brand mr-2"></i>
+              Fast & Mobile-first
+            </span>
+            <span class="glass px-4 py-2 rounded-full text-sm">
+              <i class="fas fa-magic text-brand mr-2"></i>
+              Smooth Animations
+            </span>
           </div>
         </div>
-
-        <div class="hero__card">
-          <div class="glasscard">
-            <div class="glasscard__head">
-              <div class="badge">Live Preview</div>
-              <div class="spark"></div>
+        
+        <!-- Right Content - App Preview -->
+        <div class="animate-slide-in" style="animation-delay: 0.2s">
+          <div class="glass-strong p-6 rounded-2xl">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-display font-bold text-xl">
+                <i class="fas fa-mobile-alt text-brand mr-2"></i>
+                App Preview
+              </h3>
+              <span class="text-sm text-gray-400">Swipe to explore</span>
             </div>
-
-            <div class="glasscard__body">
-              <div class="mini">
-                <div class="mini__row">
-                  <div class="mini__label">Status</div>
-                  <div class="mini__value ok">Ready</div>
-                </div>
-                <div class="mini__row">
-                  <div class="mini__label">Next step</div>
-                  <div class="mini__value">Create your account</div>
-                </div>
-              </div>
-
-              <div class="timeline">
-                <div class="step done">
-                  <div class="step__dot"></div>
-                  <div class="step__txt">
-                    <div class="step__t">Open signup</div>
-                    <div class="step__d">Enter basic details</div>
+            
+            <!-- Carousel -->
+            <div class="carousel-container rounded-xl overflow-hidden mb-6">
+              <div class="carousel-track" id="appCarousel">
+                <!-- Slide 1 -->
+                <div class="carousel-item p-6">
+                  <div class="card">
+                    <div class="flex items-center gap-4 mb-4">
+                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-brand text-xl"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-lg">Dashboard</h4>
+                        <p class="text-sm text-gray-400">Clean metrics cards</p>
+                      </div>
+                    </div>
+                    <div class="h-40 rounded-xl stream-bg">
+                      <img src="assets/stream-logo.png" alt="Stream Dashboard" class="stream-image p-4">
+                    </div>
                   </div>
                 </div>
-                <div class="step">
-                  <div class="step__dot"></div>
-                  <div class="step__txt">
-                    <div class="step__t">Verify email</div>
-                    <div class="step__d">Confirm your address</div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-item p-6">
+                  <div class="card">
+                    <div class="flex items-center gap-4 mb-4">
+                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
+                        <i class="fas fa-users text-brand text-xl"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-lg">Community</h4>
+                        <p class="text-sm text-gray-400">Better onboarding UI</p>
+                      </div>
+                    </div>
+                    <div class="h-40 rounded-xl stream-bg">
+                      <img src="assets/stream-logo.png" alt="Stream Community" class="stream-image p-4">
+                    </div>
                   </div>
                 </div>
-                <div class="step">
-                  <div class="step__dot"></div>
-                  <div class="step__txt">
-                    <div class="step__t">Finish onboarding</div>
-                    <div class="step__d">Access your dashboard</div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-item p-6">
+                  <div class="card">
+                    <div class="flex items-center gap-4 mb-4">
+                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
+                        <i class="fas fa-gift text-brand text-xl"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-lg">Rewards</h4>
+                        <p class="text-sm text-gray-400">Clear call-to-actions</p>
+                      </div>
+                    </div>
+                    <div class="h-40 rounded-xl stream-bg">
+                      <img src="assets/stream-logo.png" alt="Stream Rewards" class="stream-image p-4">
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="glasscard__cta">
-                <a class="btn btn--solid wfull" href="./signup.html">Start Now</a>
-                <p class="tiny">No clutter. Just a clean Stream flow.</p>
               </div>
             </div>
+            
+            <!-- Carousel Controls -->
+            <div class="flex justify-between items-center">
+              <button class="btn-secondary" id="carouselPrev">
+                <i class="fas fa-chevron-left"></i>
+                Previous
+              </button>
+              <div class="flex gap-2">
+                <div class="w-2 h-2 rounded-full bg-brand"></div>
+                <div class="w-2 h-2 rounded-full bg-white/20"></div>
+                <div class="w-2 h-2 rounded-full bg-white/20"></div>
+              </div>
+              <button class="btn-secondary" id="carouselNext">
+                Next
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="glass mt-6 p-4 rounded-xl">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm text-gray-400">Trusted UI patterns</span>
+              <span class="font-bold text-brand">
+                <i class="fas fa-star"></i>
+                4.7/5
+              </span>
+            </div>
+            <p class="text-sm text-gray-300">
+              Smooth scrolling • Glass cards • Better spacing • Better CTA hierarchy
+            </p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="hero__waves" aria-hidden="true"></div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="h2">What you get</h2>
-          <p class="muted">A simple onboarding flow that feels premium and easy to follow.</p>
+  <!-- Features Section -->
+  <section id="features" class="bg-gradient-to-b from-transparent to-black/20">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Stream Features</h2>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          A cleaner layout with glass cards, better icons, improved spacing, and consistent green accent everywhere.
+        </p>
+      </div>
+      
+      <div class="features-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="card">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
+            <i class="fas fa-sparkles text-brand text-2xl"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl mb-3">Glassmorphic UI</h3>
+          <p class="text-gray-300">
+            Premium dark glass panels, neon green highlights, and consistent motion across all sections.
+          </p>
         </div>
-
-        <div class="grid3">
-          <article class="feature">
-            <div class="feature__icon">⚡</div>
-            <h3>Fast onboarding</h3>
-            <p>Clear steps from signup to dashboard — designed to reduce confusion and increase completion.</p>
-          </article>
-
-          <article class="feature">
-            <div class="feature__icon">🛡️</div>
-            <h3>Trust signals</h3>
-            <p>Clean UI patterns that make users feel safe: confirmations, hints, and transparent actions.</p>
-          </article>
-
-          <article class="feature">
-            <div class="feature__icon">📱</div>
-            <h3>Mobile-first</h3>
-            <p>Looks sharp on iPhone and Android, with accessible contrast and tap-friendly controls.</p>
-          </article>
+        
+        <!-- Feature 2 -->
+        <div class="card">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
+            <i class="fas fa-mobile-alt text-brand text-2xl"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl mb-3">Mobile-first Layout</h3>
+          <p class="text-gray-300">
+            Everything is built to look premium on phones: padding, radius, typography, and tap targets.
+          </p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="card">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
+            <i class="fas fa-bolt text-brand text-2xl"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl mb-3">Better CTA System</h3>
+          <p class="text-gray-300">
+            Primary actions stand out (green gradient), secondary actions stay elegant (ghost glass).
+          </p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="card">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
+            <i class="fas fa-shield-alt text-brand text-2xl"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl mb-3">Cleaner Trust Blocks</h3>
+          <p class="text-gray-300">
+            More readable "tips", clearer disclaimers, and better content scanning for users.
+          </p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="card">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
+            <i class="fas fa-images text-brand text-2xl"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl mb-3">Carousel Sections</h3>
+          <p class="text-gray-300">
+            Showcase and testimonial carousels with snap scrolling + buttons + auto slide.
+          </p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="card">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
+            <i class="fas fa-magic text-brand text-2xl"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl mb-3">Smooth Animations</h3>
+          <p class="text-gray-300">
+            AOS stays, plus extra hover + micro motion that feels "app-like", not "template-like".
+          </p>
         </div>
       </div>
-    </section>
+      
+      <div class="text-center mt-10">
+        <a href="/how-to-register.html" class="btn-primary">
+          <i class="fas fa-rocket"></i>
+          Start Now
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container cta__inner">
+  <!-- Showcase Section -->
+  <section id="showcase" class="bg-gradient-to-b from-black/20 to-transparent">
+    <div class="container-custom">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
         <div>
-          <h2 class="h2">Ready to register on Stream?</h2>
-          <p class="muted">Create your account now, or view the step-by-step registration guide.</p>
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-3">Showcase</h2>
+          <p class="text-lg text-gray-300 max-w-2xl">
+            A proper landing-page carousel section featuring Stream's premium interface.
+          </p>
         </div>
-        <div class="cta__actions">
-          <a class="btn btn--solid" href="./signup.html">Sign Up</a>
-          <a class="btn btn--ghost" href="./how-to-register.html">How to Register</a>
+        <div class="flex gap-3">
+          <button class="btn-secondary showcase-prev">
+            <i class="fas fa-chevron-left"></i>
+            Prev
+          </button>
+          <button class="btn-secondary showcase-next">
+            Next
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__left">
-        <div class="footer__brand">
-          <img src="./assets/stream-logo.png" alt="" />
-          <span>Stream</span>
+      
+      <div class="relative">
+        <div class="carousel-container">
+          <div class="carousel-track" id="showcaseCarousel">
+            <!-- Showcase 1 -->
+            <div class="carousel-item p-4">
+              <div class="card overflow-hidden">
+                <div class="h-64 stream-bg rounded-t-xl">
+                  <img src="assets/stream-logo.png" alt="Stream Clean Dashboard" class="stream-image">
+                </div>
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-3">
+                    <div>
+                      <h3 class="font-display font-bold text-xl">Clean Dashboard</h3>
+                      <p class="text-gray-400">Glass cards + quick actions</p>
+                    </div>
+                    <span class="glass px-3 py-1 rounded-full text-sm">
+                      <i class="fas fa-chart-simple"></i>
+                      UI
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Showcase 2 -->
+            <div class="carousel-item p-4">
+              <div class="card overflow-hidden">
+                <div class="h-64 stream-bg rounded-t-xl">
+                  <img src="assets/stream-logo.png" alt="Stream Better Onboarding" class="stream-image">
+                </div>
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-3">
+                    <div>
+                      <h3 class="font-display font-bold text-xl">Better Onboarding</h3>
+                      <p class="text-gray-400">More readable steps & CTAs</p>
+                    </div>
+                    <span class="glass px-3 py-1 rounded-full text-sm">
+                      <i class="fas fa-route"></i>
+                      Flow
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Showcase 3 -->
+            <div class="carousel-item p-4">
+              <div class="card overflow-hidden">
+                <div class="h-64 stream-bg rounded-t-xl">
+                  <img src="assets/stream-logo.png" alt="Stream Activities & Rewards" class="stream-image">
+                </div>
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-3">
+                    <div>
+                      <h3 class="font-display font-bold text-xl">Activities & Rewards</h3>
+                      <p class="text-gray-400">Premium feel, consistent green</p>
+                    </div>
+                    <span class="glass px-3 py-1 rounded-full text-sm">
+                      <i class="fas fa-gift"></i>
+                      Rewards
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="tiny">© <span id="year"></span> Stream. All rights reserved.</p>
+        
+        <p class="text-center text-gray-500 text-sm mt-6">
+          Stream's interface is designed for maximum user engagement and conversion.
+        </p>
       </div>
+    </div>
+  </section>
 
-      <div class="footer__links">
-        <a href="./how-to-register.html">How to Register</a>
-        <a href="./signup.html">Sign Up</a>
-        <a href="./index.html">Home</a>
+  <!-- Packages Section -->
+  <section id="packages" class="bg-gradient-to-b from-transparent to-black/30">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Packages — Choose What Fits</h2>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          Same package content, but upgraded cards, better hierarchy, and modal opens correctly.
+        </p>
+      </div>
+      
+      <div class="packages-grid grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Package 1 -->
+        <div class="card border-2 border-transparent hover:border-brand/30 transition-all">
+          <div class="flex gap-2 mb-4">
+            <span class="bg-brand/20 text-brand px-3 py-1 rounded-full text-sm font-medium">
+              Popular
+            </span>
+            <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">
+              Best starter
+            </span>
+          </div>
+          
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="font-display font-bold text-2xl">Stream Plus</h3>
+            <div class="text-right">
+              <div class="text-sm text-gray-400">from</div>
+              <div class="text-3xl font-bold">₦10,000</div>
+            </div>
+          </div>
+          
+          <p class="text-gray-300 mb-6">
+            A clean entry package designed for fast onboarding and a smooth start.
+          </p>
+          
+          <div class="h-48 rounded-xl stream-bg mb-6">
+            <img src="assets/stream-logo.png" alt="Stream Plus" class="stream-image">
+          </div>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-brand"></i>
+              <span>Welcome Bonus: $8 (₦8,000)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-brand"></i>
+              <span>Daily Game Bonus: $3 (₦3,000)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-brand"></i>
+              <span>Matching Partners: $2 (₦2,000)</span>
+            </li>
+          </ul>
+          
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button class="btn-primary flex-1 package-details" data-package="plus">
+              <i class="fas fa-info-circle"></i>
+              View Details
+            </button>
+            <a href="https://linkfly.to/earningmiamor" target="_blank" class="btn-secondary flex-1 text-center">
+              <i class="fas fa-external-link-alt"></i>
+              Choose Plus
+            </a>
+          </div>
+        </div>
+        
+        <!-- Package 2 -->
+        <div class="card border-2 border-brand/40">
+          <div class="flex gap-2 mb-4">
+            <span class="bg-brand/20 text-brand px-3 py-1 rounded-full text-sm font-medium">
+              Max Value
+            </span>
+            <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">
+              Premium
+            </span>
+          </div>
+          
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="font-display font-bold text-2xl">Stream Ultra</h3>
+            <div class="text-right">
+              <div class="text-sm text-gray-400">from</div>
+              <div class="text-3xl font-bold">₦14,000</div>
+            </div>
+          </div>
+          
+          <p class="text-gray-300 mb-6">
+            A higher tier for users who want more value and stronger feature access.
+          </p>
+          
+          <div class="h-48 rounded-xl stream-bg mb-6">
+            <img src="assets/stream-logo.png" alt="Stream Ultra" class="stream-image">
+          </div>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-brand"></i>
+              <span>Welcome Bonus: $12 (₦12,500)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-brand"></i>
+              <span>Daily Game Bonus: $5 (₦5,000)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-brand"></i>
+              <span>Matching Partners: $2.5 (₦2,500)</span>
+            </li>
+          </ul>
+          
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button class="btn-primary flex-1 package-details" data-package="ultra">
+              <i class="fas fa-info-circle"></i>
+              View Details
+            </button>
+            <a href="https://linkfly.to/earningmiamor" target="_blank" class="btn-secondary flex-1 text-center">
+              <i class="fas fa-external-link-alt"></i>
+              Choose Ultra
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
+        Availability, pricing, and program details may vary by region. No guaranteed outcomes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Download Stream App & Platforms</h2>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          Use official links and verify the source. (You can keep your existing download destinations.)
+        </p>
+      </div>
+      
+      <div class="download-grid grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+        <!-- Android -->
+        <a href="https://linkfly.to/earningmiamor" target="_blank" class="card hover:border-brand/30 transition-all">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center">
+              <img src="assets/stream-logo.png" alt="Android" class="w-10 h-10">
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl">Android</h3>
+              <p class="text-sm text-gray-400">APK/AAB</p>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            Official build links for installation on Android devices.
+          </p>
+        </a>
+        
+        <!-- iOS -->
+        <a href="https://linkfly.to/earningmiamor" target="_blank" class="card hover:border-brand/30 transition-all">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center">
+              <img src="assets/stream-logo.png" alt="iOS" class="w-10 h-10">
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl">iOS</h3>
+              <p class="text-sm text-gray-400">Coming Soon</p>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            Placeholder listing. Check back for updates on iOS availability.
+          </p>
+        </a>
+        
+        <!-- Web -->
+        <a href="https://linkfly.to/earningmiamor" target="_blank" class="card hover:border-brand/30 transition-all">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center">
+              <img src="assets/stream-logo.png" alt="Web" class="w-10 h-10">
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl">Web</h3>
+              <p class="text-sm text-gray-400">Browser</p>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            Use Stream directly in your browser without any installation.
+          </p>
+        </a>
+      </div>
+      
+      <div class="glass-strong p-8 rounded-2xl max-w-4xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="font-display font-bold text-2xl mb-2">Want the fastest start?</h3>
+            <p class="text-gray-300">
+              Register first, then download the correct build for your device.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="/how-to-register.html" class="btn-primary">
+              <i class="fas fa-user-plus"></i>
+              Register Now
+            </a>
+            <a href="#packages" class="btn-secondary">
+              <i class="fas fa-box"></i>
+              View Packages
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="bg-gradient-to-b from-black/30 to-transparent">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Frequently Asked Questions</h2>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          Short, clear answers that look good on mobile and are easy to scan.
+        </p>
+      </div>
+      
+      <div class="faq-grid grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- FAQ 1 -->
+        <div class="card">
+          <details class="group">
+            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center">
+              What is Stream?
+              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <p class="mt-3 text-gray-300">
+              Stream is a modern platform for connecting, discovering communities, and exploring rewards. 
+              Features can vary by region.
+            </p>
+          </details>
+        </div>
+        
+        <!-- FAQ 2 -->
+        <div class="card">
+          <details class="group">
+            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center">
+              How do I register?
+              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <p class="mt-3 text-gray-300">
+              Go to the registration page, enter correct details, and follow the prompts to complete your account setup.
+            </p>
+          </details>
+        </div>
+        
+        <!-- FAQ 3 -->
+        <div class="card">
+          <details class="group">
+            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center">
+              Where do I download the app?
+              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <p class="mt-3 text-gray-300">
+              Use the Download section on this page or your official download links provided by the platform.
+            </p>
+          </details>
+        </div>
+        
+        <!-- FAQ 4 -->
+        <div class="card">
+          <details class="group">
+            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center">
+              Are outcomes guaranteed?
+              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+            </summary>
+            <p class="mt-3 text-gray-300">
+              No. Availability and outcomes can vary. Always verify current rules and updates inside the platform.
+            </p>
+          </details>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/how-to-register.html" class="btn-primary mr-4">
+          <i class="fas fa-user-plus"></i>
+          Register on Stream
+        </a>
+        <a href="#top" class="btn-secondary">
+          <i class="fas fa-arrow-up"></i>
+          Back to Top
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-gradient-to-b from-transparent to-black/50">
+    <div class="container-custom">
+      <div class="glass-strong p-8 md:p-12 rounded-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Ready to start on Stream?</h2>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+          Register, pick a package, then download the app. Clean flow, no confusion.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/how-to-register.html" class="btn-primary">
+            <i class="fas fa-user-plus"></i>
+            Register Now
+          </a>
+          <a href="#download" class="btn-secondary">
+            <i class="fas fa-download"></i>
+            Download App
+          </a>
+          <a href="#showcase" class="btn-secondary">
+            <i class="fas fa-images"></i>
+            View Showcase
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10">
+    <div class="container-custom">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl stream-bg flex items-center justify-center">
+              <img src="assets/stream-logo.png" alt="Stream Logo" class="w-8 h-8">
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl">Stream</h3>
+              <p class="text-xs text-gray-400">Connect • Discover • Earn</p>
+            </div>
+          </a>
+          <nav class="flex flex-wrap gap-4 text-sm">
+            <a href="#features" class="text-gray-400 hover:text-white">Features</a>
+            <a href="#packages" class="text-gray-400 hover:text-white">Packages</a>
+            <a href="#faq" class="text-gray-400 hover:text-white">FAQ</a>
+            <a href="/how-to-register.html" class="text-gray-400 hover:text-white">Contact</a>
+          </nav>
+        </div>
+        
+        <div class="flex gap-3">
+          <a href="https://web.facebook.com/groups/455507947224832/?ref=share" target="_blank" 
+             class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-brand/10 transition-colors">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://linktr.ee/makemoneyonline312" target="_blank" 
+             class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-brand/10 transition-colors">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://linktr.ee/makemoneyonline312" target="_blank" 
+             class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-brand/10 transition-colors">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 pt-8 text-center">
+        <p class="text-gray-500 text-sm">
+          © Stream 2025 • All rights reserved • 
+          <a href="#" class="underline hover:text-white">Privacy Policy</a> • 
+          <a href="#" class="underline hover:text-white">Terms of Service</a>
+        </p>
       </div>
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
+  <!-- Back to Top -->
+  <a href="#top" id="backToTop" 
+     class="fixed bottom-8 right-8 w-12 h-12 glass rounded-full flex items-center justify-center opacity-0 transition-all hover:bg-brand/10">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/70" data-modal-close></div>
+    <div class="glass-strong rounded-2xl max-w-md w-full p-6 relative z-10 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center mb-6">
+        <h3 id="modalTitle" class="font-display font-bold text-2xl">Package Details</h3>
+        <button data-modal-close class="w-10 h-10 rounded-xl hover:bg-white/10 flex items-center justify-center">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="modalContent" class="text-gray-300">
+        <!-- Modal content will be inserted here -->
+      </div>
+      <div class="mt-8 flex gap-3">
+        <button id="modalAction" class="btn-primary flex-1">
+          Activate
+        </button>
+        <button data-modal-close class="btn-secondary flex-1">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // DOM Ready
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Menu
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+          }
+        });
+      }
+      
+      // Scroll Progress
+      const scrollProgress = document.getElementById('scrollProgress');
+      const backToTop = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', () => {
+        // Scroll progress
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        
+        if (scrollProgress) {
+          scrollProgress.style.width = scrolled + '%';
+        }
+        
+        // Back to top button
+        if (backToTop) {
+          if (window.scrollY > 300) {
+            backToTop.style.opacity = '1';
+            backToTop.style.pointerEvents = 'auto';
+          } else {
+            backToTop.style.opacity = '0';
+            backToTop.style.pointerEvents = 'none';
+          }
+        }
+        
+        // Navbar effect on scroll
+        const nav = document.querySelector('nav');
+        if (nav) {
+          if (window.scrollY > 50) {
+            nav.classList.add('glass-strong');
+          } else {
+            nav.classList.remove('glass-strong');
+          }
+        }
+      });
+      
+      // Back to top
+      if (backToTop) {
+        backToTop.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // Carousel functionality
+      let currentAppSlide = 0;
+      let currentShowcaseSlide = 0;
+      
+      const appCarousel = document.getElementById('appCarousel');
+      const appItems = appCarousel ? appCarousel.children : [];
+      const showcaseCarousel = document.getElementById('showcaseCarousel');
+      const showcaseItems = showcaseCarousel ? showcaseCarousel.children : [];
+      
+      // App carousel
+      document.getElementById('carouselPrev')?.addEventListener('click', () => {
+        if (appItems.length === 0) return;
+        currentAppSlide = (currentAppSlide - 1 + appItems.length) % appItems.length;
+        updateCarousel(appCarousel, currentAppSlide);
+      });
+      
+      document.getElementById('carouselNext')?.addEventListener('click', () => {
+        if (appItems.length === 0) return;
+        currentAppSlide = (currentAppSlide + 1) % appItems.length;
+        updateCarousel(appCarousel, currentAppSlide);
+      });
+      
+      // Showcase carousel
+      document.querySelector('.showcase-prev')?.addEventListener('click', () => {
+        if (showcaseItems.length === 0) return;
+        currentShowcaseSlide = (currentShowcaseSlide - 1 + showcaseItems.length) % showcaseItems.length;
+        updateCarousel(showcaseCarousel, currentShowcaseSlide);
+      });
+      
+      document.querySelector('.showcase-next')?.addEventListener('click', () => {
+        if (showcaseItems.length === 0) return;
+        currentShowcaseSlide = (currentShowcaseSlide + 1) % showcaseItems.length;
+        updateCarousel(showcaseCarousel, currentShowcaseSlide);
+      });
+      
+      function updateCarousel(carousel, slideIndex) {
+        if (!carousel) return;
+        const itemWidth = 100; // percentage
+        carousel.style.transform = `translateX(-${slideIndex * itemWidth}%)`;
+      }
+      
+      // Auto-rotate carousels
+      setInterval(() => {
+        if (appItems.length > 0) {
+          currentAppSlide = (currentAppSlide + 1) % appItems.length;
+          updateCarousel(appCarousel, currentAppSlide);
+        }
+      }, 5000);
+      
+      setInterval(() => {
+        if (showcaseItems.length > 0) {
+          currentShowcaseSlide = (currentShowcaseSlide + 1) % showcaseItems.length;
+          updateCarousel(showcaseCarousel, currentShowcaseSlide);
+        }
+      }, 7000);
+      
+      // Modal functionality
+      const modal = document.getElementById('modal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      const modalAction = document.getElementById('modalAction');
+      
+      // Package details
+      const packageDetails = {
+        plus: {
+          title: 'Stream Plus Package',
+          content: `
+            <div class="space-y-4">
+              <p class="text-lg font-semibold text-brand">Starter tier built for a clean, fast onboarding.</p>
+              
+              <div class="bg-white/5 rounded-xl p-4">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="border-b border-white/10">
+                      <th class="py-2 text-left">Benefit</th>
+                      <th class="py-2 text-right">USD</th>
+                      <th class="py-2 text-right">NGN (approx)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-white/5">
+                      <td class="py-3">Welcome Bonus</td>
+                      <td class="py-3 text-right">$8</td>
+                      <td class="py-3 text-right">₦8,000</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                      <td class="py-3">Daily Game Bonus</td>
+                      <td class="py-3 text-right">$3</td>
+                      <td class="py-3 text-right">₦3,000</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3">Matching Partners</td>
+                      <td class="py-3 text-right">$2</td>
+                      <td class="py-3 text-right">₦2,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <p class="text-sm text-gray-400">
+                All values are approximate and subject to change. Availability may vary by region.
+              </p>
+            </div>
+          `,
+          actionUrl: 'https://linkfly.to/earningmiamor'
+        },
+        ultra: {
+          title: 'Stream Ultra Package',
+          content: `
+            <div class="space-y-4">
+              <p class="text-lg font-semibold text-brand">Premium tier with higher value and stronger feature access.</p>
+              
+              <div class="bg-white/5 rounded-xl p-4">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="border-b border-white/10">
+                      <th class="py-2 text-left">Benefit</th>
+                      <th class="py-2 text-right">USD</th>
+                      <th class="py-2 text-right">NGN (approx)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-white/5">
+                      <td class="py-3">Welcome Bonus</td>
+                      <td class="py-3 text-right">$12</td>
+                      <td class="py-3 text-right">₦12,500</td>
+                    </tr>
+                    <tr class="border-b border-white/5">
+                      <td class="py-3">Daily Game Bonus</td>
+                      <td class="py-3 text-right">$5</td>
+                      <td class="py-3 text-right">₦5,000</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3">Matching Partners</td>
+                      <td class="py-3 text-right">$2.5</td>
+                      <td class="py-3 text-right">₦2,500</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <p class="text-sm text-gray-400">
+                All values are approximate and subject to change. Premium features may have additional requirements.
+              </p>
+            </div>
+          `,
+          actionUrl: 'https://linkfly.to/earningmiamor'
+        }
+      };
+      
+      // Open modal for package details
+      document.querySelectorAll('.package-details').forEach(button => {
+        button.addEventListener('click', () => {
+          const packageType = button.getAttribute('data-package');
+          const packageInfo = packageDetails[packageType];
+          
+          if (packageInfo && modal) {
+            modalTitle.textContent = packageInfo.title;
+            modalContent.innerHTML = packageInfo.content;
+            modalAction.onclick = () => {
+              window.open(packageInfo.actionUrl, '_blank');
+            };
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+      
+      // Close modal
+      document.querySelectorAll('[data-modal-close]').forEach(button => {
+        button.addEventListener('click', () => {
+          if (modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+      
+      // Close modal on ESC key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          
+          // Skip if it's just "#"
+          if (href === '#') return;
+          
+          // Don't smooth scroll if it's a different page anchor
+          if (href.startsWith('#') && href.length > 1) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+              // Close mobile menu if open
+              if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+              }
+              
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+      
+      // Add hover effects to cards
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-8px)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0)';
+        });
+      });
+      
+      // Initialize animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-slide-in');
+          }
+        });
+      }, observerOptions);
+      
+      // Observe all cards and sections
+      document.querySelectorAll('.card, section').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
