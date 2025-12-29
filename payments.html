@@ -7,62 +7,201 @@
     body[unresolved] { opacity: 0; display: block; overflow: hidden; position: relative; }
   </style>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#06110b" />
-  <meta name="color-scheme" content="dark" />
+  <!-- Charset & viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
 
-  <title>Stream — Payment (Nigeria + Foreign)</title>
-  <meta name="description" content="Choose your Stream country, select your package, then (for Nigeria) choose OPay or Normal Bank. Pay and submit proof on WhatsApp with a prefilled message." />
+  <!-- Indexing & canonical -->
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <link rel="canonical" href="https://example.com/payments.html" />
+  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://streamwebsite.com.ng/" />
+  <base target="_top" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+  <!-- Title & meta -->
+  <title>Stream Website — Earn Money & Connect, Join Official Platform</title>
+  <meta name="title" content="Stream Website — Earn Money & Connect, Join Official Platform" />
+  <meta
+    name="description"
+    content="Stream Website — the official place to connect with others and earn real rewards. Register, download the app, and start turning your time online into income today."
+  />
+  <meta
+    name="keywords"
+    content="Stream, stream official, stream registration, earn money online, social platform Nigeria, social earning, skill development, entrepreneurship, packages, download, streamwebsite.com.ng"
+  />
+
+  <!-- Theme / Icons -->
+  <meta name="theme-color" content="#0B64D8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-icon-180x180.png" />
+
+  <!-- Internationalization -->
+  <link rel="alternate" href="https://streamwebsite.com.ng/" hreflang="en-ng" />
+  <link rel="alternate" href="https://streamwebsite.com.ng/" hreflang="en" />
+  <link rel="alternate" href="https://streamwebsite.com.ng/" hreflang="x-default" />
+  <meta name="geo.region" content="NG" />
+  <meta name="geo.placename" content="Nigeria" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Stream — Payment (Nigeria + Foreign)" />
-  <meta property="og:description" content="Choose country, package, payment method (Nigeria), pay and submit proof on WhatsApp." />
-  <meta property="og:url" content="https://example.com/payments.html" />
-  <meta property="og:image" content="https://example.com/assets/stream-logo.png" />
+  <meta property="og:url" content="https://streamwebsite.com.ng/" />
+  <meta property="og:site_name" content="Stream Website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Stream Website — Earn Money & Connect, Join Official Platform" />
+  <meta
+    property="og:description"
+    content="Discover Stream Website — connect with others and earn rewards. Register now to start earning and engaging today."
+  />
+  <meta property="og:image" content="https://streamwebsite.com.ng/img/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Stream Website hero banner" />
+  <meta property="article:modified_time" content="2025-08-28T01:40:17+00:00" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stream — Payment (Nigeria + Foreign)" />
-  <meta name="twitter:description" content="Choose country, package, payment method (Nigeria), pay and submit proof on WhatsApp." />
-  <meta name="twitter:image" content="https://example.com/assets/stream-logo.png" />
+  <meta name="twitter:url" content="https://streamwebsite.com.ng/" />
+  <meta name="twitter:title" content="Stream Website — Earn Money & Connect, Join Official Platform" />
+  <meta
+    name="twitter:description"
+    content="On Stream Website — earn real rewards and connect with people. Register, download the app, and start earning today."
+  />
+  <meta name="twitter:image" content="https://streamwebsite.com.ng/img/og-cover.jpg" />
 
+  <!-- Preload / preconnect -->
+  <link rel="preload" as="image" href="/img/hero-poster.jpg" imagesrcset="/img/hero-poster.jpg 1600w" imagesizes="100vw" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- JSON-LD (WebPage + Organization) -->
+  <!-- Optional: Google logo ranking helpers (image SEO) -->
+  <link rel="preload" as="image" href="/img/stream-logo.png" />
+
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@graph":[
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Stream",
+    "url": "https://streamwebsite.com.ng/",
+    "logo": "https://streamwebsite.com.ng/img/stream-logo.png",
+    "image": "https://streamwebsite.com.ng/img/stream-logo.png",
+    "sameAs": [
+      "https://facebook.com/stream",
+      "https://twitter.com/stream",
+      "https://instagram.com/stream"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Stream Website — Social Platform & Earnings",
+    "url": "https://streamwebsite.com.ng/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://streamwebsite.com.ng/blog?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://streamwebsite.com.ng/" },
+      { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://streamwebsite.com.ng/#features" },
+      { "@type": "ListItem", "position": 3, "name": "Register", "item": "https://streamwebsite.com.ng/register.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Stream",
+    "applicationCategory": ["LifestyleApplication", "SocialNetworkingApplication"],
+    "operatingSystem": "Android, iOS, Web",
+    "offers": { "@type": "Offer", "price": 0, "priceCurrency": "NGN" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": 4.7, "ratingCount": 1320 },
+    "url": "https://streamwebsite.com.ng/",
+    "downloadUrl": "https://streamwebsite.com.ng/#downloads",
+    "softwareVersion": "1.0.1",
+    "image": "https://streamwebsite.com.ng/img/stream-logo.png",
+    "description": "Stream is a fast-growing lifestyle and social networking platform in Nigeria that helps people connect and explore earning opportunities."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Stream — Quick Overview",
+    "description": "Discover Stream, a fast-growing lifestyle platform. Learn how to register, connect, and explore earning opportunities today.",
+    "thumbnailUrl": "https://streamwebsite.com.ng/img/hero-poster.jpg",
+    "uploadDate": "2025-08-10T12:00:00+01:00",
+    "contentUrl": "https://streamwebsite.com.ng/video/stream-hero.mp4",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Stream",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://streamwebsite.com.ng/img/stream-logo.png"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
       {
-        "@type":"Organization",
-        "@id":"https://example.com/#organization",
-        "name":"Stream",
-        "url":"https://example.com/",
-        "logo":{"@type":"ImageObject","url":"https://example.com/assets/stream-logo.png"}
+        "@type": "Question",
+        "name": "What is Stream Website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stream Website is an online platform where you can connect with people, engage with the community, and earn rewards through eligible activities."
+        }
       },
       {
-        "@type":"WebPage",
-        "@id":"https://example.com/payments.html#webpage",
-        "url":"https://example.com/payments.html",
-        "name":"Stream — Payment (Nigeria + Foreign)",
-        "isPartOf":{"@id":"https://example.com/#website"},
-        "about":{"@id":"https://example.com/#organization"},
-        "inLanguage":"en",
-        "description":"Choose your Stream country, select package, then (Nigeria) choose OPay or Normal Bank, pay and submit proof via WhatsApp."
+        "@type": "Question",
+        "name": "How do I register on Stream?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To register, visit streamwebsite.com.ng, click on 'Register', fill in your details, and follow the verification prompts to complete your account."
+        }
       },
       {
-        "@type":"BreadcrumbList",
-        "@id":"https://example.com/payments.html#breadcrumb",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://example.com/"},
-          {"@type":"ListItem","position":2,"name":"Payments","item":"https://example.com/payments.html"}
-        ]
+        "@type": "Question",
+        "name": "Can I earn money online with Stream?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stream may offer earning opportunities through community activities, referrals, and special programs. Availability and rules can change."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Stream safe to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stream is designed with user safety in mind. Always use the official domain streamwebsite.com.ng and avoid unofficial links."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the official Stream site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The official Stream website is streamwebsite.com.ng."
+        }
       }
     ]
   }
@@ -203,7 +342,10 @@
       border:1px solid rgba(52,255,150,.16);
       position:relative;
       overflow:hidden;
-      transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease, background .16s ease;
+      will-change: transform, box-shadow, background;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1), background 0.35s cubic-bezier(0.16,1,0.3,1);
       cursor:pointer;
       user-select:none;
       touch-action: manipulation;
@@ -217,7 +359,8 @@
         rgba(52,255,150,.48),
         transparent 60%);
       opacity:0;
-      transition:opacity .18s ease;
+      will-change: opacity;
+      transition: opacity 0.35s cubic-bezier(0.16,1,0.3,1);
       pointer-events:none;
     }
 
@@ -458,7 +601,10 @@
       color:var(--text);
       font-size:12px;
       backdrop-filter: blur(12px);
-      transition: opacity .18s ease, transform .18s ease;
+      will-change: opacity, transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transition: opacity 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.35s cubic-bezier(0.16,1,0.3,1);
       z-index: 10010;
       max-width: calc(100vw - 24px);
       text-align:center;
@@ -479,7 +625,7 @@
   <main class="wrap">
     <section class="card">
       <!-- CHANGE THIS TO YOUR STREAM LOGO PATH -->
-      <img class="logo" src="./assets/stream-logo.png" alt="Stream Logo" loading="eager" />
+      <img class="logo" src="stream-logo.png" alt="Stream Logo" loading="eager" />
 
       <h1>Stream Payment (Nigeria + Foreign)</h1>
       <p class="subtitle">
