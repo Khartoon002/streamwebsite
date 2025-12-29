@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stream — Dark Green Glass Platform</title>
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-  
+
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  
+
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -54,7 +54,7 @@
       }
     }
   </script>
-  
+
   <!-- Custom CSS -->
   <style>
     :root {
@@ -68,16 +68,14 @@
       --glass-secondary: rgba(8, 18, 12, .78);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--text-primary);
-      background: 
+      background:
         radial-gradient(1200px 700px at 10% 0%, rgba(52,255,150,.18), transparent 60%),
         radial-gradient(900px 600px at 100% 30%, rgba(18,216,112,.12), transparent 55%),
         radial-gradient(1200px 700px at 30% 100%, rgba(52,255,150,.08), transparent 55%),
@@ -88,25 +86,21 @@
     }
 
     /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: rgba(10, 24, 16, 0.3);
-    }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: rgba(10, 24, 16, 0.3); }
     ::-webkit-scrollbar-thumb {
       background: linear-gradient(180deg, var(--brand-primary), var(--brand-secondary));
       border-radius: 5px;
     }
 
-    /* Glass Effect */
+    /* Glass */
     .glass {
       background: var(--glass-primary);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
-      box-shadow: 
+      box-shadow:
         0 8px 32px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
@@ -119,112 +113,86 @@
       border-radius: 20px;
     }
 
-    /* Typography */
-    h1, h2, h3, h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-    }
+    h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; }
 
-    /* Animations */
     @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
+    .animate-slide-in { animation: slideIn 0.6s ease-out forwards; }
 
-    .animate-slide-in {
-      animation: slideIn 0.6s ease-out forwards;
-    }
+    section { padding: 5rem 1.25rem; }
+    @media (min-width: 768px) { section { padding: 6rem 2rem; } }
+    @media (min-width: 1024px) { section { padding: 8rem 2rem; } }
 
-    /* Section Spacing */
-    section {
-      padding: 5rem 1.5rem;
-    }
-
-    @media (min-width: 768px) {
-      section {
-        padding: 6rem 2rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      section {
-        padding: 8rem 2rem;
-      }
-    }
-
-    /* Container */
     .container-custom {
       max-width: 1280px;
       margin: 0 auto;
       width: 100%;
-      padding: 0 1.5rem;
+      padding: 0 1rem;
     }
+    @media (min-width: 640px) { .container-custom { padding: 0 1.5rem; } }
 
-    /* Button Styles */
+    /* Buttons */
     .btn-primary {
       background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
       color: #07110b;
-      padding: 0.875rem 1.75rem;
+      padding: 0.875rem 1.25rem;
       border-radius: 12px;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
       text-decoration: none;
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 8px 32px rgba(52, 255, 150, 0.2);
+      max-width: 100%;
+      white-space: nowrap;
+      min-height: 44px;
     }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(52, 255, 150, 0.3);
-    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(52, 255, 150, 0.3); }
 
     .btn-secondary {
       background: rgba(255, 255, 255, 0.05);
       color: var(--text-primary);
-      padding: 0.875rem 1.75rem;
+      padding: 0.875rem 1.25rem;
       border-radius: 12px;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
       text-decoration: none;
       border: 1px solid rgba(255, 255, 255, 0.1);
       cursor: pointer;
       transition: all 0.3s ease;
+      max-width: 100%;
+      white-space: nowrap;
+      min-height: 44px;
     }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    /* Card Styles */
+    /* Cards */
     .card {
       background: var(--glass-primary);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
-      padding: 1.5rem;
+      padding: 1.25rem;
       transition: all 0.3s ease;
+      overflow: hidden;
+      min-width: 0;
     }
-
     .card:hover {
       transform: translateY(-5px);
       border-color: rgba(52, 255, 150, 0.3);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     }
 
-    /* Navigation */
+    /* Nav */
     .nav-link {
       color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
@@ -233,17 +201,12 @@
       transition: all 0.3s ease;
       font-weight: 500;
     }
-
-    .nav-link:hover {
-      color: var(--brand-primary);
-      background: rgba(52, 255, 150, 0.1);
-    }
+    .nav-link:hover { color: var(--brand-primary); background: rgba(52, 255, 150, 0.1); }
 
     /* Hero Video */
     .hero-video {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -252,24 +215,13 @@
     }
 
     /* Carousel */
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-    }
+    .carousel-container { position: relative; overflow: hidden; border-radius: 16px; }
+    .carousel-track { display: flex; transition: transform 0.5s ease; will-change: transform; }
+    .carousel-item { flex: 0 0 100%; min-width: 100%; padding: 1rem; }
+    @media (max-width: 480px) { .carousel-item { padding: 0.75rem; } }
 
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .carousel-item {
-      flex: 0 0 100%;
-      min-width: 100%;
-      padding: 1rem;
-    }
-
-    /* Image Styling */
+    /* Images */
+    img { max-width: 100%; height: auto; display: block; }
     .stream-image {
       width: 100%;
       height: 100%;
@@ -278,7 +230,6 @@
       background: rgba(255, 255, 255, 0.05);
       padding: 1rem;
     }
-
     .stream-bg {
       background: linear-gradient(135deg, rgba(52, 255, 150, 0.1), rgba(18, 216, 112, 0.05));
       border-radius: 16px;
@@ -286,34 +237,33 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      min-width: 0;
     }
 
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .hero-grid {
-        grid-template-columns: 1fr !important;
-      }
-      
-      .features-grid {
-        grid-template-columns: 1fr !important;
-      }
-      
-      .packages-grid {
-        grid-template-columns: 1fr !important;
-      }
-      
-      .download-grid {
-        grid-template-columns: 1fr !important;
-      }
-      
-      .faq-grid {
-        grid-template-columns: 1fr !important;
-      }
-      
-      .mobile-hidden {
-        display: none;
-      }
+    /* RESPONSIVE FIXES (important) */
+    /* 1) prevent overflow from long titles/buttons on small screens */
+    .text-balance { text-wrap: balance; }
+    .wrap-anywhere { overflow-wrap: anywhere; word-break: break-word; }
+    .min-w-0 { min-width: 0 !important; }
+
+    /* 2) stack “Back to top / Register” buttons nicely on small */
+    @media (max-width: 520px) {
+      .faq-cta { display: flex; flex-direction: column; gap: 12px; }
+      .faq-cta .btn-primary, .faq-cta .btn-secondary { width: 100%; }
     }
+
+    /* 3) Make nav spacing tighter on very small screens */
+    @media (max-width: 380px) {
+      .btn-primary, .btn-secondary { padding: 0.75rem 1rem; font-size: 0.95rem; }
+    }
+
+    /* 4) make tables scroll on small screens (modal tables) */
+    .table-wrap { width: 100%; overflow-x: auto; }
+    .table-wrap table { min-width: 520px; }
+
+    /* 5) Ensure fixed elements don’t cover content */
+    nav { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+    body { padding-bottom: env(safe-area-inset-bottom); }
 
     /* Accessibility */
     .sr-only {
@@ -328,28 +278,25 @@
       border: 0;
     }
 
-    /* Focus Styles */
-    *:focus {
-      outline: 2px solid var(--brand-primary);
-      outline-offset: 2px;
-    }
+    *:focus { outline: 2px solid var(--brand-primary); outline-offset: 2px; }
   </style>
 </head>
+
 <body class="bg-black text-white">
   <!-- Scroll Progress -->
   <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand to-brand2 z-50" style="width: 0%;"></div>
 
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-40 glass py-4">
-    <div class="container-custom flex items-center justify-between">
+    <div class="container-custom flex items-center justify-between gap-3">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand to-brand2 flex items-center justify-center">
+      <a href="/" class="flex items-center gap-3 min-w-0">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand to-brand2 flex items-center justify-center shrink-0">
           <i class="fas fa-play text-ink text-lg"></i>
         </div>
-        <div>
-          <h1 class="font-display font-bold text-xl">Stream</h1>
-          <p class="text-xs text-brand opacity-80">Dark • Glass • Green</p>
+        <div class="min-w-0">
+          <h1 class="font-display font-bold text-xl leading-tight truncate">Stream</h1>
+          <p class="text-xs text-brand opacity-80 truncate">Dark • Glass • Green</p>
         </div>
       </a>
 
@@ -374,7 +321,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden glass-strong mt-4 p-6 rounded-xl">
+    <div id="mobileMenu" class="md:hidden hidden glass-strong mt-4 p-4 sm:p-6 rounded-xl mx-3 sm:mx-0">
       <div class="grid grid-cols-2 gap-3 mb-4">
         <a href="#features" class="btn-secondary text-center">
           <i class="fas fa-sparkles"></i>
@@ -393,7 +340,7 @@
           Download
         </a>
       </div>
-      <div class="flex gap-3">
+      <div class="flex flex-col sm:flex-row gap-3">
         <a href="/how-to-register.html" class="btn-primary flex-1 text-center">
           <i class="fas fa-user-plus"></i>
           Register
@@ -408,45 +355,43 @@
 
   <!-- Hero Section -->
   <section class="pt-24 pb-12 md:pt-32 md:pb-20 relative overflow-hidden">
-    <!-- Background Video -->
     <video class="hero-video" autoplay muted loop playsinline poster="assets/stream-logo.png">
       <source src="/video/miamor-hero.mp4" type="video/mp4">
     </video>
-    
-    <!-- Gradient Overlay -->
+
     <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
-    
+
     <div class="container-custom relative z-10">
-      <div class="hero-grid grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Left Content -->
-        <div class="animate-slide-in">
+      <div class="hero-grid grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <!-- Left -->
+        <div class="animate-slide-in min-w-0">
           <div class="inline-flex items-center gap-2 bg-white/5 rounded-full px-4 py-2 mb-6">
             <div class="w-2 h-2 rounded-full bg-brand animate-pulse"></div>
-            <span class="text-sm">New UI • Dark Glass • Green Neon</span>
+            <span class="text-sm wrap-anywhere">New UI • Dark Glass • Green Neon</span>
           </div>
-          
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Stream — where 
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 text-balance">
+            Stream — where
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand2">connection</span>
             meets premium experience
           </h1>
-          
-          <p class="text-lg text-gray-300 mb-8">
-            A full landing-page revamp: dark green glassmorphism, smoother animations, modern sections, 
+
+          <p class="text-lg text-gray-300 mb-8 wrap-anywhere">
+            A full landing-page revamp: dark green glassmorphism, smoother animations, modern sections,
             and a new carousel showcase. Keep your existing links, just a new premium UI layer.
           </p>
-          
-          <div class="flex flex-wrap gap-4 mb-8">
-            <a href="/how-to-register.html" class="btn-primary">
+
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
+            <a href="/how-to-register.html" class="btn-primary w-full sm:w-auto">
               <i class="fas fa-user-plus"></i>
               Register on Stream
             </a>
-            <a href="#showcase" class="btn-secondary">
+            <a href="#showcase" class="btn-secondary w-full sm:w-auto">
               <i class="fas fa-images"></i>
               See Showcase
             </a>
           </div>
-          
+
           <div class="flex flex-wrap gap-3">
             <span class="glass px-4 py-2 rounded-full text-sm">
               <i class="fas fa-shield-alt text-brand mr-2"></i>
@@ -462,95 +407,92 @@
             </span>
           </div>
         </div>
-        
-        <!-- Right Content - App Preview -->
-        <div class="animate-slide-in" style="animation-delay: 0.2s">
-          <div class="glass-strong p-6 rounded-2xl">
-            <div class="flex justify-between items-center mb-6">
+
+        <!-- Right -->
+        <div class="animate-slide-in min-w-0" style="animation-delay: 0.2s">
+          <div class="glass-strong p-4 sm:p-6 rounded-2xl">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-6">
               <h3 class="font-display font-bold text-xl">
                 <i class="fas fa-mobile-alt text-brand mr-2"></i>
                 App Preview
               </h3>
               <span class="text-sm text-gray-400">Swipe to explore</span>
             </div>
-            
-            <!-- Carousel -->
+
             <div class="carousel-container rounded-xl overflow-hidden mb-6">
               <div class="carousel-track" id="appCarousel">
-                <!-- Slide 1 -->
-                <div class="carousel-item p-6">
+                <div class="carousel-item">
                   <div class="card">
-                    <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
+                    <div class="flex items-center gap-4 mb-4 min-w-0">
+                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center shrink-0">
                         <i class="fas fa-chart-line text-brand text-xl"></i>
                       </div>
-                      <div>
-                        <h4 class="font-bold text-lg">Dashboard</h4>
-                        <p class="text-sm text-gray-400">Clean metrics cards</p>
+                      <div class="min-w-0">
+                        <h4 class="font-bold text-lg truncate">Dashboard</h4>
+                        <p class="text-sm text-gray-400 truncate">Clean metrics cards</p>
                       </div>
                     </div>
-                    <div class="h-40 rounded-xl stream-bg">
+                    <div class="h-40 sm:h-44 rounded-xl stream-bg">
                       <img src="assets/stream-logo.png" alt="Stream Dashboard" class="stream-image p-4">
                     </div>
                   </div>
                 </div>
-                
-                <!-- Slide 2 -->
-                <div class="carousel-item p-6">
+
+                <div class="carousel-item">
                   <div class="card">
-                    <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
+                    <div class="flex items-center gap-4 mb-4 min-w-0">
+                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center shrink-0">
                         <i class="fas fa-users text-brand text-xl"></i>
                       </div>
-                      <div>
-                        <h4 class="font-bold text-lg">Community</h4>
-                        <p class="text-sm text-gray-400">Better onboarding UI</p>
+                      <div class="min-w-0">
+                        <h4 class="font-bold text-lg truncate">Community</h4>
+                        <p class="text-sm text-gray-400 truncate">Better onboarding UI</p>
                       </div>
                     </div>
-                    <div class="h-40 rounded-xl stream-bg">
+                    <div class="h-40 sm:h-44 rounded-xl stream-bg">
                       <img src="assets/stream-logo.png" alt="Stream Community" class="stream-image p-4">
                     </div>
                   </div>
                 </div>
-                
-                <!-- Slide 3 -->
-                <div class="carousel-item p-6">
+
+                <div class="carousel-item">
                   <div class="card">
-                    <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
+                    <div class="flex items-center gap-4 mb-4 min-w-0">
+                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center shrink-0">
                         <i class="fas fa-gift text-brand text-xl"></i>
                       </div>
-                      <div>
-                        <h4 class="font-bold text-lg">Rewards</h4>
-                        <p class="text-sm text-gray-400">Clear call-to-actions</p>
+                      <div class="min-w-0">
+                        <h4 class="font-bold text-lg truncate">Rewards</h4>
+                        <p class="text-sm text-gray-400 truncate">Clear call-to-actions</p>
                       </div>
                     </div>
-                    <div class="h-40 rounded-xl stream-bg">
+                    <div class="h-40 sm:h-44 rounded-xl stream-bg">
                       <img src="assets/stream-logo.png" alt="Stream Rewards" class="stream-image p-4">
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            
-            <!-- Carousel Controls -->
-            <div class="flex justify-between items-center">
-              <button class="btn-secondary" id="carouselPrev">
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-3">
+              <button class="btn-secondary w-full sm:w-auto" id="carouselPrev">
                 <i class="fas fa-chevron-left"></i>
                 Previous
               </button>
+
               <div class="flex gap-2">
                 <div class="w-2 h-2 rounded-full bg-brand"></div>
                 <div class="w-2 h-2 rounded-full bg-white/20"></div>
                 <div class="w-2 h-2 rounded-full bg-white/20"></div>
               </div>
-              <button class="btn-secondary" id="carouselNext">
+
+              <button class="btn-secondary w-full sm:w-auto" id="carouselNext">
                 Next
                 <i class="fas fa-chevron-right"></i>
               </button>
             </div>
           </div>
-          
+
           <div class="glass mt-6 p-4 rounded-xl">
             <div class="flex justify-between items-center mb-2">
               <span class="text-sm text-gray-400">Trusted UI patterns</span>
@@ -559,7 +501,7 @@
                 4.7/5
               </span>
             </div>
-            <p class="text-sm text-gray-300">
+            <p class="text-sm text-gray-300 wrap-anywhere">
               Smooth scrolling • Glass cards • Better spacing • Better CTA hierarchy
             </p>
           </div>
@@ -568,84 +510,78 @@
     </div>
   </section>
 
-  <!-- Features Section -->
+  <!-- Features -->
   <section id="features" class="bg-gradient-to-b from-transparent to-black/20">
     <div class="container-custom">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Stream Features</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto wrap-anywhere">
           A cleaner layout with glass cards, better icons, improved spacing, and consistent green accent everywhere.
         </p>
       </div>
-      
+
       <div class="features-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Feature 1 -->
         <div class="card">
           <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
             <i class="fas fa-sparkles text-brand text-2xl"></i>
           </div>
           <h3 class="font-display font-bold text-xl mb-3">Glassmorphic UI</h3>
-          <p class="text-gray-300">
+          <p class="text-gray-300 wrap-anywhere">
             Premium dark glass panels, neon green highlights, and consistent motion across all sections.
           </p>
         </div>
-        
-        <!-- Feature 2 -->
+
         <div class="card">
           <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
             <i class="fas fa-mobile-alt text-brand text-2xl"></i>
           </div>
           <h3 class="font-display font-bold text-xl mb-3">Mobile-first Layout</h3>
-          <p class="text-gray-300">
+          <p class="text-gray-300 wrap-anywhere">
             Everything is built to look premium on phones: padding, radius, typography, and tap targets.
           </p>
         </div>
-        
-        <!-- Feature 3 -->
+
         <div class="card">
           <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
             <i class="fas fa-bolt text-brand text-2xl"></i>
           </div>
           <h3 class="font-display font-bold text-xl mb-3">Better CTA System</h3>
-          <p class="text-gray-300">
+          <p class="text-gray-300 wrap-anywhere">
             Primary actions stand out (green gradient), secondary actions stay elegant (ghost glass).
           </p>
         </div>
-        
-        <!-- Feature 4 -->
+
         <div class="card">
           <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
             <i class="fas fa-shield-alt text-brand text-2xl"></i>
           </div>
           <h3 class="font-display font-bold text-xl mb-3">Cleaner Trust Blocks</h3>
-          <p class="text-gray-300">
+          <p class="text-gray-300 wrap-anywhere">
             More readable "tips", clearer disclaimers, and better content scanning for users.
           </p>
         </div>
-        
-        <!-- Feature 5 -->
+
         <div class="card">
           <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
             <i class="fas fa-images text-brand text-2xl"></i>
           </div>
           <h3 class="font-display font-bold text-xl mb-3">Carousel Sections</h3>
-          <p class="text-gray-300">
+          <p class="text-gray-300 wrap-anywhere">
             Showcase and testimonial carousels with snap scrolling + buttons + auto slide.
           </p>
         </div>
-        
-        <!-- Feature 6 -->
+
         <div class="card">
           <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
             <i class="fas fa-magic text-brand text-2xl"></i>
           </div>
           <h3 class="font-display font-bold text-xl mb-3">Smooth Animations</h3>
-          <p class="text-gray-300">
+          <p class="text-gray-300 wrap-anywhere">
             AOS stays, plus extra hover + micro motion that feels "app-like", not "template-like".
           </p>
         </div>
       </div>
-      
+
       <div class="text-center mt-10">
         <a href="/how-to-register.html" class="btn-primary">
           <i class="fas fa-rocket"></i>
@@ -655,44 +591,43 @@
     </div>
   </section>
 
-  <!-- Showcase Section -->
+  <!-- Showcase -->
   <section id="showcase" class="bg-gradient-to-b from-black/20 to-transparent">
     <div class="container-custom">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
-        <div>
+        <div class="min-w-0">
           <h2 class="text-3xl md:text-4xl font-display font-bold mb-3">Showcase</h2>
-          <p class="text-lg text-gray-300 max-w-2xl">
+          <p class="text-lg text-gray-300 max-w-2xl wrap-anywhere">
             A proper landing-page carousel section featuring Stream's premium interface.
           </p>
         </div>
-        <div class="flex gap-3">
-          <button class="btn-secondary showcase-prev">
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <button class="btn-secondary showcase-prev w-full sm:w-auto">
             <i class="fas fa-chevron-left"></i>
             Prev
           </button>
-          <button class="btn-secondary showcase-next">
+          <button class="btn-secondary showcase-next w-full sm:w-auto">
             Next
             <i class="fas fa-chevron-right"></i>
           </button>
         </div>
       </div>
-      
+
       <div class="relative">
         <div class="carousel-container">
           <div class="carousel-track" id="showcaseCarousel">
-            <!-- Showcase 1 -->
-            <div class="carousel-item p-4">
+            <div class="carousel-item p-3 sm:p-4">
               <div class="card overflow-hidden">
-                <div class="h-64 stream-bg rounded-t-xl">
+                <div class="h-52 sm:h-64 stream-bg rounded-t-xl">
                   <img src="assets/stream-logo.png" alt="Stream Clean Dashboard" class="stream-image">
                 </div>
-                <div class="p-6">
-                  <div class="flex justify-between items-start mb-3">
-                    <div>
-                      <h3 class="font-display font-bold text-xl">Clean Dashboard</h3>
-                      <p class="text-gray-400">Glass cards + quick actions</p>
+                <div class="p-5 sm:p-6">
+                  <div class="flex justify-between items-start gap-3 mb-3 min-w-0">
+                    <div class="min-w-0">
+                      <h3 class="font-display font-bold text-xl truncate">Clean Dashboard</h3>
+                      <p class="text-gray-400 truncate">Glass cards + quick actions</p>
                     </div>
-                    <span class="glass px-3 py-1 rounded-full text-sm">
+                    <span class="glass px-3 py-1 rounded-full text-sm shrink-0">
                       <i class="fas fa-chart-simple"></i>
                       UI
                     </span>
@@ -700,20 +635,19 @@
                 </div>
               </div>
             </div>
-            
-            <!-- Showcase 2 -->
-            <div class="carousel-item p-4">
+
+            <div class="carousel-item p-3 sm:p-4">
               <div class="card overflow-hidden">
-                <div class="h-64 stream-bg rounded-t-xl">
+                <div class="h-52 sm:h-64 stream-bg rounded-t-xl">
                   <img src="assets/stream-logo.png" alt="Stream Better Onboarding" class="stream-image">
                 </div>
-                <div class="p-6">
-                  <div class="flex justify-between items-start mb-3">
-                    <div>
-                      <h3 class="font-display font-bold text-xl">Better Onboarding</h3>
-                      <p class="text-gray-400">More readable steps & CTAs</p>
+                <div class="p-5 sm:p-6">
+                  <div class="flex justify-between items-start gap-3 mb-3 min-w-0">
+                    <div class="min-w-0">
+                      <h3 class="font-display font-bold text-xl truncate">Better Onboarding</h3>
+                      <p class="text-gray-400 truncate">More readable steps & CTAs</p>
                     </div>
-                    <span class="glass px-3 py-1 rounded-full text-sm">
+                    <span class="glass px-3 py-1 rounded-full text-sm shrink-0">
                       <i class="fas fa-route"></i>
                       Flow
                     </span>
@@ -721,20 +655,19 @@
                 </div>
               </div>
             </div>
-            
-            <!-- Showcase 3 -->
-            <div class="carousel-item p-4">
+
+            <div class="carousel-item p-3 sm:p-4">
               <div class="card overflow-hidden">
-                <div class="h-64 stream-bg rounded-t-xl">
+                <div class="h-52 sm:h-64 stream-bg rounded-t-xl">
                   <img src="assets/stream-logo.png" alt="Stream Activities & Rewards" class="stream-image">
                 </div>
-                <div class="p-6">
-                  <div class="flex justify-between items-start mb-3">
-                    <div>
-                      <h3 class="font-display font-bold text-xl">Activities & Rewards</h3>
-                      <p class="text-gray-400">Premium feel, consistent green</p>
+                <div class="p-5 sm:p-6">
+                  <div class="flex justify-between items-start gap-3 mb-3 min-w-0">
+                    <div class="min-w-0">
+                      <h3 class="font-display font-bold text-xl truncate">Activities & Rewards</h3>
+                      <p class="text-gray-400 truncate">Premium feel, consistent green</p>
                     </div>
-                    <span class="glass px-3 py-1 rounded-full text-sm">
+                    <span class="glass px-3 py-1 rounded-full text-sm shrink-0">
                       <i class="fas fa-gift"></i>
                       Rewards
                     </span>
@@ -744,67 +677,62 @@
             </div>
           </div>
         </div>
-        
-        <p class="text-center text-gray-500 text-sm mt-6">
+
+        <p class="text-center text-gray-500 text-sm mt-6 wrap-anywhere">
           Stream's interface is designed for maximum user engagement and conversion.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Packages Section -->
+  <!-- Packages -->
   <section id="packages" class="bg-gradient-to-b from-transparent to-black/30">
     <div class="container-custom">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Packages — Choose What Fits</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto wrap-anywhere">
           Same package content, but upgraded cards, better hierarchy, and modal opens correctly.
         </p>
       </div>
-      
-      <div class="packages-grid grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Package 1 -->
+
+      <div class="packages-grid grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
         <div class="card border-2 border-transparent hover:border-brand/30 transition-all">
-          <div class="flex gap-2 mb-4">
-            <span class="bg-brand/20 text-brand px-3 py-1 rounded-full text-sm font-medium">
-              Popular
-            </span>
-            <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">
-              Best starter
-            </span>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-brand/20 text-brand px-3 py-1 rounded-full text-sm font-medium">Popular</span>
+            <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">Best starter</span>
           </div>
-          
-          <div class="flex justify-between items-center mb-4">
-            <h3 class="font-display font-bold text-2xl">Stream Plus</h3>
-            <div class="text-right">
+
+          <div class="flex items-start justify-between gap-4 mb-4 min-w-0">
+            <h3 class="font-display font-bold text-2xl min-w-0 wrap-anywhere">Stream Plus</h3>
+            <div class="text-right shrink-0">
               <div class="text-sm text-gray-400">from</div>
               <div class="text-3xl font-bold">₦10,000</div>
             </div>
           </div>
-          
-          <p class="text-gray-300 mb-6">
+
+          <p class="text-gray-300 mb-6 wrap-anywhere">
             A clean entry package designed for fast onboarding and a smooth start.
           </p>
-          
-          <div class="h-48 rounded-xl stream-bg mb-6">
+
+          <div class="h-44 sm:h-48 rounded-xl stream-bg mb-6">
             <img src="assets/stream-logo.png" alt="Stream Plus" class="stream-image">
           </div>
-          
+
           <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check-circle text-brand"></i>
-              <span>Welcome Bonus: $8 (₦8,000)</span>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-brand mt-1"></i>
+              <span class="wrap-anywhere">Welcome Bonus: $8 (₦8,000)</span>
             </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check-circle text-brand"></i>
-              <span>Daily Game Bonus: $3 (₦3,000)</span>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-brand mt-1"></i>
+              <span class="wrap-anywhere">Daily Game Bonus: $3 (₦3,000)</span>
             </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check-circle text-brand"></i>
-              <span>Matching Partners: $2 (₦2,000)</span>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-brand mt-1"></i>
+              <span class="wrap-anywhere">Matching Partners: $2 (₦2,000)</span>
             </li>
           </ul>
-          
+
           <div class="flex flex-col sm:flex-row gap-3">
             <button class="btn-primary flex-1 package-details" data-package="plus">
               <i class="fas fa-info-circle"></i>
@@ -816,49 +744,44 @@
             </a>
           </div>
         </div>
-        
-        <!-- Package 2 -->
+
         <div class="card border-2 border-brand/40">
-          <div class="flex gap-2 mb-4">
-            <span class="bg-brand/20 text-brand px-3 py-1 rounded-full text-sm font-medium">
-              Max Value
-            </span>
-            <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">
-              Premium
-            </span>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-brand/20 text-brand px-3 py-1 rounded-full text-sm font-medium">Max Value</span>
+            <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">Premium</span>
           </div>
-          
-          <div class="flex justify-between items-center mb-4">
-            <h3 class="font-display font-bold text-2xl">Stream Ultra</h3>
-            <div class="text-right">
+
+          <div class="flex items-start justify-between gap-4 mb-4 min-w-0">
+            <h3 class="font-display font-bold text-2xl min-w-0 wrap-anywhere">Stream Ultra</h3>
+            <div class="text-right shrink-0">
               <div class="text-sm text-gray-400">from</div>
               <div class="text-3xl font-bold">₦14,000</div>
             </div>
           </div>
-          
-          <p class="text-gray-300 mb-6">
+
+          <p class="text-gray-300 mb-6 wrap-anywhere">
             A higher tier for users who want more value and stronger feature access.
           </p>
-          
-          <div class="h-48 rounded-xl stream-bg mb-6">
+
+          <div class="h-44 sm:h-48 rounded-xl stream-bg mb-6">
             <img src="assets/stream-logo.png" alt="Stream Ultra" class="stream-image">
           </div>
-          
+
           <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check-circle text-brand"></i>
-              <span>Welcome Bonus: $12 (₦12,500)</span>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-brand mt-1"></i>
+              <span class="wrap-anywhere">Welcome Bonus: $12 (₦12,500)</span>
             </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check-circle text-brand"></i>
-              <span>Daily Game Bonus: $5 (₦5,000)</span>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-brand mt-1"></i>
+              <span class="wrap-anywhere">Daily Game Bonus: $5 (₦5,000)</span>
             </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check-circle text-brand"></i>
-              <span>Matching Partners: $2.5 (₦2,500)</span>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-brand mt-1"></i>
+              <span class="wrap-anywhere">Matching Partners: $2.5 (₦2,500)</span>
             </li>
           </ul>
-          
+
           <div class="flex flex-col sm:flex-row gap-3">
             <button class="btn-primary flex-1 package-details" data-package="ultra">
               <i class="fas fa-info-circle"></i>
@@ -871,87 +794,76 @@
           </div>
         </div>
       </div>
-      
-      <p class="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
+
+      <p class="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto wrap-anywhere">
         Availability, pricing, and program details may vary by region. No guaranteed outcomes.
       </p>
     </div>
   </section>
 
-  <!-- Download Section -->
+  <!-- Download -->
   <section id="download">
     <div class="container-custom">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Download Stream App & Platforms</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto wrap-anywhere">
           Use official links and verify the source. (You can keep your existing download destinations.)
         </p>
       </div>
-      
+
       <div class="download-grid grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
-        <!-- Android -->
         <a href="https://linkfly.to/earningmiamor" target="_blank" class="card hover:border-brand/30 transition-all">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center">
+          <div class="flex items-center gap-4 mb-4 min-w-0">
+            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center shrink-0">
               <img src="assets/stream-logo.png" alt="Android" class="w-10 h-10">
             </div>
-            <div>
-              <h3 class="font-display font-bold text-xl">Android</h3>
-              <p class="text-sm text-gray-400">APK/AAB</p>
+            <div class="min-w-0">
+              <h3 class="font-display font-bold text-xl truncate">Android</h3>
+              <p class="text-sm text-gray-400 truncate">APK/AAB</p>
             </div>
           </div>
-          <p class="text-gray-300">
-            Official build links for installation on Android devices.
-          </p>
+          <p class="text-gray-300 wrap-anywhere">Official build links for installation on Android devices.</p>
         </a>
-        
-        <!-- iOS -->
+
         <a href="https://linkfly.to/earningmiamor" target="_blank" class="card hover:border-brand/30 transition-all">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center">
+          <div class="flex items-center gap-4 mb-4 min-w-0">
+            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center shrink-0">
               <img src="assets/stream-logo.png" alt="iOS" class="w-10 h-10">
             </div>
-            <div>
-              <h3 class="font-display font-bold text-xl">iOS</h3>
-              <p class="text-sm text-gray-400">Coming Soon</p>
+            <div class="min-w-0">
+              <h3 class="font-display font-bold text-xl truncate">iOS</h3>
+              <p class="text-sm text-gray-400 truncate">Coming Soon</p>
             </div>
           </div>
-          <p class="text-gray-300">
-            Placeholder listing. Check back for updates on iOS availability.
-          </p>
+          <p class="text-gray-300 wrap-anywhere">Placeholder listing. Check back for updates on iOS availability.</p>
         </a>
-        
-        <!-- Web -->
+
         <a href="https://linkfly.to/earningmiamor" target="_blank" class="card hover:border-brand/30 transition-all">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center">
+          <div class="flex items-center gap-4 mb-4 min-w-0">
+            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center shrink-0">
               <img src="assets/stream-logo.png" alt="Web" class="w-10 h-10">
             </div>
-            <div>
-              <h3 class="font-display font-bold text-xl">Web</h3>
-              <p class="text-sm text-gray-400">Browser</p>
+            <div class="min-w-0">
+              <h3 class="font-display font-bold text-xl truncate">Web</h3>
+              <p class="text-sm text-gray-400 truncate">Browser</p>
             </div>
           </div>
-          <p class="text-gray-300">
-            Use Stream directly in your browser without any installation.
-          </p>
+          <p class="text-gray-300 wrap-anywhere">Use Stream directly in your browser without any installation.</p>
         </a>
       </div>
-      
-      <div class="glass-strong p-8 rounded-2xl max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
+
+      <div class="glass-strong p-6 sm:p-8 rounded-2xl max-w-4xl mx-auto">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div class="min-w-0">
             <h3 class="font-display font-bold text-2xl mb-2">Want the fastest start?</h3>
-            <p class="text-gray-300">
-              Register first, then download the correct build for your device.
-            </p>
+            <p class="text-gray-300 wrap-anywhere">Register first, then download the correct build for your device.</p>
           </div>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href="/how-to-register.html" class="btn-primary">
+          <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <a href="/how-to-register.html" class="btn-primary w-full sm:w-auto">
               <i class="fas fa-user-plus"></i>
               Register Now
             </a>
-            <a href="#packages" class="btn-secondary">
+            <a href="#packages" class="btn-secondary w-full sm:w-auto">
               <i class="fas fa-box"></i>
               View Packages
             </a>
@@ -961,73 +873,69 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ -->
   <section id="faq" class="bg-gradient-to-b from-black/30 to-transparent">
     <div class="container-custom">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Frequently Asked Questions</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto wrap-anywhere">
           Short, clear answers that look good on mobile and are easy to scan.
         </p>
       </div>
-      
+
       <div class="faq-grid grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        <!-- FAQ 1 -->
         <div class="card">
           <details class="group">
-            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center">
-              What is Stream?
-              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center gap-3">
+              <span class="min-w-0 wrap-anywhere">What is Stream?</span>
+              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform shrink-0"></i>
             </summary>
-            <p class="mt-3 text-gray-300">
-              Stream is a modern platform for connecting, discovering communities, and exploring rewards. 
+            <p class="mt-3 text-gray-300 wrap-anywhere">
+              Stream is a modern platform for connecting, discovering communities, and exploring rewards.
               Features can vary by region.
             </p>
           </details>
         </div>
-        
-        <!-- FAQ 2 -->
+
         <div class="card">
           <details class="group">
-            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center">
-              How do I register?
-              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center gap-3">
+              <span class="min-w-0 wrap-anywhere">How do I register?</span>
+              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform shrink-0"></i>
             </summary>
-            <p class="mt-3 text-gray-300">
+            <p class="mt-3 text-gray-300 wrap-anywhere">
               Go to the registration page, enter correct details, and follow the prompts to complete your account setup.
             </p>
           </details>
         </div>
-        
-        <!-- FAQ 3 -->
+
         <div class="card">
           <details class="group">
-            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center">
-              Where do I download the app?
-              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center gap-3">
+              <span class="min-w-0 wrap-anywhere">Where do I download the app?</span>
+              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform shrink-0"></i>
             </summary>
-            <p class="mt-3 text-gray-300">
+            <p class="mt-3 text-gray-300 wrap-anywhere">
               Use the Download section on this page or your official download links provided by the platform.
             </p>
           </details>
         </div>
-        
-        <!-- FAQ 4 -->
+
         <div class="card">
           <details class="group">
-            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center">
-              Are outcomes guaranteed?
-              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center gap-3">
+              <span class="min-w-0 wrap-anywhere">Are outcomes guaranteed?</span>
+              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform shrink-0"></i>
             </summary>
-            <p class="mt-3 text-gray-300">
+            <p class="mt-3 text-gray-300 wrap-anywhere">
               No. Availability and outcomes can vary. Always verify current rules and updates inside the platform.
             </p>
           </details>
         </div>
       </div>
-      
-      <div class="text-center mt-10">
-        <a href="/how-to-register.html" class="btn-primary mr-4">
+
+      <div class="text-center mt-10 faq-cta">
+        <a href="/how-to-register.html" class="btn-primary">
           <i class="fas fa-user-plus"></i>
           Register on Stream
         </a>
@@ -1042,21 +950,21 @@
   <!-- Final CTA -->
   <section class="bg-gradient-to-b from-transparent to-black/50">
     <div class="container-custom">
-      <div class="glass-strong p-8 md:p-12 rounded-3xl text-center">
+      <div class="glass-strong p-6 sm:p-8 md:p-12 rounded-3xl text-center">
         <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Ready to start on Stream?</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8 wrap-anywhere">
           Register, pick a package, then download the app. Clean flow, no confusion.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/how-to-register.html" class="btn-primary">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <a href="/how-to-register.html" class="btn-primary w-full sm:w-auto">
             <i class="fas fa-user-plus"></i>
             Register Now
           </a>
-          <a href="#download" class="btn-secondary">
+          <a href="#download" class="btn-secondary w-full sm:w-auto">
             <i class="fas fa-download"></i>
             Download App
           </a>
-          <a href="#showcase" class="btn-secondary">
+          <a href="#showcase" class="btn-secondary w-full sm:w-auto">
             <i class="fas fa-images"></i>
             View Showcase
           </a>
@@ -1069,14 +977,14 @@
   <footer class="border-t border-white/10 py-10">
     <div class="container-custom">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-        <div>
-          <a href="/" class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-xl stream-bg flex items-center justify-center">
+        <div class="min-w-0">
+          <a href="/" class="flex items-center gap-3 mb-4 min-w-0">
+            <div class="w-10 h-10 rounded-xl stream-bg flex items-center justify-center shrink-0">
               <img src="assets/stream-logo.png" alt="Stream Logo" class="w-8 h-8">
             </div>
-            <div>
-              <h3 class="font-display font-bold text-xl">Stream</h3>
-              <p class="text-xs text-gray-400">Connect • Discover • Earn</p>
+            <div class="min-w-0">
+              <h3 class="font-display font-bold text-xl truncate">Stream</h3>
+              <p class="text-xs text-gray-400 truncate">Connect • Discover • Earn</p>
             </div>
           </a>
           <nav class="flex flex-wrap gap-4 text-sm">
@@ -1086,27 +994,27 @@
             <a href="/how-to-register.html" class="text-gray-400 hover:text-white">Contact</a>
           </nav>
         </div>
-        
+
         <div class="flex gap-3">
-          <a href="https://web.facebook.com/groups/455507947224832/?ref=share" target="_blank" 
+          <a href="https://web.facebook.com/groups/455507947224832/?ref=share" target="_blank"
              class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-brand/10 transition-colors">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="https://linktr.ee/makemoneyonline312" target="_blank" 
+          <a href="https://linktr.ee/makemoneyonline312" target="_blank"
              class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-brand/10 transition-colors">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="https://linktr.ee/makemoneyonline312" target="_blank" 
+          <a href="https://linktr.ee/makemoneyonline312" target="_blank"
              class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-brand/10 transition-colors">
             <i class="fab fa-whatsapp"></i>
           </a>
         </div>
       </div>
-      
+
       <div class="border-t border-white/10 pt-8 text-center">
-        <p class="text-gray-500 text-sm">
-          © Stream 2025 • All rights reserved • 
-          <a href="#" class="underline hover:text-white">Privacy Policy</a> • 
+        <p class="text-gray-500 text-sm wrap-anywhere">
+          © Stream 2025 • All rights reserved •
+          <a href="#" class="underline hover:text-white">Privacy Policy</a> •
           <a href="#" class="underline hover:text-white">Terms of Service</a>
         </p>
       </div>
@@ -1114,71 +1022,62 @@
   </footer>
 
   <!-- Back to Top -->
-  <a href="#top" id="backToTop" 
-     class="fixed bottom-8 right-8 w-12 h-12 glass rounded-full flex items-center justify-center opacity-0 transition-all hover:bg-brand/10">
+  <a href="#top" id="backToTop"
+     class="fixed bottom-6 sm:bottom-8 right-4 sm:right-8 w-12 h-12 glass rounded-full flex items-center justify-center opacity-0 transition-all hover:bg-brand/10"
+     style="pointer-events:none;">
     <i class="fas fa-arrow-up"></i>
   </a>
 
   <!-- Modal -->
   <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
     <div class="absolute inset-0 bg-black/70" data-modal-close></div>
-    <div class="glass-strong rounded-2xl max-w-md w-full p-6 relative z-10 max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-center mb-6">
-        <h3 id="modalTitle" class="font-display font-bold text-2xl">Package Details</h3>
-        <button data-modal-close class="w-10 h-10 rounded-xl hover:bg-white/10 flex items-center justify-center">
+    <div class="glass-strong rounded-2xl max-w-md w-full p-5 sm:p-6 relative z-10 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center mb-6 gap-3">
+        <h3 id="modalTitle" class="font-display font-bold text-2xl min-w-0 wrap-anywhere">Package Details</h3>
+        <button data-modal-close class="w-10 h-10 rounded-xl hover:bg-white/10 flex items-center justify-center shrink-0">
           <i class="fas fa-times"></i>
         </button>
       </div>
       <div id="modalContent" class="text-gray-300">
         <!-- Modal content will be inserted here -->
       </div>
-      <div class="mt-8 flex gap-3">
-        <button id="modalAction" class="btn-primary flex-1">
-          Activate
-        </button>
-        <button data-modal-close class="btn-secondary flex-1">
-          Close
-        </button>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <button id="modalAction" class="btn-primary flex-1">Activate</button>
+        <button data-modal-close class="btn-secondary flex-1">Close</button>
       </div>
     </div>
   </div>
 
   <!-- JavaScript -->
   <script>
-    // DOM Ready
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Mobile Menu
       const mobileMenuButton = document.getElementById('mobileMenuButton');
       const mobileMenu = document.getElementById('mobileMenu');
-      
+
       if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
           mobileMenu.classList.toggle('hidden');
         });
-        
-        // Close mobile menu when clicking outside
+
         document.addEventListener('click', (e) => {
           if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
             mobileMenu.classList.add('hidden');
           }
         });
       }
-      
-      // Scroll Progress
+
+      // Scroll Progress + Back to Top + Nav Effect
       const scrollProgress = document.getElementById('scrollProgress');
       const backToTop = document.getElementById('backToTop');
-      
+
       window.addEventListener('scroll', () => {
-        // Scroll progress
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        
-        if (scrollProgress) {
-          scrollProgress.style.width = scrolled + '%';
-        }
-        
-        // Back to top button
+        const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+
+        if (scrollProgress) scrollProgress.style.width = scrolled + '%';
+
         if (backToTop) {
           if (window.scrollY > 300) {
             backToTop.style.opacity = '1';
@@ -1188,100 +1087,86 @@
             backToTop.style.pointerEvents = 'none';
           }
         }
-        
-        // Navbar effect on scroll
+
         const nav = document.querySelector('nav');
         if (nav) {
-          if (window.scrollY > 50) {
-            nav.classList.add('glass-strong');
-          } else {
-            nav.classList.remove('glass-strong');
-          }
+          if (window.scrollY > 50) nav.classList.add('glass-strong');
+          else nav.classList.remove('glass-strong');
         }
       });
-      
-      // Back to top
+
       if (backToTop) {
         backToTop.addEventListener('click', (e) => {
           e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
-      
-      // Carousel functionality
+
+      // Carousel
       let currentAppSlide = 0;
       let currentShowcaseSlide = 0;
-      
+
       const appCarousel = document.getElementById('appCarousel');
       const appItems = appCarousel ? appCarousel.children : [];
       const showcaseCarousel = document.getElementById('showcaseCarousel');
       const showcaseItems = showcaseCarousel ? showcaseCarousel.children : [];
-      
-      // App carousel
+
       document.getElementById('carouselPrev')?.addEventListener('click', () => {
-        if (appItems.length === 0) return;
+        if (!appItems.length) return;
         currentAppSlide = (currentAppSlide - 1 + appItems.length) % appItems.length;
         updateCarousel(appCarousel, currentAppSlide);
       });
-      
+
       document.getElementById('carouselNext')?.addEventListener('click', () => {
-        if (appItems.length === 0) return;
+        if (!appItems.length) return;
         currentAppSlide = (currentAppSlide + 1) % appItems.length;
         updateCarousel(appCarousel, currentAppSlide);
       });
-      
-      // Showcase carousel
+
       document.querySelector('.showcase-prev')?.addEventListener('click', () => {
-        if (showcaseItems.length === 0) return;
+        if (!showcaseItems.length) return;
         currentShowcaseSlide = (currentShowcaseSlide - 1 + showcaseItems.length) % showcaseItems.length;
         updateCarousel(showcaseCarousel, currentShowcaseSlide);
       });
-      
+
       document.querySelector('.showcase-next')?.addEventListener('click', () => {
-        if (showcaseItems.length === 0) return;
+        if (!showcaseItems.length) return;
         currentShowcaseSlide = (currentShowcaseSlide + 1) % showcaseItems.length;
         updateCarousel(showcaseCarousel, currentShowcaseSlide);
       });
-      
+
       function updateCarousel(carousel, slideIndex) {
         if (!carousel) return;
-        const itemWidth = 100; // percentage
-        carousel.style.transform = `translateX(-${slideIndex * itemWidth}%)`;
+        carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
       }
-      
-      // Auto-rotate carousels
+
       setInterval(() => {
-        if (appItems.length > 0) {
+        if (appItems.length) {
           currentAppSlide = (currentAppSlide + 1) % appItems.length;
           updateCarousel(appCarousel, currentAppSlide);
         }
       }, 5000);
-      
+
       setInterval(() => {
-        if (showcaseItems.length > 0) {
+        if (showcaseItems.length) {
           currentShowcaseSlide = (currentShowcaseSlide + 1) % showcaseItems.length;
           updateCarousel(showcaseCarousel, currentShowcaseSlide);
         }
       }, 7000);
-      
-      // Modal functionality
+
+      // Modal
       const modal = document.getElementById('modal');
       const modalTitle = document.getElementById('modalTitle');
       const modalContent = document.getElementById('modalContent');
       const modalAction = document.getElementById('modalAction');
-      
-      // Package details
+
       const packageDetails = {
         plus: {
           title: 'Stream Plus Package',
           content: `
             <div class="space-y-4">
               <p class="text-lg font-semibold text-brand">Starter tier built for a clean, fast onboarding.</p>
-              
-              <div class="bg-white/5 rounded-xl p-4">
+              <div class="bg-white/5 rounded-xl p-4 table-wrap">
                 <table class="w-full text-sm">
                   <thead>
                     <tr class="border-b border-white/10">
@@ -1309,10 +1194,7 @@
                   </tbody>
                 </table>
               </div>
-              
-              <p class="text-sm text-gray-400">
-                All values are approximate and subject to change. Availability may vary by region.
-              </p>
+              <p class="text-sm text-gray-400">All values are approximate and subject to change. Availability may vary by region.</p>
             </div>
           `,
           actionUrl: 'https://linkfly.to/earningmiamor'
@@ -1322,8 +1204,7 @@
           content: `
             <div class="space-y-4">
               <p class="text-lg font-semibold text-brand">Premium tier with higher value and stronger feature access.</p>
-              
-              <div class="bg-white/5 rounded-xl p-4">
+              <div class="bg-white/5 rounded-xl p-4 table-wrap">
                 <table class="w-full text-sm">
                   <thead>
                     <tr class="border-b border-white/10">
@@ -1351,110 +1232,76 @@
                   </tbody>
                 </table>
               </div>
-              
-              <p class="text-sm text-gray-400">
-                All values are approximate and subject to change. Premium features may have additional requirements.
-              </p>
+              <p class="text-sm text-gray-400">All values are approximate and subject to change. Premium features may have additional requirements.</p>
             </div>
           `,
           actionUrl: 'https://linkfly.to/earningmiamor'
         }
       };
-      
-      // Open modal for package details
+
       document.querySelectorAll('.package-details').forEach(button => {
         button.addEventListener('click', () => {
           const packageType = button.getAttribute('data-package');
           const packageInfo = packageDetails[packageType];
-          
+
           if (packageInfo && modal) {
             modalTitle.textContent = packageInfo.title;
             modalContent.innerHTML = packageInfo.content;
-            modalAction.onclick = () => {
-              window.open(packageInfo.actionUrl, '_blank');
-            };
+            modalAction.onclick = () => window.open(packageInfo.actionUrl, '_blank');
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
           }
         });
       });
-      
-      // Close modal
-      document.querySelectorAll('[data-modal-close]').forEach(button => {
-        button.addEventListener('click', () => {
-          if (modal) {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-          }
+
+      document.querySelectorAll('[data-modal-close]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (!modal) return;
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
         });
       });
-      
-      // Close modal on ESC key
+
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
           modal.classList.add('hidden');
           document.body.style.overflow = '';
         }
       });
-      
-      // Smooth scrolling for anchor links
+
+      // Smooth scroll (kept)
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
           const href = this.getAttribute('href');
-          
-          // Skip if it's just "#"
           if (href === '#') return;
-          
-          // Don't smooth scroll if it's a different page anchor
+
           if (href.startsWith('#') && href.length > 1) {
             e.preventDefault();
             const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
-              // Close mobile menu if open
-              if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-              }
-              
-              window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-              });
+              if (mobileMenu && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+              window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
             }
           }
         });
       });
-      
-      // Add hover effects to cards
+
+      // Hover effects (kept)
       document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          card.style.transform = 'translateY(-8px)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'translateY(0)';
-        });
+        card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-8px)');
+        card.addEventListener('mouseleave', () => card.style.transform = 'translateY(0)');
       });
-      
-      // Initialize animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-      
+
+      // Intersection animations
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-slide-in');
-          }
+          if (entry.isIntersecting) entry.target.classList.add('animate-slide-in');
         });
-      }, observerOptions);
-      
-      // Observe all cards and sections
-      document.querySelectorAll('.card, section').forEach(el => {
-        observer.observe(el);
-      });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.card, section').forEach(el => observer.observe(el));
     });
   </script>
 </body>
