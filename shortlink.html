@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Stream — Get Started</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#02030a;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.7);
+      --muted2:rgba(255,255,255,.55);
+      --green:#34ff96;
+      --green2:#12d870;
+      --radius:26px;
+      --shadow:0 30px 90px rgba(0,0,0,.75);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family:Poppins,system-ui,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(52,255,150,.12), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(18,216,112,.10), transparent 60%),
+        linear-gradient(180deg,#020309,var(--bg));
+      color:var(--text);
+      overflow:hidden;
+    }
+
+    /* mouse glow follower */
+    .glow{
+      position:fixed;
+      width:520px;height:520px;
+      transform:translate(-50%,-50%);
+      pointer-events:none;
+      background:radial-gradient(circle,
+        rgba(52,255,150,.3),
+        rgba(52,255,150,.15),
+        transparent 65%);
+      filter:blur(18px);
+      mix-blend-mode:screen;
+      opacity:0;
+      transition:opacity .25s ease;
+      z-index:0;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px 16px;
+      position:relative;
+      z-index:1;
+    }
+
+    .card{
+      width:min(520px,100%);
+      text-align:center;
+      padding:24px;
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(16px);
+      box-shadow:var(--shadow);
+    }
+
+    .logo{
+      width:min(240px,70%);
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.14);
+      margin:0 auto 14px;
+      display:block;
+    }
+
+    h1{
+      font-size:21px;
+      font-weight:800;
+      margin:8px 0 6px;
+    }
+
+    .subtitle{
+      font-size:13px;
+      color:var(--muted);
+      max-width:44ch;
+      margin:0 auto;
+      line-height:1.5;
+    }
+
+    .links{
+      margin-top:22px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px;
+      border-radius:20px;
+      text-decoration:none;
+      color:#fff;
+      background:rgba(0,0,0,.38);
+      border:1px solid rgba(255,255,255,.14);
+      position:relative;
+      overflow:hidden;
+      transition:.18s ease;
+    }
+
+    .btn::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(220px 220px at var(--mx,50%) var(--my,50%),
+        rgba(52,255,150,.45),
+        transparent 60%);
+      opacity:0;
+      transition:opacity .18s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(18,216,112,.6);
+      box-shadow:0 14px 40px rgba(52,255,150,.15);
+    }
+
+    .btn:hover::after{opacity:1}
+
+    .left{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      text-align:left;
+    }
+
+    .ico{
+      width:46px;height:46px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      font-size:20px;
+      background:linear-gradient(135deg,rgba(52,255,150,.18),rgba(18,216,112,.1));
+      border:1px solid rgba(255,255,255,.14);
+    }
+
+    .label{
+      font-weight:800;
+      font-size:14px;
+    }
+
+    .note{
+      font-size:12px;
+      color:var(--muted2);
+      margin-top:2px;
+      line-height:1.4;
+      max-width:38ch;
+    }
+
+    .arrow{opacity:.9}
+
+    @media(min-width:900px){
+      h1{font-size:23px}
+      .subtitle{font-size:14px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glow" id="glow"></div>
+
+  <main class="wrap">
+    <section class="card">
+      <img
+        class="logo"
+        src="https://streamwebsite.com.ng/img/stream-logo.png"
+        alt="Stream Logo"
+      />
+
+      <h1>Welcome to Stream</h1>
+      <p class="subtitle">
+        Click the button below to get started on the Stream website.
+      </p>
+
+      <div class="links" id="links"></div>
+    </section>
+  </main>
+
+  <script>
+    /**********************
+     * TOGGLES
+     **********************/
+    const SETTINGS = {
+      whatsappEnabled: true // set to true anytime
+    };
+
+    /**********************
+     * LINKS
+     **********************/
+    const LINKS = [
+      {
+        enabled: SETTINGS.whatsappEnabled,
+        title: "WhatsApp (wa.link)",
+        icon: "💬",
+        note: "Chat with us directly on WhatsApp",
+        url: "https://wa.link/6c4cc5"
+      },
+      {
+        enabled: true,
+        title: "Telegram",
+        icon: "📣",
+        note: "Tap to start a chat on Telegram",
+        url: "https://t.me/thevendor3?text=From%20Stream%20Website%2C%20I%27m%20ready%20to%20get%20started%20on%20Stream.%20How%20do%20I%20continue%20and%20what%20are%20the%20requirements%3F"
+      }
+    ];
+
+    const linksEl = document.getElementById("links");
+
+    LINKS.forEach(l => {
+      if(!l.enabled) return;
+
+      const a = document.createElement("a");
+      a.className = "btn";
+      a.href = l.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+
+      a.innerHTML = `
+        <div class="left">
+          <div class="ico">${l.icon}</div>
+          <div>
+            <div class="label">${l.title}</div>
+            <div class="note">${l.note}</div>
+          </div>
+        </div>
+        <div class="arrow">↗</div>
+      `;
+
+      a.addEventListener("mousemove", e => {
+        const r = a.getBoundingClientRect();
+        a.style.setProperty("--mx", ((e.clientX - r.left)/r.width)*100 + "%");
+        a.style.setProperty("--my", ((e.clientY - r.top)/r.height)*100 + "%");
+      });
+
+      linksEl.appendChild(a);
+    });
+
+    /**********************
+     * MOUSE GLOW FOLLOW
+     **********************/
+    const glow = document.getElementById("glow");
+    let x=innerWidth/2, y=innerHeight/2, tx=x, ty=y;
+
+    addEventListener("mousemove",e=>{
+      tx=e.clientX; ty=e.clientY;
+      glow.style.opacity=1;
+    });
+
+    function loop(){
+      x+=(tx-x)*.12;
+      y+=(ty-y)*.12;
+      glow.style.left=x+"px";
+      glow.style.top=y+"px";
+      requestAnimationFrame(loop);
+    }
+    loop();
+  </script>
+</body>
+</html>
