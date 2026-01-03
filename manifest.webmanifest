@@ -1,0 +1,46 @@
+{
+  "name": "Stream Website — Earn from Gigs & Tasks",
+  "short_name": "Stream",
+  "description": "Stream Website official homepage. Learn how to register for Stream Website, explore gigs, tasks, and start earning.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#06110b",
+  "theme_color": "#0B64D8",
+  "lang": "en-NG",
+  "dir": "ltr",
+  "categories": ["business", "finance", "social", "productivity"],
+  "icons": [
+    {
+      "src": "/img/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icons/maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/img/icons/maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
