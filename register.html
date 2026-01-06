@@ -1,0 +1,495 @@
+<!-- File: register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+ 
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://streamwebsite.com.ng/register.html" />
+  <base target="_top" />
+
+  <meta name="theme-color" content="#04130E" />
+
+  <title>Stream Website Registration — How to Register & How Stream Website Works</title>
+  <meta name="title" content="Stream Website Registration — How to Register & How Stream Website Works" />
+  <meta name="description" content="Stream Website registration made easy. Create your account, choose your plan, follow official payment instructions, submit proof (if required), and get activated. Learn how Stream Website works: tasks, gigs, campaigns, and earning rules." />
+  <meta name="keywords" content="stream website registration, how to register for stream website, stream registration, stream website signup, register stream website, stream website how it works, stream tasks, stream gigs, stream activation, streamwebsite.com.ng" />
+  <meta name="author" content="Stream Website" />
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="application-name" content="Stream Website" />
+  <meta name="apple-mobile-web-app-title" content="Stream Website" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg?v=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.svg?v=1" />
+
+  <meta property="og:locale" content="en_NG" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Stream Website" />
+  <meta property="og:url" content="https://streamwebsite.com.ng/register.html" />
+  <meta property="og:title" content="Stream Website Registration — Create Account, Choose Plan & Get Activated" />
+  <meta property="og:description" content="Register on Stream Website in minutes. Learn how Stream Website works and complete Stream Website registration using the official steps on this page." />
+  <meta property="og:image" content="https://streamwebsite.com.ng/img/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Stream Website registration cover" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://streamwebsite.com.ng/register.html" />
+  <meta name="twitter:title" content="Stream Website Registration — How to Register" />
+  <meta name="twitter:description" content="Stream Website registration: create your account, choose plan, follow official instructions, and get activated. Learn how Stream Website works." />
+  <meta name="twitter:image" content="https://streamwebsite.com.ng/img/og-cover.jpg" />
+
+  <link rel="alternate" href="https://streamwebsite.com.ng/register.html" hreflang="en-ng" />
+  <link rel="alternate" href="https://streamwebsite.com.ng/register.html" hreflang="en" />
+  <link rel="alternate" href="https://streamwebsite.com.ng/register.html" hreflang="x-default" />
+  <meta name="geo.region" content="NG" />
+  <meta name="geo.placename" content="Nigeria" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg0:#04130E;
+      --bg4:#020906;
+
+      --mint:#34ff96;
+      --mint2:#12d870;
+
+      --text:#EAFDF4;
+      --muted: rgba(234,253,244,.72);
+
+      --shadow: 0 30px 90px rgba(0,0,0,.65);
+      --radius: 24px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      overflow-x:hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ✅ animated gradient background */
+    .bg-anim{
+      position:fixed; inset:0; z-index:-2;
+      background:
+        radial-gradient(900px 600px at 10% 0%, rgba(52,255,150,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(18,216,112,.16), transparent 55%),
+        radial-gradient(700px 500px at 50% 110%, rgba(52,255,150,.12), transparent 65%),
+        linear-gradient(180deg, var(--bg0), var(--bg4));
+      background-size: 140% 140%;
+      animation: bgMove 12s ease-in-out infinite;
+    }
+    @keyframes bgMove{
+      0%{ background-position: 0% 0%; }
+      50%{ background-position: 100% 60%; }
+      100%{ background-position: 0% 0%; }
+    }
+
+    /* subtle grain */
+    .grain{
+      position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+      opacity:.06;
+      mix-blend-mode: overlay;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img, svg{ max-width:100%; height:auto; display:block; }
+
+    /* top bar */
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      padding: 12px 0;
+      background: rgba(255,255,255,.03);
+      border-bottom: 1px solid rgba(255,255,255,.09);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .brand img{ height:30px; width:auto; }
+
+    .mini-pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(234,253,244,.82);
+      font-size: .88rem;
+      white-space: nowrap;
+    }
+    .dot{ width:9px; height:9px; border-radius:50%; background: var(--mint); box-shadow: 0 0 16px rgba(52,255,150,.55); }
+
+    /* ✅ page layout: form should NOT fill the page */
+    .wrap{ position:relative; z-index:1; }
+    .page-pad{ padding: 26px 0 18px; }
+
+    /* ✅ much smaller form shell */
+    .form-shell{
+      width: min(360px, 100%);
+      margin-inline: auto;
+    }
+
+    /* card */
+    .cardx{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      position:relative;
+    }
+    .cardx::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 260px at 20% 0%, rgba(52,255,150,.14), transparent 62%),
+        radial-gradient(520px 260px at 80% 110%, rgba(18,216,112,.10), transparent 62%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .cardx-inner{ position:relative; padding: 16px 14px; }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(234,253,244,.85);
+      width: fit-content;
+    }
+
+    .title{
+      font-weight: 950;
+      letter-spacing:-.6px;
+      margin: 10px 0 6px;
+      font-size: 1.15rem;
+      line-height:1.2;
+    }
+    .subtitle{
+      color: var(--muted);
+      line-height:1.6;
+      margin:0 0 10px;
+      font-size: .92rem;
+    }
+
+    /* ✅ trim extra content so the page doesn't feel "full page form" */
+    .seo-mini{
+      margin-top: 10px;
+      padding: 10px 10px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(234,253,244,.70);
+      line-height: 1.6;
+      font-size: .88rem;
+    }
+    .seo-mini b{ color: rgba(234,253,244,.92); }
+
+    /* ✅ tighter form spacing */
+    .row.g-3{ --bs-gutter-x: .8rem; --bs-gutter-y: .65rem; }
+
+    .form-label{ color: rgba(234,253,244,.88); font-weight:700; font-size: .88rem; margin-bottom: .3rem; }
+    .form-control{
+      background: rgba(0,0,0,.20);
+      border: 1px solid rgba(255,255,255,.14);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 9px 11px;
+      outline:none;
+      box-shadow:none;
+      font-size: .92rem;
+    }
+    .form-control::placeholder{ color: rgba(234,253,244,.42); }
+    .form-control:focus{
+      border-color: rgba(52,255,150,.55);
+      box-shadow: 0 0 0 4px rgba(52,255,150,.11);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+    }
+    .input-group-text{
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(234,253,244,.8);
+      border-radius: 12px;
+    }
+
+    /* password toggle */
+    #togglePass{
+      border-radius: 12px !important;
+      border: 1px solid rgba(255,255,255,.16) !important;
+      background: rgba(255,255,255,.06) !important;
+      color: rgba(234,253,244,.9) !important;
+    }
+
+    .hint{ color: rgba(234,253,244,.6); font-size:.86rem; line-height:1.5; }
+
+    .agree{
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      padding: 10px 10px;
+    }
+
+    .form-check-label{ color: rgba(234,253,244,.78); font-size:.9rem; }
+
+    /* buttons */
+    .btnx{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing:.2px;
+      border:none;
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+      user-select:none;
+      width: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-size: .92rem;
+    }
+    .btn-primaryx{
+      background: linear-gradient(135deg, var(--mint), var(--mint2));
+      color:#04130E;
+      box-shadow: 0 18px 45px rgba(18,216,112,.18);
+    }
+    .btn-primaryx:hover{ transform: translateY(-2px); box-shadow: 0 22px 55px rgba(18,216,112,.22); }
+
+    .btn-ghostx{
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.16);
+      color: var(--text);
+    }
+    .btn-ghostx:hover{ transform: translateY(-2px); }
+
+    /* hide long sections (keep SEO in head) */
+    .section{ display:none; }
+
+    /* toast */
+    .toastx{
+      position: fixed;
+      top: 82px;
+      right: 16px;
+      z-index: 9999;
+      width: min(380px, calc(100% - 32px));
+      border-radius: 16px;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 12px 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      display:none;
+    }
+    .toastx.show{ display:block; }
+    .toastx b{ color: var(--mint); }
+    .toastx p{ margin: 4px 0 0; color: rgba(234,253,244,.78); }
+
+    /* footer */
+    .foot{
+      color: rgba(234,253,244,.45);
+      font-size: .85rem;
+      padding: 12px 0 24px;
+      text-align:center;
+    }
+
+    @media (max-width: 575px){
+      .mini-pill{ display:none; }
+      .page-pad{ padding: 22px 0 16px; }
+      .form-shell{ width: min(360px, calc(100% - 18px)); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-anim" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container d-flex align-items-center justify-content-between gap-3">
+      <a class="brand" href="index.html" aria-label="Stream Website Home">
+        <img src="assets/logo.svg" alt="Stream Website Logo">
+        <span class="d-none d-sm-inline">Stream Website Registration</span>
+      </a>
+
+      <span class="mini-pill" title="Use only the official Stream Website domain">
+        <span class="dot"></span>
+        Official Signup
+      </span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="container page-pad">
+      <div class="form-shell">
+        <div class="cardx">
+          <div class="cardx-inner">
+            <div class="kicker">
+              <span class="dot"></span>
+              <small><b>Stream Website</b> • Signup</small>
+            </div>
+
+            <h1 class="title">Create your account</h1>
+            <p class="subtitle">
+              Fill your details to start Stream Website registration.
+            </p>
+
+            <div class="seo-mini">
+              <b>How it works:</b> register → follow official onboarding → get activated → access tasks/gigs/campaigns (where available).
+            </div>
+
+            <form id="regForm" class="mt-3" novalidate>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label" for="firstName">First name</label>
+                  <input id="firstName" class="form-control" type="text" name="firstName" placeholder="e.g David" required />
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="lastName">Last name</label>
+                  <input id="lastName" class="form-control" type="text" name="lastName" placeholder="e.g James" required />
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="email">Email</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                    <input id="email" class="form-control" type="email" name="email" placeholder="you@example.com" required />
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="phone">Phone</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                    <input id="phone" class="form-control" type="tel" name="phone" placeholder="+234 80..." required />
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="password">Password</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Minimum 8 characters" minlength="8" required />
+                    <button class="btn btn-sm btn-outline-light" type="button" id="togglePass" aria-label="Show or hide password">
+                      <i class="fa-solid fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-12 agree">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agree" required>
+                    <label class="form-check-label" for="agree">
+                      I agree to the Terms and Privacy Policy.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-12 d-grid gap-2 mt-1">
+                  <button class="btnx btn-primaryx" type="submit">
+                    <i class="fa-solid fa-user-check"></i> Continue
+                  </button>
+                  <a class="btnx btn-ghostx" href="index.html">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                  </a>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+        <div class="foot">
+          &copy; 2026 Stream Website. All Rights Reserved.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toastx" id="toast" role="status" aria-live="polite">
+    <div class="d-flex align-items-start gap-2">
+      <i class="fa-solid fa-circle-check" style="color:var(--mint); margin-top:2px;"></i>
+      <div>
+        <b>Saved!</b>
+        <p class="mb-0">Redirecting…</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // show/hide password
+    const toggle = document.getElementById('togglePass');
+    const pass = document.getElementById('password');
+    toggle.addEventListener('click', () => {
+      const isPass = pass.type === 'password';
+      pass.type = isPass ? 'text' : 'password';
+      toggle.innerHTML = isPass ? '<i class="fa-solid fa-eye-slash"></i>' : '<i class="fa-solid fa-eye"></i>';
+    });
+
+    // validation + redirect to /shortlink.html
+    const form = document.getElementById('regForm');
+    const toast = document.getElementById('toast');
+
+    function showToast(){
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()){
+        form.classList.add('was-validated');
+        const card = document.querySelector('.cardx');
+        card.animate(
+          [
+            { transform: 'translateX(0px)' },
+            { transform: 'translateX(-6px)' },
+            { transform: 'translateX(6px)' },
+            { transform: 'translateX(-4px)' },
+            { transform: 'translateX(4px)' },
+            { transform: 'translateX(0px)' }
+          ],
+          { duration: 360, easing: 'ease-out' }
+        );
+        return;
+      }
+
+      showToast();
+
+      // ✅ go to /shortlink.html (same domain)
+      setTimeout(() => {
+        window.location.href = "/shortlink.html";
+      }, 700);
+    });
+  </script>
+</body>
+</html>

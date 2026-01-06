@@ -1,61 +1,75 @@
+<!-- FILE NAME: index.html (edit this if your file name is different) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =======================
-    STREAM WEBSITE — SEO + PERFORMANCE
-    (cleaned, deduped, responsive, no unnecessary delays)
-  ======================== -->
-
   <!-- Charset & viewport -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no" />
-  <meta name="theme-color" content="#0B64D8" />
 
   <!-- Indexing & canonical -->
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <link rel="canonical" href="https://streamwebsite.com.ng/" />
-  <base target="_top" />
-  <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#04130E" />
 
   <!-- Title & Description -->
-  <title>Stream Website — Register &amp; Earn from Gigs, Games, and Social Tasks</title>
-  <meta name="description" content="Stream Website is a trusted earning platform where users make money through gigs, games, and social posts. Learn how to register for Stream Website, explore Earn As You Snap and Face of Stream contests, and see why Stream Website is legit. Start today and discover how to earn on Stream Website safely and creatively." />
+  <title>Stream Website (Stream Africa) — How It Works, Rewards, Gigs & Stream Registration</title>
+  <meta
+    name="description"
+    content="Stream website (Stream Africa) is a digital movement that helps Africans earn from entertainment engagement. Learn how Stream website works, how rewards are shared from partnerships, and how to complete Stream registration to start earning from verified tasks, campaigns, gigs, and SkillUp mentorship."
+  />
 
-  <!-- Logo + Icons (helps Google show brand assets) -->
-  <link rel="icon" href="/img/icons/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png" />
+  <!-- Optional keywords/author -->
+  <meta
+    name="keywords"
+    content="stream website, streamwebsite.com.ng, Stream Africa, how stream website works, stream registration, stream registrations, register on stream, Streamer rewards, entertainment engagement, media tasks, digital gigs, SkillUp mentorship, Africa, Nigeria"
+  />
+  <meta name="author" content="Stream Africa" />
 
-  <!-- Extra discovery hints -->
-  <meta name="application-name" content="Stream" />
-  <meta name="apple-mobile-web-app-title" content="Stream" />
-  <meta name="google-site-verification" content="" /> <!-- optional: paste your Search Console token -->
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="application-name" content="Stream Africa" />
+  <meta name="apple-mobile-web-app-title" content="Stream Africa" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <!-- Open Graph -->
-  <meta property="og:locale" content="en_US" />
+  <!-- ✅ ICONS (verified in /assets/icons/*) -->
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="shortcut icon" href="assets/icons/favicon.ico" />
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#34ff96" />
+  <meta name="msapplication-config" content="browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#04130E" />
+
+  <!-- Social / Open Graph (✅ updated image to existing asset: /assets/stream-audio.jpeg) -->
+  <meta property="og:locale" content="en_NG" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Stream Website — Register &amp; Earn from Gigs, Games, and Social Tasks" />
-  <meta property="og:description" content="Stream Website is a trusted earning platform where users make money through gigs, games, and social posts. Learn how to register for Stream Website, explore Earn As You Snap and Face of Stream contests, and see why Stream Website is legit. Start today and discover how to earn on Stream Website safely and creatively." />
+  <meta property="og:site_name" content="Stream Africa" />
   <meta property="og:url" content="https://streamwebsite.com.ng/" />
-  <meta property="og:site_name" content="Stream Website" />
-  <meta property="og:image" content="https://streamwebsite.com.ng/img/og-cover.jpg" />
-  <meta property="og:image:secure_url" content="https://streamwebsite.com.ng/img/og-cover.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Stream Website hero banner" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="article:published_time" content="2025-08-10T12:00:00+01:00" />
-  <meta property="article:modified_time" content="2025-08-28T01:40:17+00:00" />
+  <meta property="og:title" content="Stream Website — How Stream Works + Stream Registration (Stream Africa)" />
+  <meta
+    property="og:description"
+    content="Stream website helps Africans earn from entertainment engagement through partnerships with creators and media companies. Learn how Stream website works and complete Stream registration to access verified tasks, campaigns, gigs and SkillUp."
+  />
+  <meta property="og:image" content="https://streamwebsite.com.ng/assets/stream-audio.jpeg" />
+  <meta property="og:image:secure_url" content="https://streamwebsite.com.ng/assets/stream-audio.jpeg" />
+  <meta property="og:image:alt" content="Stream Africa — Stream website preview" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stream Website — Register &amp; Earn from Gigs, Games, and Social Tasks" />
-  <meta name="twitter:description" content="Stream Website is a trusted earning platform where users make money through gigs, games, and social posts. Learn how to register for Stream Website, explore Earn As You Snap and Face of Stream contests, and see why Stream Website is legit. Start today and discover how to earn on Stream Website safely and creatively." />
-  <meta name="twitter:image" content="https://streamwebsite.com.ng/img/og-cover.jpg" />
+  <meta name="twitter:url" content="https://streamwebsite.com.ng/" />
+  <meta name="twitter:title" content="Stream Website — How Stream Works + Stream Registration" />
+  <meta
+    name="twitter:description"
+    content="Learn how Stream website works: partners share rewards from campaigns and royalties, and Streamers earn through verified engagement. Complete Stream registration to get started."
+  />
+  <meta name="twitter:image" content="https://streamwebsite.com.ng/assets/stream-audio.jpeg" />
 
   <!-- Internationalization -->
   <link rel="alternate" href="https://streamwebsite.com.ng/" hreflang="en-ng" />
@@ -64,1611 +78,1292 @@
   <meta name="geo.region" content="NG" />
   <meta name="geo.placename" content="Nigeria" />
 
-  <!-- Performance: preconnect + preload -->
+  <!-- Performance hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="/img/hero-poster.jpg" imagesrcset="/img/hero-poster.jpg 1600w" imagesizes="100vw" />
-  <link rel="preload" as="image" href="/assets/stream-logo.png" />
+  <link rel="preload" as="image" href="assets/stream-audio.jpeg" />
+  <link rel="preload" as="image" href="assets/logo.svg" />
 
-  <!-- Fonts (keep only once) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+  <!-- ===================== SCHEMA (JSON-LD) — FIXED + MATCHES REAL FILES/IDS ===================== -->
+  <!-- ✅ Verified pages in repo root:
+       /index.html, /register.html, /shortlink.html, /how-to-register.html, /payments.html
+       ✅ Verified section IDs in index.html: #hero, #about, #features, #pricing, #faqwrap
+       ✅ Verified images: /assets/logo.svg, /assets/stream-audio.jpeg, /assets/who-are-we.jpeg
+  -->
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://streamwebsite.com.ng/#organization",
+        "name":"Stream Africa",
+        "url":"https://streamwebsite.com.ng/",
+        "logo":{
+          "@type":"ImageObject",
+          "url":"https://streamwebsite.com.ng/assets/logo.svg"
+        },
+        "image":"https://streamwebsite.com.ng/assets/stream-audio.jpeg",
+        "description":"Stream Africa is a digital movement redefining how Africans experience entertainment and earn from it through verified engagement and partnerships.",
+        "email":"support@streamwebsite.com.ng",
+        "address":{
+          "@type":"PostalAddress",
+          "addressCountry":"NG"
+        },
+        "sameAs":[
+          "https://www.facebook.com/groups/455507947224832/?ref=share&mibextid=NSMWBT",
+          "https://www.tiktok.com/@how_to_register_stream"
+        ]
+      },
 
-  <!-- Tailwind (kept for your existing classes) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: '#34ff96',
-            brand2: '#12d870',
-            ink: '#06110b',
-            ink2: '#040a07',
-            glass: 'rgba(10, 24, 16, .55)',
-            glass2: 'rgba(8, 18, 12, .78)'
+      {
+        "@type":"WebSite",
+        "@id":"https://streamwebsite.com.ng/#website",
+        "name":"Stream Africa",
+        "alternateName":"Stream Website",
+        "url":"https://streamwebsite.com.ng/",
+        "description":"Stream website helps Africans earn from entertainment engagement through partnerships, verified tasks, campaigns, gigs, and SkillUp mentorship.",
+        "publisher":{"@id":"https://streamwebsite.com.ng/#organization"},
+        "inLanguage":"en"
+      },
+
+      {
+        "@type":"WebPage",
+        "@id":"https://streamwebsite.com.ng/#webpage",
+        "name":"Stream Website (Stream Africa) — How It Works, Rewards, Gigs & Stream Registration",
+        "url":"https://streamwebsite.com.ng/",
+        "isPartOf":{"@id":"https://streamwebsite.com.ng/#website"},
+        "about":{"@id":"https://streamwebsite.com.ng/#organization"},
+        "primaryImageOfPage":{
+          "@type":"ImageObject",
+          "url":"https://streamwebsite.com.ng/assets/stream-audio.jpeg"
+        },
+        "inLanguage":"en",
+        "datePublished":"2026-01-06",
+        "dateModified":"2026-01-06",
+        "description":"Learn how Stream website works, how rewards are shared from partnerships, and how to complete Stream registration to access verified tasks, campaigns, gigs and SkillUp mentorship."
+      },
+
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://streamwebsite.com.ng/#breadcrumbs",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://streamwebsite.com.ng/"}
+        ]
+      },
+
+      {
+        "@type":"SiteNavigationElement",
+        "@id":"https://streamwebsite.com.ng/#sitenav",
+        "name":["Home","How it Works","What You Get","Packages","FAQs","Register"],
+        "url":[
+          "https://streamwebsite.com.ng/#hero",
+          "https://streamwebsite.com.ng/#about",
+          "https://streamwebsite.com.ng/#features",
+          "https://streamwebsite.com.ng/#pricing",
+          "https://streamwebsite.com.ng/#faqwrap",
+          "https://streamwebsite.com.ng/register.html"
+        ]
+      },
+
+      {
+        "@type":"SoftwareApplication",
+        "@id":"https://streamwebsite.com.ng/#app",
+        "name":"Stream Africa",
+        "applicationCategory":["BusinessApplication","LifestyleApplication"],
+        "operatingSystem":"Web, Android, iOS",
+        "url":"https://streamwebsite.com.ng/",
+        "downloadUrl":"https://streamwebsite.com.ng/register.html",
+        "image":"https://streamwebsite.com.ng/assets/logo.svg",
+        "publisher":{"@id":"https://streamwebsite.com.ng/#organization"},
+        "description":"Stream Africa connects Streamers to verified entertainment engagement, media tasks, campaigns, gigs, and SkillUp mentorship.",
+        "offers":{
+          "@type":"AggregateOffer",
+          "priceCurrency":"NGN",
+          "lowPrice":10000,
+          "highPrice":15000,
+          "offerCount":2,
+          "offers":[
+            {
+              "@type":"Offer",
+              "name":"Standard Access",
+              "price":10000,
+              "priceCurrency":"NGN",
+              "url":"https://streamwebsite.com.ng/register.html",
+              "availability":"https://schema.org/InStock"
+            },
+            {
+              "@type":"Offer",
+              "name":"Premium Access",
+              "price":15000,
+              "priceCurrency":"NGN",
+              "url":"https://streamwebsite.com.ng/register.html",
+              "availability":"https://schema.org/InStock"
+            }
+          ]
+        }
+      },
+
+      {
+        "@type":"Service",
+        "@id":"https://streamwebsite.com.ng/#service",
+        "name":"Stream Website Rewards & Engagement Platform",
+        "provider":{"@id":"https://streamwebsite.com.ng/#organization"},
+        "serviceType":"Entertainment engagement rewards, verified media tasks, campaigns, gigs and mentorship access",
+        "areaServed":{"@type":"Place","name":"Africa"},
+        "url":"https://streamwebsite.com.ng/",
+        "description":"Stream transforms ordinary digital engagement into real value by connecting creators and audiences through partnerships and shared rewards."
+      },
+
+      {
+        "@type":"FAQPage",
+        "@id":"https://streamwebsite.com.ng/#faq",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"How does Stream website work?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Stream partners with artists, labels, studios and content distributors to reach real audiences. When Streamers complete approved engagement and campaigns, partners share a portion of campaign revenue or royalties with Stream, and rewards are distributed to participating users."
+            }
           },
-          fontFamily: {
-            sans: ['Poppins', 'system-ui', 'sans-serif'],
-            display: ['Montserrat', 'Poppins', 'sans-serif']
+          {
+            "@type":"Question",
+            "name":"How do I complete Stream registration?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"To complete Stream registration, click Register on Stream Africa and follow the steps. After activation, you can access verified tasks, campaigns, gigs and SkillUp mentorship based on your package."
+            }
           },
-          animation: { 'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4,0,0.2,1) infinite' },
-          keyframes: {
-            'pulse-glow': {
-              '0%, 100%': { boxShadow: '0 0 0 rgba(52,255,150,0)' },
-              '50%': { boxShadow: '0 0 40px rgba(52,255,150,0.24)' }
+          {
+            "@type":"Question",
+            "name":"How do I earn on Stream?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"You earn by completing verified media tasks, participating in campaigns, offering services via gigs, and learning skills through SkillUp mentorship on the Stream website."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Is Stream available worldwide?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Stream is designed for universal access — you can join from anywhere using your phone."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"What does Stream membership cost?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Standard Access is ₦10,000 and Premium Access is ₦15,000 — both are one-time registration fees."
             }
           }
-        }
+        ]
+      },
+
+      {
+        "@type":"ImageObject",
+        "@id":"https://streamwebsite.com.ng/#heroimage",
+        "contentUrl":"https://streamwebsite.com.ng/assets/stream-audio.jpeg",
+        "url":"https://streamwebsite.com.ng/assets/stream-audio.jpeg",
+        "caption":"Stream Africa — Stream website preview"
+      },
+
+      {
+        "@type":"WebPage",
+        "@id":"https://streamwebsite.com.ng/register.html#webpage",
+        "name":"Stream Website Registration",
+        "url":"https://streamwebsite.com.ng/register.html",
+        "isPartOf":{"@id":"https://streamwebsite.com.ng/#website"},
+        "about":{"@id":"https://streamwebsite.com.ng/#organization"},
+        "inLanguage":"en"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://streamwebsite.com.ng/shortlink.html#webpage",
+        "name":"Stream Shortlink",
+        "url":"https://streamwebsite.com.ng/shortlink.html",
+        "isPartOf":{"@id":"https://streamwebsite.com.ng/#website"},
+        "about":{"@id":"https://streamwebsite.com.ng/#organization"},
+        "inLanguage":"en"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://streamwebsite.com.ng/how-to-register.html#webpage",
+        "name":"How to Register on Stream Website",
+        "url":"https://streamwebsite.com.ng/how-to-register.html",
+        "isPartOf":{"@id":"https://streamwebsite.com.ng/#website"},
+        "about":{"@id":"https://streamwebsite.com.ng/#organization"},
+        "inLanguage":"en"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://streamwebsite.com.ng/payments.html#webpage",
+        "name":"Stream Website Payments",
+        "url":"https://streamwebsite.com.ng/payments.html",
+        "isPartOf":{"@id":"https://streamwebsite.com.ng/#website"},
+        "about":{"@id":"https://streamwebsite.com.ng/#organization"},
+        "inLanguage":"en"
+      }
+    ]
+  }
+  </script>
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Different green palette (still similar vibe) */
+      --bg0:#04130E;
+      --bg1:#061B14;
+      --bg2:#071F17;
+      --bg3:#051812;
+      --bg4:#020906;
+
+      --glass: rgba(255,255,255,.06);
+      --glass2: rgba(255,255,255,.09);
+      --border: rgba(255,255,255,.12);
+      --border2: rgba(255,255,255,.18);
+
+      --mint:#34ff96;     /* green glow */
+      --mint2:#12d870;    /* deeper green */
+      --aqua:#00f2ff;     /* tiny accent (used very lightly) */
+
+      --text:#EAFDF4;
+      --muted: rgba(234,253,244,.72);
+
+      --radius: 26px;
+      --shadow: 0 30px 90px rgba(0,0,0,.65);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 10% 0%, rgba(52,255,150,.12), transparent 60%),
+                  radial-gradient(900px 700px at 100% 20%, rgba(18,216,112,.12), transparent 55%),
+                  linear-gradient(180deg, var(--bg0), var(--bg4));
+      overflow-x:hidden;
+    }
+    a{ color:inherit; text-decoration:none; }
+
+    .page-wrapper{ width:100%; overflow:hidden; }
+
+    /* --- liquid / blob background --- */
+    .liquid-bg{
+      position:absolute; inset:0;
+      pointer-events:none;
+      overflow:hidden;
+      z-index:0;
+    }
+    .blob{
+      position:absolute;
+      width:520px; height:520px;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity:.55;
+      transform: translate3d(0,0,0);
+      background: radial-gradient(circle at 30% 30%, rgba(52,255,150,.55), rgba(18,216,112,.25), transparent 65%);
+      animation: floaty 14s ease-in-out infinite;
+    }
+    .blob.b2{
+      width:620px; height:620px;
+      opacity:.35;
+      background: radial-gradient(circle at 35% 35%, rgba(0,242,255,.25), rgba(52,255,150,.20), transparent 70%);
+      animation-duration: 18s;
+    }
+    .blob.b3{
+      width:460px; height:460px;
+      opacity:.40;
+      background: radial-gradient(circle at 35% 35%, rgba(18,216,112,.50), rgba(52,255,150,.18), transparent 70%);
+      animation-duration: 16s;
+    }
+    @keyframes floaty{
+      0%   { transform: translate(-10%, -10%) scale(1); }
+      50%  { transform: translate(12%, 10%) scale(1.06); }
+      100% { transform: translate(-10%, -10%) scale(1); }
+    }
+
+    /* --- navbar (floating glass) --- */
+    .navbar{
+      z-index:1030;
+      padding: 1.25rem 0;
+      transition: all .35s ease;
+    }
+    .navbar-scrolled{
+      padding: .85rem 0;
+      background: rgba(255,255,255,.05) !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 35px rgba(0,0,0,.20);
+    }
+    .navbar-brand img{ height:40px; width:auto; }
+
+    .nav-link{
+      color: rgba(234,253,244,.88) !important;
+      font-weight: 500;
+      margin: 0 .85rem;
+      transition: all .2s ease;
+    }
+    .nav-link:hover{ color: var(--mint) !important; }
+
+    @media (max-width: 991px){
+      .navbar-collapse{
+        background: rgba(4,19,14,.92);
+        border: 1px solid rgba(255,255,255,.10);
+        border-radius: 16px;
+        padding: 12px 10px;
+        margin-top: 10px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
       }
     }
-  </script>
 
-  <!-- ===================== SCHEMA (JSON-LD) ===================== -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Stream",
-    "url":"https://streamwebsite.com.ng/",
-    "logo":"https://streamwebsite.com.ng/assets/stream-logo.png",
-    "image":"https://streamwebsite.com.ng/assets/stream-logo.png"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"Stream Website — Social Platform & Earnings",
-    "url":"https://streamwebsite.com.ng/",
-    "potentialAction":{
-      "@type":"SearchAction",
-      "target":"https://streamwebsite.com.ng/blog?q={search_term_string}",
-      "query-input":"required name=search_term_string"
+    .navbar-toggler{
+      border:none;
+      color: var(--text);
+      padding:0;
+      font-size: 1.85rem;
     }
-  }
-  </script>
+    .navbar-toggler:focus{ box-shadow:none; }
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      { "@type":"ListItem","position":1,"name":"Home","item":"https://streamwebsite.com.ng/" },
-      { "@type":"ListItem","position":2,"name":"Who We Are","item":"https://streamwebsite.com.ng/#about" },
-      { "@type":"ListItem","position":3,"name":"Register","item":"https://streamwebsite.com.ng/how-to-register.html" }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"Stream",
-    "applicationCategory":["LifestyleApplication","SocialNetworkingApplication"],
-    "operatingSystem":"Android, iOS, Web",
-    "offers":{"@type":"Offer","price":0,"priceCurrency":"NGN"},
-    "aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"ratingCount":1320},
-    "url":"https://streamwebsite.com.ng/",
-    "downloadUrl":"https://streamwebsite.com.ng/#download",
-    "softwareVersion":"1.0.1",
-    "image":"https://streamwebsite.com.ng/img/stream-logo.png",
-    "description":"Stream is a fast-growing lifestyle and social networking platform in Nigeria that helps people connect and explore earning opportunities."
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"VideoObject",
-    "name":"Stream — Quick Overview",
-    "description":"Discover Stream, a fast-growing lifestyle platform. Learn how to register, connect, and explore earning opportunities today.",
-    "thumbnailUrl":"https://streamwebsite.com.ng/img/stream-logo.png",
-    "uploadDate":"2025-08-10T12:00:00+01:00",
-    "contentUrl":"https://streamwebsite.com.ng/video/stream-hero.mp4",
-    "publisher":{
-      "@type":"Organization",
-      "name":"Stream",
-      "logo":{"@type":"ImageObject","url":"https://streamwebsite.com.ng/img/stream-logo.png"}
+    /* --- buttons --- */
+    .btn-custom{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 34px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing:.2px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      white-space: nowrap;
+      user-select:none;
     }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"What is Stream Website?","acceptedAnswer":{"@type":"Answer","text":"Stream Website is an online platform where you can connect with people, engage with the community, and earn rewards through eligible activities."}},
-      {"@type":"Question","name":"How do I register on Stream?","acceptedAnswer":{"@type":"Answer","text":"To register, visit streamwebsite.com.ng, click on 'Register', fill in your details, and follow the verification prompts to complete your account."}},
-      {"@type":"Question","name":"How does Stream turn entertainment into income?","acceptedAnswer":{"@type":"Answer","text":"Stream partners with content companies and platforms and distributes eligible rewards to users for collaboration and engagement, depending on program rules and availability."}},
-      {"@type":"Question","name":"Is Stream safe to use?","acceptedAnswer":{"@type":"Answer","text":"Stream is designed with user safety in mind. Always use the official domain streamwebsite.com.ng and avoid unofficial links."}},
-      {"@type":"Question","name":"What is the official Stream site?","acceptedAnswer":{"@type":"Answer","text":"The official Stream website is streamwebsite.com.ng."}}
-    ]
-  }
-  </script>
-
-  <!-- ===================== CSS (CLEAN + RESPONSIVE) ===================== -->
-  <style>
-  :root {
-    --bg-primary: #040a07;
-    --bg-secondary: #06110b;
-    --brand-primary: #34ff96;
-    --brand-secondary: #12d870;
-    --text-primary: #eafff2;
-    --text-secondary: rgba(234, 255, 242, .75);
-    --glass-primary: rgba(10, 24, 16, .55);
-    --glass-secondary: rgba(8, 18, 12, .78);
-    --radius: 20px;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: 100%; max-width: 100%; overflow-x: hidden; scroll-padding-top: 90px; }
-  body {
-    font-family: 'Poppins', system-ui, sans-serif;
-    color: var(--text-primary);
-    background:
-      radial-gradient(1200px 700px at 10% 0%, rgba(52,255,150,.18), transparent 60%),
-      radial-gradient(900px 600px at 100% 30%, rgba(18,216,112,.12), transparent 55%),
-      radial-gradient(1200px 700px at 30% 100%, rgba(52,255,150,.08), transparent 55%),
-      linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 40%, var(--bg-primary) 100%);
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    overflow-x: hidden;
-  }
-
-  /* iOS / small-screen overflow guards */
-  body, section, nav, footer { max-width: 100%; }
-  img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
-  .container-custom, .glass, .glass-strong, .card { min-width: 0; }
-  .container-custom * { min-width: 0; }
-  p, a, span, div { word-break: break-word; overflow-wrap: anywhere; }
-
-  /* Scrollbar */
-  ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: rgba(10, 24, 16, 0.3); }
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--brand-primary), var(--brand-secondary));
-    border-radius: 5px;
-  }
-
-  /* Layout helpers */
-  section { padding: clamp(3.5rem, 6vw, 8rem) 1.25rem; }
-  .container-custom { max-width: 1280px; margin: 0 auto; width: 100%; padding: 0 clamp(1rem, 3vw, 1.5rem); }
-  h1, h2, h3, h4 { font-family: 'Montserrat', 'Poppins', sans-serif; font-weight: 800; }
-  a { color: inherit; }
-
-  /* Glass */
-  .glass {
-    background: var(--glass-primary);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  }
-  .glass-strong {
-    background: var(--glass-secondary);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(52, 255, 150, 0.15);
-    border-radius: var(--radius);
-  }
-
-  /* Buttons */
-  .btn-primary {
-    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
-    color: #07110b;
-    padding: 0.875rem 1.75rem;
-    border-radius: 12px;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1);
-    box-shadow: 0 8px 32px rgba(52, 255, 150, 0.2);
-    will-change: transform;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(52, 255, 150, 0.28); }
-
-  .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
-    padding: 0.875rem 1.75rem;
-    border-radius: 12px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-    transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), background 0.25s cubic-bezier(0.16,1,0.3,1);
-    will-change: transform;
-  }
-  .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
-
-  /* Cards */
-  .card {
-    background: var(--glass-primary);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1);
-    will-change: transform;
-  }
-  @media (hover:hover) {
-    .card:hover { transform: translateY(-5px); border-color: rgba(52, 255, 150, 0.3); box-shadow: 0 14px 50px rgba(0, 0, 0, 0.45); }
-  }
-
-  /* Nav */
-  .nav-link {
-    color: rgba(255, 255, 255, 0.86);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    transition: color 0.2s ease, background 0.2s ease;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-  .nav-link:hover { color: var(--brand-primary); background: rgba(52, 255, 150, 0.1); }
-
-  /* Hero video */
-  .hero-video {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0.4;
-    z-index: -1;
-  }
-
-  /* Carousel */
-  .carousel-container { position: relative; overflow: hidden; border-radius: 16px; }
-  .carousel-track { display: flex; will-change: transform; transition: transform .55s cubic-bezier(.16, 1, .3, 1); touch-action: pan-y; }
-  .carousel-item { flex: 0 0 100%; min-width: 100%; padding: 1rem; }
-
-  /* Images */
-  .stream-image { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; background: rgba(255,255,255,.05); padding: 1rem; }
-  .stream-bg {
-    background: linear-gradient(135deg, rgba(52, 255, 150, 0.1), rgba(18, 216, 112, 0.05));
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  /* About banner */
-  .about-banner { border-radius: 22px; overflow: hidden; position: relative; border: 1px solid rgba(255,255,255,.10); box-shadow: 0 18px 60px rgba(0,0,0,.55); }
-  .about-banner::before{
-    content:""; position:absolute; inset:0;
-    background:
-      radial-gradient(900px 420px at 25% 25%, rgba(52,255,150,.20), transparent 60%),
-      radial-gradient(900px 420px at 90% 40%, rgba(18,216,112,.14), transparent 60%),
-      linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75));
-    pointer-events:none; z-index:2;
-  }
-  .about-banner img{ width:100%; height:auto; }
-  .about-banner .overlay-content{
-    position:absolute; inset:0;
-    padding: clamp(18px, 3vw, 28px);
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    gap: 14px;
-    z-index:3;
-  }
-
-  /* Entry animations */
-  .reveal { opacity: 0; transform: translateY(14px); }
-  .reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .35s ease, transform .35s cubic-bezier(.16,1,.3,1); }
-
-  /* Back to top */
-  #backToTop { pointer-events:none; opacity:0; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease; }
-  #backToTop.show { pointer-events:auto; opacity:1; transform: translateY(0); }
-
-  /* ====== MOBILE RESPONSIVE FIXES (real) ====== */
-  @media (max-width: 900px){
-    /* prevent nav wrapping weirdly */
-    #mainNav .container-custom { gap: 10px; }
-  }
-
-  @media (max-width: 768px) {
-    .mobile-hidden { display: none; }
-    .btn-primary, .btn-secondary { width: 100%; }
-
-    /* tighter hero spacing */
-    #top { padding-top: 92px !important; }
-
-    /* app preview card padding smaller */
-    .carousel-item { padding: .5rem; }
-    .glass-strong { border-radius: 18px; }
-
-    /* footer + nav items don’t overflow */
-    nav a, footer a { max-width: 100%; }
-  }
-
-  @media (max-width: 640px) {
-    section { padding: 3.25rem 1rem; }
-    h1 { font-size: clamp(2rem, 7vw, 2.7rem) !important; line-height: 1.12 !important; }
-    h2 { font-size: clamp(1.6rem, 6vw, 2.2rem) !important; }
-
-    .card { padding: 1.05rem; border-radius: 18px; }
-
-    /* carousel buttons fit on tiny screens */
-    #carouselPrev, #carouselNext, #testiPrev, #testiNext {
-      width: 49%;
-      padding: .75rem .9rem;
-      font-size: .95rem;
+    .btn-solid{
+      background: linear-gradient(135deg, var(--mint), var(--mint2));
+      color: #04130E;
+      border: none;
+      box-shadow: 0 18px 45px rgba(18,216,112,.18), 0 0 0 1px rgba(255,255,255,.05) inset;
+    }
+    .btn-solid:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(18,216,112,.25), 0 0 0 1px rgba(255,255,255,.07) inset;
+    }
+    .btn-glass{
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.20);
+      color: var(--text);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 16px 35px rgba(0,0,0,.20);
+    }
+    .btn-glass:hover{
+      transform: translateY(-2px);
+      border-color: rgba(52,255,150,.45);
+      box-shadow: 0 18px 50px rgba(52,255,150,.12), 0 16px 35px rgba(0,0,0,.22);
+    }
+    .btn-nav{
+      padding: 9px 22px;
+      font-size: .92rem;
     }
 
-    /* reduce dots + spacing */
-    #appDots { gap: 6px; }
-  }
+    /* --- hero --- */
+    #hero{
+      position:relative;
+      min-height: 100svh;
+      overflow:hidden;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      min-height: 100svh;
+      display:flex;
+      align-items:center;
+      padding-top: clamp(84px, 10vh, 120px);
+      padding-bottom: clamp(28px, 6vh, 56px);
+    }
 
-  @media (max-width: 420px){
-    /* ultra-small phones */
-    .container-custom { padding-left: 14px; padding-right: 14px; }
-    #backToTop { right: 14px; bottom: 14px; }
-    .about-banner .overlay-content { gap: 10px; }
-  }
+    .hero-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(234,253,244,.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      width: fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--mint);
+      box-shadow: 0 0 18px rgba(52,255,150,.55);
+      flex: 0 0 auto;
+    }
 
-  /* ====== MODAL TABLE MOBILE SCROLL ====== */
-  #modalContent table { width: 100%; }
-  @media (max-width: 480px){
-    #modalContent .bg-white\/5 { overflow-x: auto; }
-    #modalContent table { min-width: 420px; }
-  }
+    .hero-title{
+      font-weight: 800;
+      letter-spacing: -.6px;
+      line-height: 1.05;
+      margin: 16px 0 14px;
+      font-size: clamp(1.95rem, 4.7vw, 3.6rem);
+    }
+    .hero-title span{
+      background: linear-gradient(135deg, var(--mint), rgba(234,253,244,.95));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-desc{
+      color: var(--muted);
+      max-width: 560px;
+      font-size: clamp(.98rem, 1.15vw, 1.05rem);
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
 
-  /* Accessibility */
-  .sr-only {
-    position: absolute; width: 1px; height: 1px;
-    padding: 0; margin: -1px; overflow: hidden;
-    clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
-  }
-  *:focus { outline: 2px solid var(--brand-primary); outline-offset: 2px; }
+    /* ✅ HERO IMAGE */
+    .hero-card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      width: min(520px, 100%);
+      margin-inline: auto;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(450px 260px at 20% 10%, rgba(52,255,150,.22), transparent 60%),
+                  radial-gradient(420px 260px at 80% 70%, rgba(18,216,112,.18), transparent 65%);
+      pointer-events:none;
+    }
+    .hero-card-inner{
+      position:relative;
+      padding: clamp(12px, 2.2vw, 18px);
+    }
+    .hero-img{
+      width:100%;
+      display:block;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-fit: cover;
+      max-height: min(360px, 46svh);
+    }
 
-  @media (prefers-reduced-motion: reduce){
-    .carousel-track { transition: none !important; }
-    .btn-primary, .btn-secondary, .card { transition: none !important; }
-    .reveal, .reveal.is-visible { transition: none !important; transform: none !important; opacity: 1 !important; }
-  }
-</style>
+    .mini-stats{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .stat{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding: 10px 12px;
+      text-align:center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      min-height: 72px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .stat b{ display:block; font-size: 1rem; }
+    .stat small{ color: rgba(234,253,244,.68); }
 
+    /* ✅ SUPER RESPONSIVE tweaks */
+    @media (max-width: 991px){
+      .hero-inner{ padding-top: 92px; }
+      .mini-stats{ grid-template-columns: 1fr; }
+      .hero-card{ width: min(520px, 100%); }
+      .hero-img{ max-height: min(320px, 42svh); }
+    }
+    @media (max-width: 575px){
+      .hero-kicker{ width: 100%; justify-content:center; text-align:center; }
+      .hero-desc{ max-width: 100%; }
+      .btn-custom{ width: 100%; justify-content:center; }
+      .hero-title{ text-align:center; }
+      .hero-desc{ text-align:center; }
+      .hero-inner .col-lg-6:first-child{ display:flex; flex-direction:column; align-items:center; }
+      .hero-inner .mt-4{ justify-content:center; }
+      .hero-img{ aspect-ratio: 1 / 1; max-height: min(290px, 40svh); }
+    }
+
+    /* --- section common --- */
+    .section-padding{ padding: clamp(58px, 7vw, 96px) 0; }
+    .section-title{
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      display:inline-block;
+      margin-bottom: 12px;
+    }
+    .section-subtitle{
+      color: rgba(234,253,244,.70);
+      max-width: 680px;
+      margin: 0 auto 38px;
+      line-height: 1.7;
+      padding-inline: 10px;
+    }
+
+    /* --- about --- */
+    #about{
+      background: linear-gradient(180deg, var(--bg1), var(--bg2));
+      border-top: 1px solid rgba(255,255,255,.10);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      position:relative;
+    }
+    #about::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.05) 1px, transparent 0);
+      background-size: 28px 28px;
+      opacity:.35;
+      pointer-events:none;
+    }
+    .about-card{
+      position:relative;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      overflow:hidden;
+      box-shadow: 0 24px 70px rgba(0,0,0,.35);
+      cursor:pointer;
+    }
+    .about-card img{
+      width:100%; height:auto; display:block;
+      transition: transform .6s ease;
+    }
+    .about-card:hover img{ transform: scale(1.04); }
+    .about-text{
+      color: rgba(234,253,244,.82);
+      line-height: 1.85;
+      font-size: 1.02rem;
+      position:relative;
+    }
+
+    /* --- features --- */
+    #features{
+      background: linear-gradient(180deg, var(--bg2), var(--bg3));
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .feature{
+      height:100%;
+      padding: 26px 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+      position:relative;
+      overflow:hidden;
+      cursor:pointer;
+    }
+    .feature::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(340px 220px at 20% 10%, rgba(52,255,150,.16), transparent 60%);
+      opacity:0;
+      transition: opacity .25s ease;
+      pointer-events:none;
+    }
+    .feature:hover{
+      transform: translateY(-8px);
+      border-color: rgba(52,255,150,.40);
+      background: rgba(255,255,255,.075);
+      box-shadow: 0 20px 55px rgba(0,0,0,.35), 0 0 40px rgba(52,255,150,.07);
+    }
+    .feature:hover::before{ opacity:1; }
+
+    .ficon{
+      width: 62px; height: 62px;
+      border-radius: 18px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(4,19,14,.45);
+      border: 1px solid rgba(52,255,150,.55);
+      color: var(--mint);
+      font-size: 1.4rem;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.05) inset;
+      margin-bottom: 14px;
+    }
+    .feature h4{ font-weight: 800; margin: 8px 0 10px; }
+    .feature p{ color: rgba(234,253,244,.72); line-height: 1.65; margin:0; }
+
+    /* --- pricing --- */
+    #pricing{
+      background: linear-gradient(180deg, var(--bg3), var(--bg4));
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .price-card{
+      height:100%;
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.12);
+      overflow:hidden;
+      position:relative;
+      box-shadow: 0 26px 85px rgba(0,0,0,.55);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      cursor:pointer;
+    }
+    .price-card:hover{
+      transform: translateY(-8px);
+      border-color: rgba(52,255,150,.35);
+      box-shadow: 0 30px 95px rgba(0,0,0,.60), 0 0 60px rgba(52,255,150,.06);
+    }
+    .price-card.reco::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: conic-gradient(from 180deg, rgba(52,255,150,.26), transparent 25%, rgba(18,216,112,.18), transparent 55%, rgba(52,255,150,.22));
+      filter: blur(16px);
+      opacity:.55;
+      animation: spin 10s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes spin{
+      0%{ transform: rotate(0deg); }
+      100%{ transform: rotate(360deg); }
+    }
+    .price-inner{ position:relative; padding: 28px 22px; }
+    .badge-reco{
+      position:absolute;
+      top: 18px;
+      right: -52px;
+      transform: rotate(45deg);
+      padding: 7px 56px;
+      background: linear-gradient(135deg, var(--mint), var(--mint2));
+      color:#04130E;
+      font-weight: 900;
+      letter-spacing: .6px;
+      font-size: .78rem;
+      box-shadow: 0 18px 40px rgba(18,216,112,.18);
+    }
+    .price{
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing:-1px;
+      margin: 12px 0 6px;
+      color: var(--mint);
+      text-shadow: 0 0 24px rgba(52,255,150,.20);
+    }
+    .price small{ font-size: 1.2rem; vertical-align: top; }
+    .plist{
+      list-style:none;
+      padding:0;
+      margin: 18px 0 22px;
+    }
+    .plist li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 10px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: rgba(234,253,244,.80);
+    }
+    .plist li:first-child{ border-top:none; }
+    .plist i{ color: var(--mint); margin-top: 4px; }
+
+    /* --- faq + cta --- */
+    #faqwrap{
+      background: linear-gradient(180deg, var(--bg4), #000);
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .accordion-item{
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--text);
+      border-radius: 14px !important;
+      overflow:hidden;
+      margin-bottom: 10px;
+    }
+    .accordion-button{
+      background: transparent;
+      color: var(--text);
+      font-weight: 700;
+    }
+    .accordion-button:focus{ box-shadow:none; }
+    .accordion-button::after{ filter: invert(1); }
+    .accordion-button:not(.collapsed){
+      background: rgba(52,255,150,.10);
+      color: var(--mint);
+      box-shadow:none;
+    }
+
+    .cta{
+      margin-top: 36px;
+      border-radius: 30px;
+      background:
+        radial-gradient(900px 380px at 20% 0%, rgba(52,255,150,.14), transparent 60%),
+        linear-gradient(90deg, rgba(0,0,0,.88), rgba(4,19,14,.70));
+      border: 1px solid rgba(255,255,255,.14);
+      padding: 52px 22px;
+      text-align:center;
+      overflow:hidden;
+      position:relative;
+    }
+    .cta h2{ font-weight: 900; }
+    .cta p{ color: rgba(234,253,244,.70); max-width: 720px; margin: 10px auto 22px; line-height:1.7; }
+
+    /* --- footer --- */
+    footer{
+      background:#000;
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding: 56px 0 24px;
+    }
+    .footer-desc{ color: rgba(234,253,244,.58); line-height:1.7; }
+    .footer-heading{ font-weight: 800; margin-bottom: 14px; }
+    .footer-links{ list-style:none; padding:0; margin:0; }
+    .footer-links li{ margin-bottom: 10px; }
+    .footer-links a{ color: rgba(234,253,244,.66); }
+    .footer-links a:hover{ color: var(--mint); }
+
+    .social a{
+      display:inline-flex;
+      width:40px; height:40px;
+      align-items:center; justify-content:center;
+      border-radius: 14px;
+      margin-right: 10px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .social a:hover{
+      transform: translateY(-3px);
+      border-color: rgba(52,255,150,.40);
+      background: rgba(52,255,150,.12);
+    }
+    .copyright{
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: rgba(234,253,244,.45);
+      font-size: .9rem;
+      text-align:center;
+    }
+
+    /* --- mobile sticky button --- */
+    #mobile-sticky{
+      position: fixed;
+      left: 5%;
+      width: 90%;
+      bottom: 28px;
+      z-index: 1040;
+      transform: translateY(140%);
+      opacity: 0;
+      transition: transform .35s ease, opacity .35s ease, bottom .1s linear;
+      padding: 16px 18px;
+      border-radius: 999px;
+      text-align:center;
+      font-weight: 900;
+      letter-spacing:.2px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.30), inset 0 0 18px rgba(255,255,255,.06);
+    }
+    #mobile-sticky.show{
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
 </head>
 
-<body class="bg-black text-white">
-  <!-- Scroll Progress -->
-  <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand to-brand2 z-50" style="width:0%"></div>
+<body>
+  <div class="page-wrapper">
 
-  <!-- Navigation -->
-  <nav id="mainNav" class="fixed top-0 left-0 right-0 z-40 glass py-4">
-    <div class="container-custom flex items-center justify-between flex-wrap gap-3">
-      <!-- Logo -->
-      <a href="https://streamwebsite.com.ng/" class="flex items-center gap-3" aria-label="Stream Home">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand to-brand2 flex items-center justify-center overflow-hidden">
-          <img src="/assets/stream-logo.png" alt="Stream logo" class="w-7 h-7" width="28" height="28" decoding="async" loading="eager" />
-        </div>
-        <div class="min-w-0">
-          <h1 class="font-display font-bold text-xl whitespace-nowrap">Stream</h1>
-          <p class="text-xs text-brand opacity-80 whitespace-nowrap">Earn • Stream • Connect</p>
-        </div>
-      </a>
-
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center gap-6">
-        <a href="#about" class="nav-link">Who We Are</a>
-        <a href="#features" class="nav-link">Features</a>
-        <a href="#testimonials" class="nav-link">Testimonials</a>
-        <a href="#packages" class="nav-link">Packages</a>
-        <a href="#download" class="nav-link">Download</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-        <a href="/how-to-register.html" class="btn-primary">
-          <i class="fas fa-user-plus"></i> Register
-        </a>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="liquid-bg">
+        <div class="blob" style="top:-120px; left:-120px;"></div>
+        <div class="blob b2" style="top:10%; right:-220px;"></div>
+        <div class="blob b3" style="bottom:-160px; left:35%;"></div>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobileMenuButton" class="md:hidden btn-secondary" aria-controls="mobileMenu" aria-expanded="false">
-        <i class="fas fa-bars"></i><span class="ml-2">Menu</span>
-      </button>
-    </div>
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html" aria-label="Stream Africa home">
+            <img src="assets/logo.svg" alt="Stream Africa Logo">
+          </a>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden glass-strong mt-4 p-6 rounded-xl container-custom">
-      <div class="grid grid-cols-2 gap-3 mb-4">
-        <a href="#about" class="btn-secondary text-center"><i class="fas fa-circle-info"></i> About</a>
-        <a href="#features" class="btn-secondary text-center"><i class="fas fa-wand-magic-sparkles"></i> Features</a>
-        <a href="#testimonials" class="btn-secondary text-center"><i class="fas fa-comments"></i> Reviews</a>
-        <a href="#packages" class="btn-secondary text-center"><i class="fas fa-layer-group"></i> Packages</a>
-      </div>
-      <div class="grid grid-cols-2 gap-3">
-        <a href="#download" class="btn-secondary text-center"><i class="fas fa-download"></i> Download</a>
-        <a href="#faq" class="btn-secondary text-center"><i class="fas fa-circle-question"></i> FAQ</a>
-      </div>
-      <div class="mt-4 flex gap-3">
-        <a href="/how-to-register.html" class="btn-primary flex-1 text-center"><i class="fas fa-user-plus"></i> Register</a>
-        <a href="#top" class="btn-secondary flex-1 text-center"><i class="fas fa-arrow-up"></i> Top</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section id="top" class="pt-24 pb-12 md:pt-32 md:pb-20 relative overflow-hidden">
-    <video class="hero-video" autoplay muted loop playsinline poster="/img/hero-poster.jpg">
-      <source src="/video/stream-hero.mp4" type="video/mp4" />
-    </video>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
-
-    <div class="container-custom relative z-10">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="reveal">
-          <div class="inline-flex items-center gap-2 bg-white/5 rounded-full px-4 py-2 mb-6">
-            <div class="w-2 h-2 rounded-full bg-brand"></div>
-            <span class="text-sm">Official Stream • Connect • Earn</span>
+          <div class="d-flex align-items-center d-lg-none ms-auto">
+            <a href="register.html" class="btn-custom btn-solid btn-nav">Register</a>
+            <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Open navigation">
+              <i class="fa-solid fa-bars"></i>
+            </button>
           </div>
 
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Stream — where
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand2">connection</span>
-            meets income potential
-          </h1>
-
-          <p class="text-lg text-gray-300 mb-8">
-            Stream is building a new digital economy where your attention, creativity, and collaboration can translate into real rewards.
-            Explore what Stream is, how it works, and how to get started.
-          </p>
-
-          <div class="flex flex-wrap gap-4 mb-8">
-            <a href="/how-to-register.html" class="btn-primary"><i class="fas fa-user-plus"></i> Register on Stream</a>
-            <a href="#about" class="btn-secondary"><i class="fas fa-circle-info"></i> Who we are</a>
-          </div>
-
-          <div class="flex flex-wrap gap-3">
-            <span class="glass px-4 py-2 rounded-full text-sm"><i class="fas fa-shield-halved text-brand mr-2"></i>Official Platform</span>
-            <span class="glass px-4 py-2 rounded-full text-sm"><i class="fas fa-bolt text-brand mr-2"></i>Mobile-first</span>
-            <span class="glass px-4 py-2 rounded-full text-sm"><i class="fas fa-handshake text-brand mr-2"></i>Collaboration</span>
+          <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about">How it Works</a></li>
+              <li class="nav-item"><a class="nav-link" href="#features">What You Get</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pricing">Packages</a></li>
+              <li class="nav-item"><a class="nav-link" href="#faqwrap">FAQs</a></li>
+            </ul>
+            <a href="register.html" class="btn-custom btn-solid btn-nav d-none d-lg-inline-flex">
+              <i class="fa-solid fa-bolt"></i> Register
+            </a>
           </div>
         </div>
+      </nav>
 
-        <div class="reveal">
-          <div class="glass-strong p-6 rounded-2xl">
-            <div class="flex justify-between items-center mb-6">
-              <h3 class="font-display font-bold text-xl"><i class="fas fa-mobile-screen-button text-brand mr-2"></i>App Preview</h3>
-              <span class="text-sm text-gray-400">Swipe to explore</span>
+      <div class="container hero-inner">
+        <div class="row align-items-center g-4 w-100">
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="hero-kicker">
+              <span class="dot"></span>
+              <small><b>Stream Website</b> • How it works • Stream Registration</small>
             </div>
 
-            <div class="carousel-container rounded-xl overflow-hidden mb-6">
-              <div class="carousel-track" id="appCarousel">
-                <div class="carousel-item p-6">
-                  <div class="card">
-                    <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-                        <i class="fas fa-compass text-brand text-xl"></i>
-                      </div>
-                      <div>
-                        <h4 class="font-bold text-lg">Discover</h4>
-                        <p class="text-sm text-gray-400">Find communities & trends</p>
-                      </div>
-                    </div>
-                    <div class="h-40 rounded-xl stream-bg">
-                      <img src="/assets/stream-logo.png" alt="Stream Discover Preview" class="stream-image p-4" loading="lazy" decoding="async">
-                    </div>
-                  </div>
-                </div>
+            <h1 class="hero-title">
+              Stream, Earn & Grow — <span>in one continuous flow</span>
+            </h1>
 
-                <div class="carousel-item p-6">
-                  <div class="card">
-                    <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-                        <i class="fas fa-handshake text-brand text-xl"></i>
-                      </div>
-                      <div>
-                        <h4 class="font-bold text-lg">Collaborate</h4>
-                        <p class="text-sm text-gray-400">Engage with campaigns</p>
-                      </div>
-                    </div>
-                    <div class="h-40 rounded-xl stream-bg">
-                      <img src="/assets/stream-logo.png" alt="Stream Collaborate Preview" class="stream-image p-4" loading="lazy" decoding="async">
-                    </div>
-                  </div>
-                </div>
+            <p class="hero-desc">
+              Stream Africa is a digital movement redefining how Africans experience entertainment and earn from it.
+              Built on the belief that your time online should pay you back, the Stream website connects people, creativity,
+              and opportunity — and turns approved engagement into real value.
+            </p>
 
-                <div class="carousel-item p-6">
-                  <div class="card">
-                    <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-                        <i class="fas fa-gift text-brand text-xl"></i>
-                      </div>
-                      <div>
-                        <h4 class="font-bold text-lg">Rewards</h4>
-                        <p class="text-sm text-gray-400">Track eligible earnings</p>
-                      </div>
-                    </div>
-                    <div class="h-40 rounded-xl stream-bg">
-                      <img src="/assets/stream-logo.png" alt="Stream Rewards Preview" class="stream-image p-4" loading="lazy" decoding="async">
-                    </div>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="register.html" class="btn-custom btn-solid">
+                <i class="fa-solid fa-user-plus"></i> Start Stream Registration
+              </a>
+              <a href="#about" class="btn-custom btn-glass">
+                <i class="fa-solid fa-circle-info"></i> See How Stream Works
+              </a>
+            </div>
+
+            <div class="mt-4 d-flex flex-wrap gap-3" style="color: rgba(234,253,244,.65);">
+              <span><i class="fa-solid fa-handshake me-2" style="color:var(--mint)"></i>Partnership-driven rewards</span>
+              <span><i class="fa-solid fa-shield-halved me-2" style="color:var(--mint)"></i>Verified tasks & campaigns</span>
+              <span><i class="fa-solid fa-wallet me-2" style="color:var(--mint)"></i>Earn from real engagement</span>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <a href="register.html" class="d-block hero-card" aria-label="Register on Stream Africa">
+              <div class="hero-card-inner">
+                <img class="hero-img" src="assets/stream-audio.jpeg" alt="Stream website preview">
+                <div class="mini-stats">
+                  <div class="stat">
+                    <b>Engagement</b>
+                    <small>Approved tasks & campaigns</small>
+                  </div>
+                  <div class="stat">
+                    <b>Rewards</b>
+                    <small>Shared from partnerships</small>
+                  </div>
+                  <div class="stat">
+                    <b>Growth</b>
+                    <small>Skills & opportunities</small>
                   </div>
                 </div>
               </div>
+            </a>
+            <div class="text-center mt-3" style="color: rgba(234,253,244,.55); font-size:.92rem;">
+              Tap the card to complete Stream registration.
             </div>
-
-            <div class="flex justify-between items-center gap-3">
-              <button class="btn-secondary" id="carouselPrev"><i class="fas fa-chevron-left"></i> Previous</button>
-              <div class="flex gap-2" aria-hidden="true" id="appDots">
-                <div class="w-2 h-2 rounded-full bg-brand"></div>
-                <div class="w-2 h-2 rounded-full bg-white/20"></div>
-                <div class="w-2 h-2 rounded-full bg-white/20"></div>
-              </div>
-              <button class="btn-secondary" id="carouselNext">Next <i class="fas fa-chevron-right"></i></button>
-            </div>
-          </div>
-
-          <div class="glass mt-6 p-4 rounded-xl">
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-sm text-gray-400">Built for modern users</span>
-              <span class="font-bold text-brand"><i class="fas fa-star"></i> 4.7/5</span>
-            </div>
-            <p class="text-sm text-gray-300">Clean layout • Strong CTAs • Smooth motion • Mobile-first reading</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="bg-gradient-to-b from-transparent to-black/25">
-    <div class="container-custom">
-      <div class="grid lg:grid-cols-2 gap-8 items-start">
-        <div class="reveal">
-          <div class="about-banner">
-            <img src="assets/who-are-we.jpeg" alt="Stream — Who are we banner" loading="lazy" decoding="async">
-            <div class="overlay-content">
-              <div class="inline-flex items-center gap-2 bg-white/5 rounded-full px-4 py-2 w-fit">
-                <span class="w-2 h-2 rounded-full bg-brand"></span>
-                <span class="text-sm">WHO ARE WE?</span>
-              </div>
+    <!-- ABOUT / HOW IT WORKS -->
+    <section id="about" class="section-padding">
+      <div class="container position-relative" style="z-index:2;">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <a href="register.html" class="about-card d-block" aria-label="Join Stream Africa">
+              <img src="assets/who-are-we.jpeg" alt="Who we are — Stream Africa">
+            </a>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="ps-lg-3 text-center text-lg-start">
+              <div class="section-title" style="color: var(--mint);">Who are we?</div>
+              <h2 style="font-weight:900; margin: 0 0 10px;">How the Stream website works</h2>
 
-              <h2 class="text-3xl md:text-4xl font-display font-bold leading-tight">
-                The Idea Behind <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand2">STREAM</span>
-              </h2>
-
-              <p class="text-gray-200 max-w-xl">
-                Stream is built on one powerful vision: to turn entertainment into income for everyday Africans and digital creators around the world.
+              <p class="about-text">
+                We are Stream, a digital movement redefining how Africans experience and earn from entertainment.
+                Built on the belief that your time online should pay you back, the Stream website connects people,
+                creativity, and opportunity in one continuous flow.
               </p>
 
-              <div class="flex flex-wrap gap-2 mt-2">
-                <span class="glass px-3 py-2 rounded-full text-sm"><i class="fas fa-music text-brand mr-2"></i>Music</span>
-                <span class="glass px-3 py-2 rounded-full text-sm"><i class="fas fa-film text-brand mr-2"></i>Movies</span>
-                <span class="glass px-3 py-2 rounded-full text-sm"><i class="fas fa-podcast text-brand mr-2"></i>Content</span>
-                <span class="glass px-3 py-2 rounded-full text-sm"><i class="fas fa-users text-brand mr-2"></i>Community</span>
+              <p class="about-text">
+                Through partnerships with artists, record labels, movie studios, and content distributors, Stream serves as
+                a bridge between creators and the audience. We help them reach real Streamers, and in return, they share a portion
+                of their royalties and ad revenue with us. Those rewards are then distributed to our users for every approved
+                collaboration they contribute to.
+              </p>
+
+              <p class="about-text" style="margin-bottom:0;">
+                Stream transforms ordinary digital engagement into real value. Every time you collaborate, you’re not just partnering —
+                you’re participating in a new digital economy where creativity and earnings flow together.
+              </p>
+
+              <div class="mt-3 d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                <a class="btn-custom btn-solid" href="register.html"><i class="fa-solid fa-arrow-right"></i> Join Stream Now</a>
+                <a class="btn-custom btn-glass" href="#pricing"><i class="fa-solid fa-tags"></i> Pick a Package</a>
               </div>
-            </div>
-          </div>
-
-          <div class="grid sm:grid-cols-3 gap-4 mt-5">
-            <div class="glass p-4 rounded-2xl">
-              <div class="text-brand font-bold text-sm">01</div>
-              <div class="font-display font-bold text-lg mt-1">Connect</div>
-              <div class="text-gray-300 text-sm mt-1">Meet people, join circles, build your digital presence.</div>
-            </div>
-            <div class="glass p-4 rounded-2xl">
-              <div class="text-brand font-bold text-sm">02</div>
-              <div class="font-display font-bold text-lg mt-1">Collaborate</div>
-              <div class="text-gray-300 text-sm mt-1">Engage in eligible activities and partnered campaigns.</div>
-            </div>
-            <div class="glass p-4 rounded-2xl">
-              <div class="text-brand font-bold text-sm">03</div>
-              <div class="font-display font-bold text-lg mt-1">Earn</div>
-              <div class="text-gray-300 text-sm mt-1">Rewards are distributed based on program rules and availability.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal">
-          <div class="glass-strong p-6 md:p-8 rounded-2xl">
-            <div class="inline-flex items-center gap-2 bg-white/5 rounded-full px-4 py-2 mb-5">
-              <i class="fas fa-circle-nodes text-brand"></i>
-              <span class="text-sm">WHO ARE WE? — The Idea Behind STREAM</span>
-            </div>
-
-            <h3 class="font-display font-bold text-2xl md:text-3xl mb-4">
-              Stream is not just a platform. It’s a new economic pathway.
-            </h3>
-
-            <p class="text-gray-300 leading-relaxed mb-5">
-              Stream is built on one powerful vision:
-              <span class="text-white font-semibold">to turn entertainment into income</span>
-              for everyday Africans and digital creators around the world.
-            </p>
-
-            <p class="text-gray-300 leading-relaxed mb-5">
-              Through strategic partnerships with <span class="text-white font-semibold">record labels</span>,
-              <span class="text-white font-semibold">movie studios</span>, <span class="text-white font-semibold">streaming platforms</span>,
-              and <span class="text-white font-semibold">content distribution companies</span>, we create a system where people don’t just watch,
-              listen, or engage — <span class="text-white font-semibold">they collaborate</span> and can earn from it.
-            </p>
-
-            <p class="text-gray-300 leading-relaxed mb-6">
-              Stream transforms ordinary digital engagement into real value. Every time you collaborate, you’re not just participating —
-              you’re joining a community where creativity, attention, and opportunities flow together.
-            </p>
-
-            <div class="grid sm:grid-cols-2 gap-4 mb-6">
-              <div class="card">
-                <div class="flex items-start gap-3">
-                  <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-                    <i class="fas fa-handshake text-brand"></i>
-                  </div>
-                  <div>
-                    <div class="font-display font-bold text-lg">Built on partnerships</div>
-                    <div class="text-gray-300 text-sm mt-1">We bridge creators, content companies, and real users in one continuous flow.</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="flex items-start gap-3">
-                  <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-                    <i class="fas fa-coins text-brand"></i>
-                  </div>
-                  <div>
-                    <div class="font-display font-bold text-lg">Rewards-driven</div>
-                    <div class="text-gray-300 text-sm mt-1">Eligible contributions can earn rewards under Stream programs and rules.</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="flex items-start gap-3">
-                  <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-                    <i class="fas fa-users text-brand"></i>
-                  </div>
-                  <div>
-                    <div class="font-display font-bold text-lg">Community-first</div>
-                    <div class="text-gray-300 text-sm mt-1">You grow faster when you’re surrounded by a real, supportive network.</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="flex items-start gap-3">
-                  <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-                    <i class="fas fa-shield-halved text-brand"></i>
-                  </div>
-                  <div>
-                    <div class="font-display font-bold text-lg">Official & secure</div>
-                    <div class="text-gray-300 text-sm mt-1">Always use streamwebsite.com.ng and avoid unofficial links.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="glass p-5 rounded-2xl">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
-                  <i class="fas fa-diagram-project text-brand"></i>
-                </div>
-                <div class="font-display font-bold text-xl">How Stream Works (Simple)</div>
-              </div>
-
-              <ol class="space-y-3 text-gray-300">
-                <li class="flex gap-3"><span class="mt-1 w-7 h-7 rounded-full bg-brand/15 text-brand flex items-center justify-center text-sm font-bold">1</span><div><span class="text-white font-semibold">Join</span> Stream and set up your profile.</div></li>
-                <li class="flex gap-3"><span class="mt-1 w-7 h-7 rounded-full bg-brand/15 text-brand flex items-center justify-center text-sm font-bold">2</span><div><span class="text-white font-semibold">Collaborate</span> through eligible activities and campaigns.</div></li>
-                <li class="flex gap-3"><span class="mt-1 w-7 h-7 rounded-full bg-brand/15 text-brand flex items-center justify-center text-sm font-bold">3</span><div><span class="text-white font-semibold">Track</span> your progress and rewards as available.</div></li>
-                <li class="flex gap-3"><span class="mt-1 w-7 h-7 rounded-full bg-brand/15 text-brand flex items-center justify-center text-sm font-bold">4</span><div><span class="text-white font-semibold">Grow</span> by staying consistent and building your network.</div></li>
-              </ol>
-
-              <p class="text-xs text-gray-400 mt-4">Note: Reward availability and rules can vary by region and may change over time.</p>
-            </div>
-
-            <div class="mt-6 flex flex-col sm:flex-row gap-3">
-              <a href="/how-to-register.html" class="btn-primary flex-1"><i class="fas fa-user-plus"></i> Start Registration</a>
-              <a href="#packages" class="btn-secondary flex-1"><i class="fas fa-layer-group"></i> View Packages</a>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="grid md:grid-cols-3 gap-6 mt-10">
-        <div class="card reveal">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-              <i class="fas fa-bullseye text-brand text-xl"></i>
-            </div>
-            <div>
-              <div class="font-display font-bold text-lg">Our mission</div>
-              <div class="text-gray-300 text-sm mt-1">Make digital time more valuable for everyday users and creators.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card reveal">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-              <i class="fas fa-wand-magic-sparkles text-brand text-xl"></i>
-            </div>
-            <div>
-              <div class="font-display font-bold text-lg">Our belief</div>
-              <div class="text-gray-300 text-sm mt-1">Entertainment, community, and opportunity can flow together.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card reveal">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-              <i class="fas fa-rocket text-brand text-xl"></i>
-            </div>
-            <div>
-              <div class="font-display font-bold text-lg">Our focus</div>
-              <div class="text-gray-300 text-sm mt-1">Simple onboarding, premium UI, and clear action steps.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="features" class="bg-gradient-to-b from-transparent to-black/20">
-    <div class="container-custom">
-      <div class="text-center mb-12 reveal">
-        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Stream Features</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-          Discover how Stream turns everyday activities into real earning opportunities through smart digital systems.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="card reveal">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
-            <i class="fas fa-person-walking text-brand text-2xl"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl mb-3">Stream Walk-to-Earn</h3>
-          <p class="text-gray-300">
-            One of Stream’s most innovative features where your movement becomes money. Every step you take counts —
-            turning daily walking into a steady cash flow while improving your lifestyle.
-          </p>
-          <a href="/how-to-register.html" class="inline-flex items-center gap-2 mt-4 text-brand font-semibold">
-            <i class="fas fa-arrow-right"></i> How to Register
-          </a>
-        </div>
-
-        <div class="card reveal">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
-            <i class="fas fa-city text-brand text-2xl"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl mb-3">Stream Digital Real Estate</h3>
-          <p class="text-gray-300">
-            Own, trade, and profit from premium digital assets inside the Stream ecosystem. Buy virtual properties at
-            lower prices and resell them for higher returns, building long-term income through digital ownership.
-          </p>
-          <a href="/how-to-register.html" class="inline-flex items-center gap-2 mt-4 text-brand font-semibold">
-            <i class="fas fa-arrow-right"></i> Register Now
-          </a>
-        </div>
-
-        <div class="card reveal">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
-            <i class="fas fa-bullhorn text-brand text-2xl"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl mb-3">Stream Buzz</h3>
-          <p class="text-gray-300">
-            Get rewarded for talking about Stream on social media. Create authentic posts, videos, or stories about
-            Stream, use official hashtags, and earn once your content is verified by admins.
-          </p>
-          <a href="/how-to-register.html" class="inline-flex items-center gap-2 mt-4 text-brand font-semibold">
-            <i class="fas fa-arrow-right"></i> Start Earning
-          </a>
-        </div>
-
-        <div class="card reveal">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
-            <i class="fas fa-calendar-check text-brand text-2xl"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl mb-3">Consistency Rewards</h3>
-          <p class="text-gray-300">
-            Stream rewards discipline and activity. The more consistent and active you are across tasks and features,
-            the higher your earning potential grows over time.
+    <!-- FEATURES -->
+    <section id="features" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="section-title" style="color: var(--mint);">What you get</div>
+          <h2 style="font-weight:900; margin: 0 0 10px;">Everything you need to earn and grow</h2>
+          <p class="section-subtitle">
+            After Stream registration, you can access approved engagement tasks, partner campaigns, gigs, and skill development.
+            The Stream website is built to keep things simple: do verified actions, build value, and earn from the flow.
           </p>
         </div>
 
-        <div class="card reveal">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
-            <i class="fas fa-users text-brand text-2xl"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl mb-3">Community-Driven Earnings</h3>
-          <p class="text-gray-300">
-            Stream thrives on collaboration. Engage with the community, share insights, and participate in verified
-            activities that unlock more earning opportunities.
-          </p>
-        </div>
-
-        <div class="card reveal">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center mb-4">
-            <i class="fas fa-lock text-brand text-2xl"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl mb-3">Secure & Transparent</h3>
-          <p class="text-gray-300">
-            Stream is built with transparency in mind. Always use the official Stream website and follow verified
-            guidelines to stay safe while earning.
-          </p>
-        </div>
-      </div>
-
-      <div class="text-center mt-12 reveal">
-        <a href="/how-to-register.html" class="btn-primary">
-          <i class="fas fa-rocket"></i> Register on Stream Now
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="bg-gradient-to-b from-black/20 to-transparent">
-    <div class="container-custom">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 reveal">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-display font-bold mb-3">What People Say</h2>
-          <p class="text-lg text-gray-300 max-w-2xl">Real experiences from people using Stream — smooth onboarding, clear tasks, and a platform that feels premium.</p>
-        </div>
-        <div class="flex gap-3 flex-wrap">
-          <button class="btn-secondary" id="testiPrev"><i class="fas fa-chevron-left"></i> Prev</button>
-          <button class="btn-secondary" id="testiNext">Next <i class="fas fa-chevron-right"></i></button>
-        </div>
-      </div>
-
-      <div class="relative">
-        <div class="carousel-container">
-          <div class="carousel-track" id="testimonialsCarousel">
-            <div class="carousel-item p-4">
-              <div class="card overflow-hidden relative reveal">
-                <div class="p-6 relative">
-                  <div class="flex items-start justify-between gap-4 mb-4">
-                    <div class="flex items-center gap-3">
-                      <div class="w-12 h-12 rounded-full glass flex items-center justify-center">
-                        <i class="fas fa-user text-brand text-xl"></i>
-                      </div>
-                      <div>
-                        <h3 class="font-display font-bold text-xl leading-tight">Daniel U.</h3>
-                        <p class="text-gray-400 text-sm">Enugu, Nigeria</p>
-                      </div>
-                    </div>
-                    <span class="glass px-3 py-1 rounded-full text-sm whitespace-nowrap">
-                      <i class="fas fa-star text-brand"></i> 4.8
-                    </span>
-                  </div>
-
-                  <p class="text-gray-300 leading-relaxed">
-                    “Stream feels clean and easy. I understood everything from the first day, and the tasks layout is
-                    not confusing like some platforms. The whole design is premium.”
-                  </p>
-
-                  <div class="mt-5 flex items-center justify-between gap-3 flex-wrap">
-                    <div class="flex items-center gap-2 text-sm text-gray-400">
-                      <i class="fas fa-check-circle text-brand"></i> Verified user
-                    </div>
-                    <div class="flex gap-1 text-brand">
-                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
-                    </div>
-                  </div>
-                </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <a href="register.html" class="d-block h-100">
+              <div class="feature">
+                <div class="ficon"><i class="fa-solid fa-play"></i></div>
+                <h4>Verified Engagement Tasks</h4>
+                <p>Complete approved music/video engagement tasks that are tied to real partnerships and campaigns.</p>
               </div>
-            </div>
-
-            <div class="carousel-item p-4">
-              <div class="card overflow-hidden relative reveal">
-                <div class="p-6 relative">
-                  <div class="flex items-start justify-between gap-4 mb-4">
-                    <div class="flex items-center gap-3">
-                      <div class="w-12 h-12 rounded-full glass flex items-center justify-center">
-                        <i class="fas fa-user text-brand text-xl"></i>
-                      </div>
-                      <div>
-                        <h3 class="font-display font-bold text-xl leading-tight">Miriam A.</h3>
-                        <p class="text-gray-400 text-sm">Lagos, Nigeria</p>
-                      </div>
-                    </div>
-                    <span class="glass px-3 py-1 rounded-full text-sm whitespace-nowrap">
-                      <i class="fas fa-bolt text-brand"></i> Fast start
-                    </span>
-                  </div>
-
-                  <p class="text-gray-300 leading-relaxed">
-                    “The onboarding is very clear. I like how Stream explains things step-by-step and doesn’t stress
-                    you. The buttons and pages feel smooth on my phone.”
-                  </p>
-
-                  <div class="mt-5 flex items-center justify-between gap-3 flex-wrap">
-                    <div class="flex items-center gap-2 text-sm text-gray-400">
-                      <i class="fas fa-check-circle text-brand"></i> Verified user
-                    </div>
-                    <div class="flex gap-1 text-brand">
-                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="carousel-item p-4">
-              <div class="card overflow-hidden relative reveal">
-                <div class="p-6 relative">
-                  <div class="flex items-start justify-between gap-4 mb-4">
-                    <div class="flex items-center gap-3">
-                      <div class="w-12 h-12 rounded-full glass flex items-center justify-center">
-                        <i class="fas fa-user text-brand text-xl"></i>
-                      </div>
-                      <div>
-                        <h3 class="font-display font-bold text-xl leading-tight">Chisom K.</h3>
-                        <p class="text-gray-400 text-sm">Port Harcourt, Nigeria</p>
-                      </div>
-                    </div>
-                    <span class="glass px-3 py-1 rounded-full text-sm whitespace-nowrap">
-                      <i class="fas fa-shield-halved text-brand"></i> Trust
-                    </span>
-                  </div>
-
-                  <p class="text-gray-300 leading-relaxed">
-                    “What I like is the structure. Everything is arranged well and it’s easy to know what to do next.
-                    Stream just feels more serious and better organized.”
-                  </p>
-
-                  <div class="mt-5 flex items-center justify-between gap-3 flex-wrap">
-                    <div class="flex items-center gap-2 text-sm text-gray-400">
-                      <i class="fas fa-check-circle text-brand"></i> Verified user
-                    </div>
-                    <div class="flex gap-1 text-brand">
-                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="carousel-item p-4">
-              <div class="card overflow-hidden relative reveal">
-                <div class="p-6 relative">
-                  <div class="flex items-start justify-between gap-4 mb-4">
-                    <div class="flex items-center gap-3">
-                      <div class="w-12 h-12 rounded-full glass flex items-center justify-center">
-                        <i class="fas fa-user text-brand text-xl"></i>
-                      </div>
-                      <div>
-                        <h3 class="font-display font-bold text-xl leading-tight">Aisha S.</h3>
-                        <p class="text-gray-400 text-sm">Abuja, Nigeria</p>
-                      </div>
-                    </div>
-                    <span class="glass px-3 py-1 rounded-full text-sm whitespace-nowrap">
-                      <i class="fas fa-gift text-brand"></i> Rewards
-                    </span>
-                  </div>
-
-                  <p class="text-gray-300 leading-relaxed">
-                    “The rewards and activity sections are simple to follow. I like that it’s not noisy. Even the
-                    design encourages you to stay consistent and keep going.”
-                  </p>
-
-                  <div class="mt-5 flex items-center justify-between gap-3 flex-wrap">
-                    <div class="flex items-center gap-2 text-sm text-gray-400">
-                      <i class="fas fa-check-circle text-brand"></i> Verified user
-                    </div>
-                    <div class="flex gap-1 text-brand">
-                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <p class="text-center text-gray-500 text-sm mt-6">
-          Testimonials reflect individual experiences. Always use the official Stream website: streamwebsite.com.ng.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACKAGES -->
-  <section id="packages" class="bg-gradient-to-b from-transparent to-black/30">
-    <div class="container-custom">
-      <div class="text-center mb-12 reveal">
-        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Packages — Choose What Fits</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">Same package content, but upgraded cards, better hierarchy, and modal opens correctly.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="card border-2 border-transparent hover:border-brand/30 transition-all reveal">
-          <div class="flex gap-2 mb-4 flex-wrap">
-            <span class="bg-brand/20 text-brand px-3 py-1 rounded-full text-sm font-medium">Popular</span>
-            <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">Best starter</span>
-          </div>
-
-          <div class="flex justify-between items-center mb-4 gap-4">
-            <h3 class="font-display font-bold text-2xl">Stream Plus</h3>
-            <div class="text-right">
-              <div class="text-sm text-gray-400">from</div>
-              <div class="text-3xl font-bold">₦10,000</div>
-            </div>
-          </div>
-
-          <p class="text-gray-300 mb-6">A clean entry package designed for fast onboarding and a smooth start.</p>
-
-          <div class="h-48 rounded-xl stream-bg mb-6">
-            <img src="/assets/stream-logo.png" alt="Stream Plus Package" class="stream-image" loading="lazy" decoding="async">
-          </div>
-
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand"></i><span>Welcome Bonus: $8 (₦8,000)</span></li>
-            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand"></i><span>Daily Game Bonus: $3 (₦3,000)</span></li>
-            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand"></i><span>Matching Partners: $2 (₦2,000)</span></li>
-          </ul>
-
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button class="btn-primary flex-1 package-details" data-package="plus"><i class="fas fa-circle-info"></i> View Details</button>
-            <a href="https://linkfly.to/earningstream" target="_blank" class="btn-secondary flex-1 text-center" rel="noopener">
-              <i class="fas fa-arrow-up-right-from-square"></i> Choose Plus
             </a>
           </div>
-        </div>
 
-        <div class="card border-2 border-brand/40 reveal">
-          <div class="flex gap-2 mb-4 flex-wrap">
-            <span class="bg-brand/20 text-brand px-3 py-1 rounded-full text-sm font-medium">Max Value</span>
-            <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">Premium</span>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+            <a href="register.html" class="d-block h-100">
+              <div class="feature">
+                <div class="ficon"><i class="fa-solid fa-briefcase"></i></div>
+                <h4>Gigs Marketplace</h4>
+                <p>Offer services or connect with freelancers and clients for paid digital jobs inside the ecosystem.</p>
+              </div>
+            </a>
           </div>
 
-          <div class="flex justify-between items-center mb-4 gap-4">
-            <h3 class="font-display font-bold text-2xl">Stream Ultra</h3>
-            <div class="text-right">
-              <div class="text-sm text-gray-400">from</div>
-              <div class="text-3xl font-bold">₦14,000</div>
-            </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="190">
+            <a href="register.html" class="d-block h-100">
+              <div class="feature">
+                <div class="ficon"><i class="fa-solid fa-bullhorn"></i></div>
+                <h4>Partner Campaigns</h4>
+                <p>Join official promotions and collaborations from brands and creators — only verified tasks count.</p>
+              </div>
+            </a>
           </div>
 
-          <p class="text-gray-300 mb-6">A higher tier for users who want more value and stronger feature access.</p>
-
-          <div class="h-48 rounded-xl stream-bg mb-6">
-            <img src="/assets/stream-logo.png" alt="Stream Ultra Package" class="stream-image" loading="lazy" decoding="async">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="260">
+            <a href="register.html" class="d-block h-100">
+              <div class="feature">
+                <div class="ficon"><i class="fa-solid fa-coins"></i></div>
+                <h4>Shared Rewards</h4>
+                <p>Rewards are shared from collaboration value (royalties/ad revenue/campaign budgets) and distributed to Streamers.</p>
+              </div>
+            </a>
           </div>
 
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand"></i><span>Welcome Bonus: $12 (₦12,500)</span></li>
-            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand"></i><span>Daily Game Bonus: $5 (₦5,000)</span></li>
-            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand"></i><span>Matching Partners: $2.5 (₦2,500)</span></li>
-          </ul>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="330">
+            <a href="register.html" class="d-block h-100">
+              <div class="feature">
+                <div class="ficon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h4>SkillUp Mentorship</h4>
+                <p>Learn practical digital skills through structured mentorship and training paths to boost your income ability.</p>
+              </div>
+            </a>
+          </div>
 
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button class="btn-primary flex-1 package-details" data-package="ultra"><i class="fas fa-circle-info"></i> View Details</button>
-            <a href="https://linkfly.to/earningstream" target="_blank" class="btn-secondary flex-1 text-center" rel="noopener">
-              <i class="fas fa-arrow-up-right-from-square"></i> Choose Ultra
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <a href="register.html" class="d-block h-100">
+              <div class="feature">
+                <div class="ficon"><i class="fa-solid fa-earth-africa"></i></div>
+                <h4>Universal Access</h4>
+                <p>Join from anywhere. The Stream website is mobile-first and designed for everyday users across Africa.</p>
+              </div>
             </a>
           </div>
         </div>
       </div>
+    </section>
 
-      <p class="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto">
-        Availability, pricing, and program details may vary by region. No guaranteed outcomes.
-      </p>
-    </div>
-  </section>
+    <!-- PRICING -->
+    <section id="pricing" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="section-title" style="color: var(--mint);">Packages</div>
+          <h2 style="font-weight:900; margin: 0 0 10px;">Choose your Stream registration plan</h2>
+          <p class="section-subtitle">
+            One-time registration. Pick a plan, activate your account, and start participating in verified tasks, campaigns, gigs, and SkillUp.
+          </p>
+        </div>
 
-  <!-- DOWNLOAD -->
-  <section id="download">
-    <div class="container-custom">
-      <div class="text-center mb-12 reveal">
-        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Download Stream App & Platforms</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">Use official links and verify the source.</p>
-      </div>
+        <div class="row justify-content-center g-4">
+          <div class="col-md-6 col-lg-5" data-aos="fade-up">
+            <a href="register.html" class="d-block h-100">
+              <div class="price-card reco">
+                <div class="badge-reco">RECOMMENDED</div>
+                <div class="price-inner">
+                  <h3 class="text-uppercase" style="font-weight:900;">Premium Access</h3>
+                  <div class="price"><small>₦</small>15,000</div>
+                  <p style="color: rgba(234,253,244,.65); margin:0 0 10px;">Full access + higher task rates + SkillUp</p>
 
-      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
-        <a href="https://linkfly.to/earningstream" target="_blank" class="card hover:border-brand/30 transition-all reveal" rel="noopener">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center">
-              <i class="fab fa-android text-brand text-3xl"></i>
-            </div>
-            <div>
-              <h3 class="font-display font-bold text-xl">Android</h3>
-              <p class="text-sm text-gray-400">APK / AAB</p>
-            </div>
+                  <ul class="plist">
+                    <li><i class="fa-solid fa-check-circle"></i><span><b>Full Access</b> to tasks and campaigns</span></li>
+                    <li><i class="fa-solid fa-check-circle"></i><span><b>Higher rates</b> on approved engagement</span></li>
+                    <li><i class="fa-solid fa-check-circle"></i><span>Priority participation opportunities</span></li>
+                    <li><i class="fa-solid fa-check-circle"></i><span>SkillUp mentorship access</span></li>
+                    <li><i class="fa-solid fa-check-circle"></i><span>Priority support</span></li>
+                  </ul>
+
+                  <span class="btn-custom btn-solid w-100" style="padding: 16px;">
+                    <i class="fa-solid fa-arrow-right"></i> Get Premium Access
+                  </span>
+                </div>
+              </div>
+            </a>
           </div>
-          <p class="text-gray-300">Official build links for installation on Android devices.</p>
-        </a>
 
-        <a href="/how-to-register.html" target="_blank" class="card hover:border-brand/30 transition-all reveal" rel="noopener">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center">
-              <i class="fab fa-apple text-brand text-3xl"></i>
-            </div>
-            <div>
-              <h3 class="font-display font-bold text-xl">iOS</h3>
-              <p class="text-sm text-gray-400">Coming Soon</p>
-            </div>
-          </div>
-          <p class="text-gray-300">Placeholder listing. Check back for updates on iOS availability.</p>
-        </a>
+          <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="120">
+            <a href="register.html" class="d-block h-100">
+              <div class="price-card" style="opacity:.92;">
+                <div class="price-inner">
+                  <h3 class="text-uppercase" style="font-weight:900;">Standard Access</h3>
+                  <div class="price" style="color: rgba(234,253,244,.92); text-shadow:none;"><small>₦</small>10,000</div>
+                  <p style="color: rgba(234,253,244,.65); margin:0 0 10px;">Basic entry to start participating</p>
 
-        <a href="/how-to-register.html" target="_blank" class="card hover:border-brand/30 transition-all reveal" rel="noopener">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-xl stream-bg flex items-center justify-center">
-              <i class="fas fa-globe text-brand text-3xl"></i>
-            </div>
-            <div>
-              <h3 class="font-display font-bold text-xl">Web</h3>
-              <p class="text-sm text-gray-400">Browser</p>
-            </div>
-          </div>
-          <p class="text-gray-300">Use Stream directly in your browser without any installation.</p>
-        </a>
-      </div>
+                  <ul class="plist">
+                    <li><i class="fa-solid fa-check-circle" style="color: rgba(234,253,244,.45)"></i><span>Access to verified tasks</span></li>
+                    <li><i class="fa-solid fa-check-circle" style="color: rgba(234,253,244,.45)"></i><span>Approved music & video engagement</span></li>
+                    <li><i class="fa-solid fa-check-circle" style="color: rgba(234,253,244,.45)"></i><span>Standard support</span></li>
+                    <li><i class="fa-solid fa-check-circle" style="color: rgba(234,253,244,.45)"></i><span>Start building your streamer profile</span></li>
+                  </ul>
 
-      <div class="glass-strong p-8 rounded-2xl max-w-4xl mx-auto reveal">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 class="font-display font-bold text-2xl mb-2">Want the fastest start?</h3>
-            <p class="text-gray-300">Register first, then download the correct build for your device.</p>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href="/how-to-register.html" class="btn-primary"><i class="fas fa-user-plus"></i> Register Now</a>
-            <a href="#packages" class="btn-secondary"><i class="fas fa-layer-group"></i> View Packages</a>
+                  <span class="btn-custom btn-glass w-100" style="padding: 16px;">
+                    <i class="fa-solid fa-hand-pointer"></i> Choose Standard
+                  </span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="bg-gradient-to-b from-black/30 to-transparent">
-    <div class="container-custom">
-      <div class="text-center mb-12 reveal">
-        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Frequently Asked Questions</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">Short, clear answers that look good on mobile and are easy to scan.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        <div class="card reveal">
-          <details class="group">
-            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center gap-3">
-              What is Stream?
-              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-            </summary>
-            <p class="mt-3 text-gray-300">Stream is a modern platform for connecting, discovering communities, and exploring rewards. Features can vary by region.</p>
-          </details>
+    <!-- FAQ + CTA -->
+    <section id="faqwrap" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="section-title" style="color: var(--mint);">FAQ</div>
+          <h2 style="font-weight:900; margin: 0;">Frequently Asked Questions</h2>
         </div>
 
-        <div class="card reveal">
-          <details class="group">
-            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center gap-3">
-              How do I register?
-              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-            </summary>
-            <p class="mt-3 text-gray-300">Go to the registration page, enter correct details, and follow the prompts to complete your account setup.</p>
-          </details>
-        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-9" data-aos="fade-up">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f0">
+                    How does the Stream website work?
+                  </button>
+                </h2>
+                <div id="f0" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Stream partners with creators and media companies. When you complete approved engagement and campaigns,
+                    partners share a portion of royalties or campaign revenue, and rewards are distributed to Streamers who contributed.
+                  </div>
+                </div>
+              </div>
 
-        <div class="card reveal">
-          <details class="group">
-            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center gap-3">
-              Where do I download the app?
-              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-            </summary>
-            <p class="mt-3 text-gray-300">Use the Download section on this page or official links provided by Stream.</p>
-          </details>
-        </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f1">
+                    How do I earn on Stream?
+                  </button>
+                </h2>
+                <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    You earn by completing verified media tasks, participating in campaigns, offering services via gigs, and learning skills through SkillUp.
+                  </div>
+                </div>
+              </div>
 
-        <div class="card reveal">
-          <details class="group">
-            <summary class="font-display font-bold text-lg cursor-pointer flex justify-between items-center gap-3">
-              Are outcomes guaranteed?
-              <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-            </summary>
-            <p class="mt-3 text-gray-300">No. Availability and outcomes can vary. Always verify current rules and updates inside the platform.</p>
-          </details>
-        </div>
-      </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">
+                    Is Stream available worldwide?
+                  </button>
+                </h2>
+                <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Yes. Stream is designed for universal access — you can join from anywhere using your phone.
+                  </div>
+                </div>
+              </div>
 
-      <div class="text-center mt-10 flex flex-col sm:flex-row gap-3 justify-center reveal">
-        <a href="/how-to-register.html" class="btn-primary"><i class="fas fa-user-plus"></i> Register on Stream</a>
-        <a href="#top" class="btn-secondary"><i class="fas fa-arrow-up"></i> Back to Top</a>
-      </div>
-    </div>
-  </section>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">
+                    What does membership cost?
+                  </button>
+                </h2>
+                <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Standard Access is ₦10,000 and Premium Access is ₦15,000 — both are one-time Stream registration fees.
+                  </div>
+                </div>
+              </div>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10 py-10">
-    <div class="container-custom">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-        <div class="reveal">
-          <a href="https://streamwebsite.com.ng/" class="flex items-center gap-3 mb-4" aria-label="Stream Home">
-            <div class="w-10 h-10 rounded-xl stream-bg flex items-center justify-center overflow-hidden">
-              <img src="/assets/stream-logo.png" alt="Stream logo — streamwebsite.com.ng" class="w-8 h-8" width="32" height="32" loading="lazy" decoding="async">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">
+                    What do I get after Stream registration?
+                  </button>
+                </h2>
+                <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    After activation, you can access verified tasks and campaigns. Premium users also get stronger benefits like SkillUp mentorship access and priority support.
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 class="font-display font-bold text-xl">Stream</h3>
-              <p class="text-xs text-gray-400">Connect • Discover • Earn</p>
+
+            <div class="cta" data-aos="zoom-in">
+              <h2><span style="color:var(--mint)">Ready</span> to join the Stream website?</h2>
+              <p>
+                Complete your Stream registration now and start participating in verified engagement tasks, partner campaigns,
+                gigs, and SkillUp mentorship — all in one continuous flow.
+              </p>
+              <a href="register.html" class="btn-custom btn-solid">
+                <i class="fa-solid fa-rocket"></i> Register on Stream
+              </a>
             </div>
-          </a>
-          <nav class="flex flex-wrap gap-4 text-sm">
-            <a href="#about" class="text-gray-400 hover:text-white">Who We Are</a>
-            <a href="#features" class="text-gray-400 hover:text-white">Features</a>
-            <a href="#packages" class="text-gray-400 hover:text-white">Packages</a>
-            <a href="#faq" class="text-gray-400 hover:text-white">FAQ</a>
-            <a href="/how-to-register.html" class="text-gray-400 hover:text-white">Contact</a>
-          </nav>
-        </div>
-
-        <div class="flex gap-3 reveal">
-          <a href="#" target="_blank" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-brand/10 transition-colors" aria-label="Facebook" rel="noopener">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" target="_blank" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-brand/10 transition-colors" aria-label="X" rel="noopener">
-            <i class="fab fa-x-twitter"></i>
-          </a>
-          <a href="#" target="_blank" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-brand/10 transition-colors" aria-label="WhatsApp" rel="noopener">
-            <i class="fab fa-whatsapp"></i>
-          </a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="border-t border-white/10 pt-8 text-center reveal">
-        <p class="text-gray-500 text-sm">
-          © Stream 2025 • All rights reserved •
-          <a href="#" class="underline hover:text-white">Privacy Policy</a> •
-          <a href="#" class="underline hover:text-white">Terms of Service</a>
-        </p>
-      </div>
-    </div>
-  </footer>
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <a href="index.html" class="d-inline-block mb-3" aria-label="Stream Africa home">
+              <img src="assets/logo.svg" alt="Stream Africa Logo" style="height:40px;">
+            </a>
+            <p class="footer-desc">
+              Stream Africa is the Stream website connecting creators and audiences through partnerships — turning verified
+              digital engagement into real rewards for Streamers.
+            </p>
 
-  <!-- Back to Top -->
-  <a href="#top" id="backToTop"
-     class="fixed bottom-8 right-8 w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-brand/10"
-     aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </a>
+            <div class="social mt-3">
+              <a href="register.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="register.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="register.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="register.html" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+            </div>
+          </div>
 
-  <!-- Modal -->
-  <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
-    <div class="absolute inset-0 bg-black/70" data-modal-close></div>
-    <div class="glass-strong rounded-2xl max-w-md w-full p-6 relative z-10 max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-center mb-6">
-        <h3 id="modalTitle" class="font-display font-bold text-2xl">Package Details</h3>
-        <button data-modal-close class="w-10 h-10 rounded-xl hover:bg-white/10 flex items-center justify-center" aria-label="Close">
-          <i class="fas fa-times"></i>
-        </button>
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-heading">Stream Website</div>
+            <ul class="footer-links">
+              <li><a href="#about">How it Works</a></li>
+              <li><a href="#features">What You Get</a></li>
+              <li><a href="#pricing">Stream Registration Packages</a></li>
+              <li><a href="#faqwrap">FAQs</a></li>
+            </ul>
+            <div class="mt-3">
+              <a href="register.html" class="btn-custom btn-solid btn-nav"><i class="fa-solid fa-user-plus"></i> Register</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-heading">Contact</div>
+            <ul class="footer-links">
+              <li><a href="#"><i class="fa-solid fa-envelope me-2"></i> support@streamwebsite.com.ng</a></li>
+              <li><a href="#"><i class="fa-solid fa-location-dot me-2"></i> Lagos, Nigeria</a></li>
+            </ul>
+            <div class="mt-3" style="color: rgba(234,253,244,.55); line-height:1.7;">
+              Need help with Stream registration? Click Register and follow the steps on the registration page.
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          &copy; 2026 Stream Africa. All Rights Reserved.
+        </div>
       </div>
-      <div id="modalContent" class="text-gray-300"></div>
-      <div class="mt-8 flex gap-3 flex-wrap">
-        <button id="modalAction" class="btn-primary flex-1">Activate</button>
-        <button data-modal-close class="btn-secondary flex-1">Close</button>
-      </div>
-    </div>
+    </footer>
+
+    <!-- Mobile Sticky -->
+    <a href="register.html" id="mobile-sticky" class="d-lg-none">Register</a>
+
   </div>
 
-  <!-- ===================== JS (CLEAN + NO BUGS) ===================== -->
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <script>
-    (function () {
-      const $ = (s, r=document) => r.querySelector(s);
-      const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+    $(document).ready(function () {
+      AOS.init({ once: true, offset: 60, duration: 950 });
 
-      const mobileMenuButton = $("#mobileMenuButton");
-      const mobileMenu = $("#mobileMenu");
-      const mainNav = $("#mainNav");
-      const scrollProgress = $("#scrollProgress");
-      const backToTop = $("#backToTop");
+      $(window).on('scroll', function () {
+        const scrollTop = $(this).scrollTop();
+        const windowHeight = $(window).height();
+        const heroHeight = $('#hero').outerHeight();
+        const footerOffset = $('footer').offset().top;
 
-      // Mobile menu
-      if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener("click", () => {
-          const isHidden = mobileMenu.classList.contains("hidden");
-          mobileMenu.classList.toggle("hidden", !isHidden);
-          mobileMenuButton.setAttribute("aria-expanded", String(isHidden));
-        });
+        // navbar glass
+        if (scrollTop > 40) $('.navbar').addClass('navbar-scrolled');
+        else $('.navbar').removeClass('navbar-scrolled');
 
-        document.addEventListener("click", (e) => {
-          if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-            mobileMenu.classList.add("hidden");
-            mobileMenuButton.setAttribute("aria-expanded", "false");
-          }
-        });
-      }
+        // mobile sticky button
+        const $btn = $('#mobile-sticky');
+        if (scrollTop > heroHeight - 120) $btn.addClass('show');
+        else $btn.removeClass('show');
 
-      // Scroll: progress + nav + back-to-top (throttled by rAF)
-      let ticking = false;
-      function onScroll() {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-          const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-
-          if (scrollProgress) scrollProgress.style.width = scrolled + "%";
-          if (backToTop) backToTop.classList.toggle("show", window.scrollY > 300);
-          if (mainNav) mainNav.classList.toggle("glass-strong", window.scrollY > 50);
-
-          ticking = false;
-        });
-      }
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
-
-      if (backToTop) {
-        backToTop.addEventListener("click", (e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
-
-      // Smooth anchor scroll (keeps nav offset)
-      $$('a[href^="#"]').forEach(a => {
-        a.addEventListener("click", (e) => {
-          const href = a.getAttribute("href");
-          if (!href || href === "#") return;
-          const id = href.slice(1);
-          const target = document.getElementById(id);
-          if (!target) return;
-
-          e.preventDefault();
-          if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-            mobileMenu.classList.add("hidden");
-            mobileMenuButton?.setAttribute("aria-expanded", "false");
-          }
-
-          const y = target.getBoundingClientRect().top + window.pageYOffset - 86;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        });
+        // footer docking
+        if (scrollTop + windowHeight > footerOffset) {
+          const overlap = (scrollTop + windowHeight) - footerOffset;
+          $btn.css('bottom', (28 + overlap) + 'px');
+        } else {
+          $btn.css('bottom', '28px');
+        }
       });
-
-      // Reusable carousel helper (no jitter, no double timers)
-      function initCarousel(trackId, prevId, nextId, dotWrapId, intervalMs) {
-        const track = document.getElementById(trackId);
-        if (!track) return () => {};
-
-        const prevBtn = prevId ? document.getElementById(prevId) : null;
-        const nextBtn = nextId ? document.getElementById(nextId) : null;
-        const dotsWrap = dotWrapId ? document.getElementById(dotWrapId) : null;
-        const items = Array.from(track.children);
-
-        let index = 0;
-        let timer = null;
-
-        function setDots(i){
-          if (!dotsWrap) return;
-          const dots = Array.from(dotsWrap.children);
-          dots.forEach((d, idx) => {
-            d.classList.toggle("bg-brand", idx === i);
-            d.classList.toggle("bg-white/20", idx !== i);
-          });
-        }
-
-        function goTo(i) {
-          const len = items.length || 1;
-          index = (i + len) % len;
-          track.style.transform = `translate3d(${-index * 100}%,0,0)`;
-          setDots(index);
-        }
-
-        function start() {
-          if (!intervalMs) return;
-          stop();
-          timer = setInterval(() => goTo(index + 1), intervalMs);
-        }
-        function stop() {
-          if (timer) clearInterval(timer);
-          timer = null;
-        }
-
-        prevBtn?.addEventListener("click", () => { goTo(index - 1); start(); });
-        nextBtn?.addEventListener("click", () => { goTo(index + 1); start(); });
-
-        // swipe
-        let startX = 0, dx = 0, down = false;
-        track.addEventListener("pointerdown", (e) => {
-          down = true; startX = e.clientX; dx = 0;
-          stop();
-          track.setPointerCapture(e.pointerId);
-        });
-        track.addEventListener("pointermove", (e) => { if (down) dx = e.clientX - startX; });
-        track.addEventListener("pointerup", () => {
-          down = false;
-          if (Math.abs(dx) > 40) (dx < 0 ? goTo(index + 1) : goTo(index - 1));
-          start();
-        });
-
-        goTo(0);
-        start();
-        return stop;
-      }
-
-      // App carousel
-      initCarousel("appCarousel", "carouselPrev", "carouselNext", "appDots", 5200);
-
-      // Testimonials carousel
-      const stopTestimonials = (function(){
-        const track = document.getElementById("testimonialsCarousel");
-        if (!track) return () => {};
-        const prevBtn = document.getElementById("testiPrev");
-        const nextBtn = document.getElementById("testiNext");
-        const items = Array.from(track.children);
-        let index = 0, timer = null;
-
-        function itemWidth() {
-          const first = items[0];
-          if (!first) return 0;
-          return first.getBoundingClientRect().width;
-        }
-        function goTo(i) {
-          const w = itemWidth();
-          if (!w) return;
-          index = (i + items.length) % items.length;
-          track.style.transform = `translate3d(${-index * w}px,0,0)`;
-        }
-        function start() { stop(); timer = setInterval(() => goTo(index + 1), 5200); }
-        function stop() { if (timer) clearInterval(timer); timer = null; }
-
-        prevBtn?.addEventListener("click", () => { goTo(index - 1); start(); });
-        nextBtn?.addEventListener("click", () => { goTo(index + 1); start(); });
-
-        let startX = 0, dx = 0, down = false;
-        track.addEventListener("pointerdown", (e) => { down = true; startX = e.clientX; dx = 0; stop(); track.setPointerCapture(e.pointerId); });
-        track.addEventListener("pointermove", (e) => { if (down) dx = e.clientX - startX; });
-        track.addEventListener("pointerup", () => { down = false; if (Math.abs(dx) > 40) (dx < 0 ? goTo(index + 1) : goTo(index - 1)); start(); });
-
-        window.addEventListener("resize", () => goTo(index));
-
-        goTo(0); start();
-        return stop;
-      })();
-
-      // Modal
-      const modal = $("#modal");
-      const modalTitle = $("#modalTitle");
-      const modalContent = $("#modalContent");
-      const modalAction = $("#modalAction");
-
-      const packageDetails = {
-        plus: {
-          title: "Stream Plus Package",
-          content: `
-            <div class="space-y-4">
-              <p class="text-lg font-semibold text-brand">Starter tier built for a clean, fast onboarding.</p>
-              <div class="bg-white/5 rounded-xl p-4">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b border-white/10">
-                      <th class="py-2 text-left">Benefit</th>
-                      <th class="py-2 text-right">USD</th>
-                      <th class="py-2 text-right">NGN (approx)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-white/5">
-                      <td class="py-3">Welcome Bonus</td>
-                      <td class="py-3 text-right">$8</td>
-                      <td class="py-3 text-right">₦8,000</td>
-                    </tr>
-                    <tr class="border-b border-white/5">
-                      <td class="py-3">Daily Game Bonus</td>
-                      <td class="py-3 text-right">$3</td>
-                      <td class="py-3 text-right">₦3,000</td>
-                    </tr>
-                    <tr>
-                      <td class="py-3">Matching Partners</td>
-                      <td class="py-3 text-right">$2</td>
-                      <td class="py-3 text-right">₦2,000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="text-sm text-gray-400">All values are approximate and subject to change. Availability may vary by region.</p>
-            </div>
-          `,
-          actionUrl: "https://linkfly.to/earningstream"
-        },
-        ultra: {
-          title: "Stream Ultra Package",
-          content: `
-            <div class="space-y-4">
-              <p class="text-lg font-semibold text-brand">Premium tier with higher value and stronger feature access.</p>
-              <div class="bg-white/5 rounded-xl p-4">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b border-white/10">
-                      <th class="py-2 text-left">Benefit</th>
-                      <th class="py-2 text-right">USD</th>
-                      <th class="py-2 text-right">NGN (approx)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-white/5">
-                      <td class="py-3">Welcome Bonus</td>
-                      <td class="py-3 text-right">$12</td>
-                      <td class="py-3 text-right">₦12,500</td>
-                    </tr>
-                    <tr class="border-b border-white/5">
-                      <td class="py-3">Daily Game Bonus</td>
-                      <td class="py-3 text-right">$5</td>
-                      <td class="py-3 text-right">₦5,000</td>
-                    </tr>
-                    <tr>
-                      <td class="py-3">Matching Partners</td>
-                      <td class="py-3 text-right">$2.5</td>
-                      <td class="py-3 text-right">₦2,500</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="text-sm text-gray-400">All values are approximate and subject to change. Premium features may have additional requirements.</p>
-            </div>
-          `,
-          actionUrl: "https://linkfly.to/earningstream"
-        }
-      };
-
-      function openModal(type) {
-        const info = packageDetails[type];
-        if (!info || !modal) return;
-
-        modalTitle.textContent = info.title;
-        modalContent.innerHTML = info.content;
-        modalAction.onclick = () => window.open(info.actionUrl, "_blank", "noopener");
-
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeModal() {
-        if (!modal) return;
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
-        document.body.style.overflow = "";
-      }
-
-      $$(".package-details").forEach(btn => {
-        btn.addEventListener("click", () => openModal(btn.getAttribute("data-package")));
-      });
-
-      $$("[data-modal-close]").forEach(btn => btn.addEventListener("click", closeModal));
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) closeModal();
-      });
-
-      // Reveal on scroll (fast, no heavy loops)
-      const revealEls = $$(".reveal");
-      if ("IntersectionObserver" in window) {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              io.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12 });
-        revealEls.forEach(el => io.observe(el));
-      } else {
-        revealEls.forEach(el => el.classList.add("is-visible"));
-      }
-
-      // Prevent common dead reference: old showcase handlers
-      // (Showcase removed; no timers for it anymore.)
-    })();
+    });
   </script>
 </body>
 </html>
