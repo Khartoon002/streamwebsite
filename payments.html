@@ -240,7 +240,6 @@
       padding-bottom: env(safe-area-inset-bottom);
     }
 
-    /* mouse glow follower (disabled on touch via JS) */
     .glow{
       position:fixed;
       width:520px;height:520px;
@@ -408,7 +407,7 @@
       position:fixed;
       inset:0;
       display:none;
-      align-items:flex-end; /* mobile: bottom sheet feel */
+      align-items:flex-end;
       justify-content:center;
       padding: clamp(10px, 3vw, 18px);
       background: rgba(0,0,0,.72);
@@ -626,10 +625,10 @@
       <!-- CHANGE THIS TO YOUR STREAM LOGO PATH -->
       <img class="logo" src="stream-logo.png" alt="Stream Logo" loading="eager" />
 
-      <h1>Stream Payment (Nigeria + Foreign)</h1>
+      <h1>Stream Payment (Nigeria &amp; Other Countries)</h1>
       <p class="subtitle">
-        Click below to choose your <b>country</b>, select your <b>package</b>, then (for Nigeria) choose <b>OPay</b> or <b>Normal Bank</b>.
-        After payment, click <b>Submit Payment Proof</b> to open WhatsApp with a prefilled message to <b>07087108201</b>.
+        Click below to choose your <b>country</b>. For <b>Nigeria</b>, you can pay <b>₦13,000</b> via <b>Moniepoint bank transfer</b>.
+        For other countries, payment details are currently <b>pending</b> and will show as "Pending" until they are activated in the system.
       </p>
 
       <div class="links">
@@ -638,7 +637,7 @@
             <div class="ico">💳</div>
             <div class="labelwrap">
               <div class="label">Start Payment</div>
-              <div class="note">Country → Package → (Nigeria: OPay/Bank) → Pay → Submit proof (WhatsApp)</div>
+              <div class="note">Country → Registration Package → (Nigeria: Moniepoint) → Pay → Submit proof (WhatsApp).</div>
             </div>
           </div>
           <div class="arrow">↗</div>
@@ -670,33 +669,6 @@
       <div class="modalBody">
         <div class="small" style="margin-bottom:10px;">Country: <b id="selCountryLabel">—</b></div>
         <div class="grid2" id="packageGrid"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PAYMENT METHOD (Nigeria only) -->
-  <div class="modal" id="methodModal" aria-hidden="true">
-    <div class="modalCard">
-      <div class="modalHead">
-        <div class="modalTitle">Choose Payment Method (Nigeria)</div>
-        <button class="xbtn" id="closeMethod">Close</button>
-      </div>
-      <div class="modalBody">
-        <div class="small" style="margin-bottom:10px;">
-          Package: <b id="selPkgLabel">—</b> • Amount: <b id="selAmtLabel">—</b>
-        </div>
-        <div class="grid2">
-          <div class="pickCard" id="pickOpay">
-            <span class="tag">🟩 OPay</span>
-            <div class="price">OPay Users Only</div>
-            <div class="small">Tap to use OPay payment details.</div>
-          </div>
-          <div class="pickCard" id="pickBank">
-            <span class="tag">🏦 Normal Bank</span>
-            <div class="price">Other Banks Transfer</div>
-            <div class="small">Tap to use normal bank transfer details.</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -777,59 +749,77 @@
           key: "NG",
           label: "🇳🇬 Nigeria",
           packages: {
-            Starter: { amountText: "₦10,000" },
-            Pro:     { amountText: "₦15,000" }
+            Registration: { amountText: "₦13,000" }
           },
-          paymentMethods: {
-            opay: {
-              channel: "OPay Bank",
-              acctNo: "1807561116",
-              acctName: "Clinton Uchenna Spino",
-              note: "Bank: Kredi Money Mfb Ltd (OPay users only)."
-            },
-            bank: {
-              channel: "Other Banks Transfer",
-              acctNo: "6054080105",
-              acctName: "Spino Clinton",
-              note: "Bank: Moniepoint (normal transfer)."
-            }
+          payment: {
+            channel: "Moniepoint Bank Transfer",
+            acctNo: "6054080105",
+            acctName: "Spino Clinton",
+            note: "Bank: Moniepoint (normal transfer).",
+            pending: false
           }
         },
         {
           key: "GH",
           label: "🇬🇭 Ghana",
-          packages: { Starter:{ amountText:"170GHS" }, Pro:{ amountText:"250GHS" } },
-          payment: { channel:"MTN", acctNo:"0531148002", acctName:"Daniel Amoah", note:"" }
+          packages: {
+            Registration: { amountText: "Pending" }
+          },
+          payment: {
+            channel: "Pending – payment details coming soon",
+            acctNo: "Pending",
+            acctName: "Pending",
+            note: "We are still setting up secure payment for Ghana. Please do not make any payment yet.",
+            pending: true
+          }
         },
         {
           key: "ZA",
           label: "🇿🇦 South Africa",
-          packages: { Starter:{ amountText:"R270" }, Pro:{ amountText:"R370" } },
+          packages: {
+            Registration: { amountText: "Pending" }
+          },
           payment: {
-            channel:"FNB",
-            acctNo:"63096232756",
-            acctName:"Tegha digital (pty)Ltd",
-            note:"Use IMMEDIATE TRANSACTION option to ensure payment is processed instantly and without delay."
+            channel: "Pending – payment details coming soon",
+            acctNo: "Pending",
+            acctName: "Pending",
+            note: "We are still setting up secure payment for South Africa. Please do not make any payment yet.",
+            pending: true
           }
         },
         {
           key: "KE",
           label: "🇰🇪 Kenya",
-          packages: { Starter:{ amountText:"2000KES" }, Pro:{ amountText:"2700KES" } },
-          payment: { channel:"AIRTEL MONEY", acctNo:"0107494918", acctName:"Mohamed Hadid", note:"" }
+          packages: {
+            Registration: { amountText: "Pending" }
+          },
+          payment: {
+            channel: "Pending – payment details coming soon",
+            acctNo: "Pending",
+            acctName: "Pending",
+            note: "We are still setting up secure payment for Kenya. Please do not make any payment yet.",
+            pending: true
+          }
         },
         {
           key: "UG",
           label: "🇺🇬 Uganda",
-          packages: { Starter:{ amountText:"52,000UGX" }, Pro:{ amountText:"72,000UGX" } },
-          payment: { channel:"AIRTEL UGANDA", acctNo:"+256753668856", acctName:"Eriab Wakabi", note:"" }
+          packages: {
+            Registration: { amountText: "Pending" }
+          },
+          payment: {
+            channel: "Pending – payment details coming soon",
+            acctNo: "Pending",
+            acctName: "Pending",
+            note: "We are still setting up secure payment for Uganda. Please do not make any payment yet.",
+            pending: true
+          }
         }
       ]
     };
 
     let selectedCountry = null;
     let selectedPackage = null;
-    let selectedMethodKey = null;
 
     const $ = (q) => document.querySelector(q);
     const toast = $("#toast");
@@ -905,13 +895,12 @@
         div.innerHTML = `
           <span class="tag">${c.label} ${DATA.brand} DETAILS</span>
           <div class="price">${c.label}</div>
-          <div class="small">Tap to choose your package and see payment details.</div>
+          <div class="small">Tap to choose your registration package and see payment status.</div>
         `;
         attachButtonGlow(div);
         div.addEventListener("click", () => {
           selectedCountry = c;
           selectedPackage = null;
-          selectedMethodKey = null;
 
           $("#selCountryLabel").textContent = c.label;
           closeModal("#countryModal");
@@ -939,13 +928,10 @@
           selectedPackage = planName;
           closeModal("#packageModal");
 
-          if (country.key === "NG" && country.paymentMethods){
-            $("#selPkgLabel").textContent = DATA.brand + " " + planName;
-            $("#selAmtLabel").textContent = plan.amountText;
-            openModal("#methodModal");
-          } else {
-            fillPaymentModal(country, planName, null);
-            openModal("#payModal");
+          fillPaymentModal(country, planName);
+          openModal("#payModal");
+
+          if (!country.payment?.pending) {
             startCountdown(3600);
           }
         });
@@ -953,11 +939,8 @@
       });
     }
 
-    function getPaymentConfig(country, methodKey){
-      if (country.key === "NG" && country.paymentMethods){
-        return country.paymentMethods[methodKey || "bank"];
-      }
-      return country.payment;
+    function getPaymentConfig(country){
+      return country.payment || {};
     }
 
     function buildPrefilledMessage(country, planName, payCfg){
@@ -978,8 +961,8 @@ Note: ${payCfg.note}` : ""}
 I am about to upload my proof of payment now (screenshot) and my sender name.`;
     }
 
-    function fillPaymentModal(country, planName, methodKey){
-      const pay = getPaymentConfig(country, methodKey);
+    function fillPaymentModal(country, planName){
+      const pay = getPaymentConfig(country);
       const amountText = country.packages[planName]?.amountText || "—";
 
       $("#pfCountry").textContent = country.label;
@@ -990,10 +973,16 @@ I am about to upload my proof of payment now (screenshot) and my sender name.`;
       $("#pfAcctNo").textContent = pay.acctNo || "—";
       $("#pfAcctName").textContent = pay.acctName || "—";
 
-      const note = [pay.note || "", `After payment, click "Submit Payment Proof" to message ${DATA.proofPhone} on WhatsApp.`]
-        .filter(Boolean).join(" ");
-      $("#pfNote").textContent = note;
+      let noteText = "";
+      if (pay.pending) {
+        noteText = pay.note || "Payment is not yet available for this country. Please do not send any money yet.";
+      } else {
+        noteText = [pay.note || "", `After payment, click "Submit Payment Proof" to message ${DATA.proofPhone} on WhatsApp.`]
+          .filter(Boolean).join(" ");
+      }
+      $("#pfNote").textContent = noteText;
 
+      // Configure Copy All
       $("#copyAll").onclick = () => {
         const lines = [];
         lines.push(`${country.label} ${DATA.brand.toUpperCase()} DETAILS`);
@@ -1003,20 +992,36 @@ I am about to upload my proof of payment now (screenshot) and my sender name.`;
         });
         lines.push("");
         lines.push("PAYMENT DETAILS");
-        lines.push(`🛜 ${pay.channel}`);
-        lines.push(`📍 ${pay.acctNo}`);
-        lines.push(`👥 ${pay.acctName}`);
+        lines.push(`🛜 ${pay.channel || "—"}`);
+        lines.push(`📍 ${pay.acctNo || "—"}`);
+        lines.push(`👥 ${pay.acctName || "—"}`);
         if (pay.note) lines.push(`\nℹ ${pay.note}`);
-        lines.push(`\nAfter Payment: Send proof (screenshot) + sender name to ${DATA.proofPhone} on WhatsApp.`);
+        if (!pay.pending) {
+          lines.push(`\nAfter Payment: Send proof (screenshot) + sender name to ${DATA.proofPhone} on WhatsApp.`);
+        } else {
+          lines.push(`\nPayment for this country is pending. Do not pay until official details are announced.`);
+        }
         copyText(lines.join("\n"));
       };
 
-      $("#submitProof").onclick = () => {
-        const msg = buildPrefilledMessage(country, planName, pay);
-        const waDigits = DATA.proofPhone.replace(/\D/g,"");
-        const to = waDigits.startsWith("0") ? ("234" + waDigits.slice(1)) : waDigits;
-        window.location.href = "https://wa.me/" + to + "?text=" + encodeURIComponent(msg);
-      };
+      const submitBtn = $("#submitProof");
+
+      if (pay.pending) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Payment Not Available Yet";
+        submitBtn.style.opacity = "0.6";
+        submitBtn.onclick = null;
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Payment Proof (WhatsApp)";
+        submitBtn.style.opacity = "1";
+        submitBtn.onclick = () => {
+          const msg = buildPrefilledMessage(country, planName, pay);
+          const waDigits = DATA.proofPhone.replace(/\D/g,"");
+          const to = waDigits.startsWith("0") ? ("234" + waDigits.slice(1)) : waDigits;
+          window.location.href = "https://wa.me/" + to + "?text=" + encodeURIComponent(msg);
+        };
+      }
     }
 
     /**********************
@@ -1027,10 +1032,9 @@ I am about to upload my proof of payment now (screenshot) and my sender name.`;
 
     $("#closeCountry").addEventListener("click", () => closeModal("#countryModal"));
     $("#closePackage").addEventListener("click", () => closeModal("#packageModal"));
-    $("#closeMethod").addEventListener("click", () => closeModal("#methodModal"));
     $("#closePay").addEventListener("click", () => closeModal("#payModal"));
 
-    ["#countryModal","#packageModal","#methodModal","#payModal"].forEach(id => {
+    ["#countryModal","#packageModal","#payModal"].forEach(id => {
       const m = $(id);
       m.addEventListener("click", (e) => { if (e.target === m) closeModal(id); });
     });
@@ -1042,21 +1046,6 @@ I am about to upload my proof of payment now (screenshot) and my sender name.`;
       const target = document.querySelector(sel);
       if (!target) return;
       copyText((target.textContent || "").trim());
-    });
-
-    $("#pickOpay").addEventListener("click", () => {
-      selectedMethodKey = "opay";
-      closeModal("#methodModal");
-      fillPaymentModal(selectedCountry, selectedPackage, selectedMethodKey);
-      openModal("#payModal");
-      startCountdown(3600);
-    });
-    $("#pickBank").addEventListener("click", () => {
-      selectedMethodKey = "bank";
-      closeModal("#methodModal");
-      fillPaymentModal(selectedCountry, selectedPackage, selectedMethodKey);
-      openModal("#payModal");
-      startCountdown(3600);
     });
 
     document.querySelectorAll(".btn").forEach(attachButtonGlow);
@@ -1071,7 +1060,7 @@ I am about to upload my proof of payment now (screenshot) and my sender name.`;
       let remaining = seconds;
       if (countdownTimer) clearInterval(countdownTimer);
 
-      el.style.color = ""; // reset
+      el.style.color = "";
       function tick(){
         const h = String(Math.floor(remaining / 3600)).padStart(2,'0');
         const m = String(Math.floor((remaining % 3600) / 60)).padStart(2,'0');
