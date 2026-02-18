@@ -13,7 +13,7 @@
 
   <!-- Indexing & canonical -->
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-image-preview:large,max-video-preview:-1" />
   <link rel="canonical" href="https://streamwebsite.com.ng/" />
   <base target="_top" />
   <link rel="manifest" href="/manifest.webmanifest" />
@@ -622,7 +622,6 @@
 
   <main class="wrap">
     <section class="card">
-      <!-- CHANGE THIS TO YOUR STREAM LOGO PATH -->
       <img class="logo" src="https://streamwebsite.com.ng/assets/stream-logo.png" alt="Stream Logo" loading="eager" />
 
       <h1>Stream Payment (Nigeria &amp; Other Countries)</h1>
@@ -677,7 +676,7 @@
   <div class="modal" id="payModal" aria-hidden="true">
     <div class="modalCard">
       <div class="modalHead">
-        <div class="modalTitle">Payment Details</div>
+        <div class="modalTitle" id="payModalTitle">Payment Details</div>
         <button class="xbtn" id="closePay">Close</button>
       </div>
       <div class="modalBody">
@@ -685,35 +684,38 @@
           Country: <b id="pfCountry">—</b> • Package: <b id="pfPackage">—</b> • Amount: <b id="pfAmount">—</b>
         </div>
 
-        <div class="row">
-          <div>
-            <div class="k">Payment channel</div>
-            <div class="v" id="pfChannel">—</div>
+        <!-- Rows (hidden for Paystack mode) -->
+        <div id="detailsRows">
+          <div class="row">
+            <div>
+              <div class="k">Payment channel</div>
+              <div class="v" id="pfChannel">—</div>
+            </div>
+            <button class="copyBtn" data-copy="#pfChannel">Copy</button>
           </div>
-          <button class="copyBtn" data-copy="#pfChannel">Copy</button>
-        </div>
 
-        <div style="height:10px"></div>
+          <div style="height:10px"></div>
 
-        <div class="row">
-          <div>
-            <div class="k">Account / Wallet number</div>
-            <div class="v" id="pfAcctNo">—</div>
+          <div class="row">
+            <div>
+              <div class="k">Account / Wallet number</div>
+              <div class="v" id="pfAcctNo">—</div>
+            </div>
+            <button class="copyBtn" data-copy="#pfAcctNo">Copy</button>
           </div>
-          <button class="copyBtn" data-copy="#pfAcctNo">Copy</button>
-        </div>
 
-        <div style="height:10px"></div>
+          <div style="height:10px"></div>
 
-        <div class="row">
-          <div>
-            <div class="k">Account / Wallet name</div>
-            <div class="v" id="pfAcctName">—</div>
+          <div class="row">
+            <div>
+              <div class="k">Account / Wallet name</div>
+              <div class="v" id="pfAcctName">—</div>
+            </div>
+            <button class="copyBtn" data-copy="#pfAcctName">Copy</button>
           </div>
-          <button class="copyBtn" data-copy="#pfAcctName">Copy</button>
-        </div>
 
-        <div style="height:10px"></div>
+          <div style="height:10px"></div>
+        </div>
 
         <div class="row">
           <div style="min-width: 240px; flex: 1 1 240px;">
@@ -724,8 +726,8 @@
         </div>
 
         <div class="ctaRow">
-          <button class="cta" id="submitProof">Submit Payment Proof (WhatsApp)</button>
-          <button class="ghost" id="copyAll">Copy All Details</button>
+          <button class="cta" id="primaryPayBtn">Pay Now</button>
+          <button class="ghost" id="secondaryBtn">Copy All Details</button>
         </div>
 
         <div class="small" id="footerNote" style="margin-top:10px; text-align:center;">
@@ -750,10 +752,9 @@
           label: "🇳🇬 Nigeria",
           packages: { Registration: { amountText: "₦12,000" } },
           payment: {
-            channel: "Moniepoint Bank Transfer",
-            acctNo: "6054080105",
-            acctName: "Spino Clinton",
-            note: "Bank: Moniepoint (normal transfer).",
+            mode: "paystack",
+            paystackUrl: "https://paystack.shop/pay/8pp1xz1mjo",
+            note: "Click “Pay Now” to complete your payment on Paystack. After payment, click “Submit Payment Proof” to send your screenshot for confirmation.",
             footer: "After payment, send a screenshot of your payment slip and your sender name for confirmation.",
             pending: false
           }
@@ -922,7 +923,7 @@
         div.innerHTML = `
           <span class="tag">${c.label} ${DATA.brand} DETAILS</span>
           <div class="price">${c.label}</div>
-          <div class="small">Tap to choose your registration package and view payment details.</div>
+          <div class="small">Tap to choose your registration package and continue.</div>
         `;
         attachButtonGlow(div);
         div.addEventListener("click", () => {
@@ -970,6 +971,10 @@
 
     function buildPrefilledMessage(country, planName, payCfg){
       const amountText = country.packages[planName]?.amountText || "—";
+      const usedLine = (payCfg.mode === "paystack")
+        ? `Payment Method: Paystack\nPay Link: ${payCfg.paystackUrl}`
+        : `Channel: ${payCfg.channel}\nAccount / Wallet: ${payCfg.acctNo}\nAccount / Wallet Name: ${payCfg.acctName}`;
+
       return `Hello, please confirm my ${DATA.brand} payment.
 
 Country: ${country.label}
@@ -977,9 +982,7 @@ Package: ${DATA.brand} ${planName}
 Amount: ${amountText}
 
 Payment Details Used:
-Channel: ${payCfg.channel}
-Account / Wallet: ${payCfg.acctNo}
-Account / Wallet Name: ${payCfg.acctName}${payCfg.note ? `
+${usedLine}${payCfg.note ? `
 
 Note: ${payCfg.note}` : ""}
 
@@ -994,52 +997,85 @@ I am about to upload my proof of payment now (screenshot) and my sender name.`;
       $("#pfPackage").textContent = DATA.brand + " " + planName;
       $("#pfAmount").textContent = amountText;
 
-      $("#pfChannel").textContent = pay.channel || "—";
-      $("#pfAcctNo").textContent = pay.acctNo || "—";
-      $("#pfAcctName").textContent = pay.acctName || "—";
+      const isPaystack = (pay.mode === "paystack" && pay.paystackUrl);
+
+      // Toggle UI (Paystack vs Bank/Mobile details)
+      $("#payModalTitle").textContent = isPaystack ? "Pay Now (Paystack)" : "Payment Details";
+      $("#detailsRows").style.display = isPaystack ? "none" : "block";
+
+      if (!isPaystack){
+        $("#pfChannel").textContent = pay.channel || "—";
+        $("#pfAcctNo").textContent = pay.acctNo || "—";
+        $("#pfAcctName").textContent = pay.acctName || "—";
+      } else {
+        // Clear just in case
+        $("#pfChannel").textContent = "—";
+        $("#pfAcctNo").textContent = "—";
+        $("#pfAcctName").textContent = "—";
+      }
 
       const noteText = pay.pending
         ? (pay.note || "Payment is not yet available for this country. Please do not send any money yet.")
-        : ([pay.note || "", `After payment, click "Submit Payment Proof" to message ${DATA.proofPhone} on WhatsApp.`].filter(Boolean).join(" "));
+        : (pay.note || `After payment, click "Submit Payment Proof" to message ${DATA.proofPhone} on WhatsApp.`);
 
       $("#pfNote").textContent = noteText;
-
       $("#footerNote").textContent = pay.footer || "After payment, send your proof for confirmation.";
 
-      // Configure Copy All
-      $("#copyAll").onclick = () => {
-        const lines = [];
-        lines.push(`${country.label} ${DATA.brand.toUpperCase()} REG INFO`);
-        lines.push("");
-        Object.keys(country.packages).forEach(k => {
-          lines.push(`🎁 SIGNUP FEE = ${country.packages[k]?.amountText || "—"}`);
-        });
-        lines.push("");
-        lines.push("🏮 PAYMENT DETAILS");
-        lines.push(`${(pay.channel || "—")}`);
-        lines.push(`${(pay.acctNo || "—")}`);
-        lines.push(`${(pay.acctName || "—")}`);
-        if (pay.note) lines.push(`\nℹ️ ${pay.note}`);
-        if (pay.footer) lines.push(`\n${pay.footer}`);
-        copyText(lines.join("\n"));
-      };
+      const primaryBtn = $("#primaryPayBtn");
+      const secondaryBtn = $("#secondaryBtn");
 
-      const submitBtn = $("#submitProof");
-
+      // Configure buttons based on mode
       if (pay.pending) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Payment Not Available Yet";
-        submitBtn.style.opacity = "0.6";
-        submitBtn.onclick = null;
-      } else {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit Payment Proof (WhatsApp)";
-        submitBtn.style.opacity = "1";
-        submitBtn.onclick = () => {
+        primaryBtn.disabled = true;
+        primaryBtn.textContent = "Payment Not Available Yet";
+        primaryBtn.style.opacity = "0.6";
+        primaryBtn.onclick = null;
+
+        secondaryBtn.textContent = "Copy All Details";
+        secondaryBtn.onclick = () => showToast("Not available");
+      } else if (isPaystack) {
+        primaryBtn.disabled = false;
+        primaryBtn.style.opacity = "1";
+        primaryBtn.textContent = "Pay Now (Paystack)";
+        primaryBtn.onclick = () => {
+          window.location.href = pay.paystackUrl;
+        };
+
+        secondaryBtn.textContent = "Submit Payment Proof (WhatsApp)";
+        secondaryBtn.onclick = () => {
           const msg = buildPrefilledMessage(country, planName, pay);
           const waDigits = DATA.proofPhone.replace(/\D/g,"");
           const to = waDigits.startsWith("0") ? ("234" + waDigits.slice(1)) : waDigits;
           window.location.href = "https://wa.me/" + to + "?text=" + encodeURIComponent(msg);
+        };
+      } else {
+        // Default (bank/mobile) behavior
+        primaryBtn.disabled = false;
+        primaryBtn.style.opacity = "1";
+        primaryBtn.textContent = "Submit Payment Proof (WhatsApp)";
+        primaryBtn.onclick = () => {
+          const msg = buildPrefilledMessage(country, planName, pay);
+          const waDigits = DATA.proofPhone.replace(/\D/g,"");
+          const to = waDigits.startsWith("0") ? ("234" + waDigits.slice(1)) : waDigits;
+          window.location.href = "https://wa.me/" + to + "?text=" + encodeURIComponent(msg);
+        };
+
+        secondaryBtn.textContent = "Copy All Details";
+        secondaryBtn.onclick = () => {
+          const lines = [];
+          lines.push(`${country.label} ${DATA.brand.toUpperCase()} REG INFO`);
+          lines.push("");
+          Object.keys(country.packages).forEach(k => {
+            lines.push(`🎁 SIGNUP FEE = ${country.packages[k]?.amountText || "—"}`);
+          });
+          lines.push("");
+          lines.push("🏮 PAYMENT DETAILS");
+          lines.push(`${(pay.channel || "—")}`);
+          lines.push(`${(pay.acctNo || "—")}`);
+          lines.push(`${(pay.acctName || "—")}`);
+          if (pay.note) lines.push(`\nℹ️ ${pay.note}`);
+          if (pay.footer) lines.push(`\n${pay.footer}`);
+          copyText(lines.join("\n"));
         };
       }
     }
