@@ -13,7 +13,7 @@
 
   <!-- Indexing & canonical -->
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-image-preview:large,max-video-preview:-1" />
+  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <link rel="canonical" href="https://streamwebsite.com.ng/" />
   <base target="_top" />
   <link rel="manifest" href="/manifest.webmanifest" />
@@ -626,8 +626,8 @@
 
       <h1>Stream Payment (Nigeria &amp; Other Countries)</h1>
       <p class="subtitle">
-        Click below to choose your <b>country</b> and see the correct <b>signup fee</b> and <b>payment details</b>.
-        After payment, click <b>Submit Payment Proof</b> to send your proof on WhatsApp.
+        Click below to choose your <b>country</b> and see the correct <b>signup fee</b> and <b>payment flow</b>.
+        After payment, click <b>Submit Payment Proof</b> to send your proof on Telegram.
       </p>
 
       <div class="links">
@@ -636,7 +636,7 @@
             <div class="ico">💳</div>
             <div class="labelwrap">
               <div class="label">Start Payment</div>
-              <div class="note">Country → Registration → Payment details → Pay → Submit proof (WhatsApp).</div>
+              <div class="note">Country → Registration → Payment → Submit proof (Telegram).</div>
             </div>
           </div>
           <div class="arrow">↗</div>
@@ -684,7 +684,7 @@
           Country: <b id="pfCountry">—</b> • Package: <b id="pfPackage">—</b> • Amount: <b id="pfAmount">—</b>
         </div>
 
-        <!-- Rows (hidden for Paystack mode) -->
+        <!-- Rows (hidden for Paystack and foreign Telegram mode) -->
         <div id="detailsRows">
           <div class="row">
             <div>
@@ -744,7 +744,7 @@
      * STREAM DATA (UPDATED)
      **********************/
     const DATA = {
-      proofPhone: "07087108201",
+      proofPhone: "07087108201", // no longer used for links (now Telegram)
       brand: "Stream",
       countries: [
         {
@@ -753,9 +753,9 @@
           packages: { Registration: { amountText: "₦12,000" } },
           payment: {
             mode: "paystack",
-            paystackUrl: "https://paystack.shop/pay/8pp1xz1mjo",
-            note: "Click “Pay Now” to complete your payment on Paystack. After payment, click “Submit Payment Proof” to send your screenshot for confirmation.",
-            footer: "After payment, send a screenshot of your payment slip and your sender name for confirmation.",
+            paystackUrl: "https://paystack.shop/pay/-k2km5244u",
+            note: "Click “Pay Now” to complete your payment on Paystack. After payment, click “Submit Payment Proof” to send your screenshot for confirmation on Telegram.",
+            footer: "After payment, send a screenshot of your payment slip and your sender name to @streamvendor on Telegram for confirmation.",
             pending: false
           }
         },
@@ -768,8 +768,8 @@
             channel: "MTN",
             acctNo: "0550827063",
             acctName: "RUTH ENNIN",
-            note: "After payment, click “Submit Payment Proof” to send your screenshot for confirmation.",
-            footer: "After Payment: Send a screenshot of your payment slip for confirmation.",
+            note: "Use the Telegram button below to speak with @streamvendor and complete your foreign payment.",
+            footer: "All foreign payments are processed via @streamvendor on Telegram.",
             pending: false
           }
         },
@@ -782,8 +782,8 @@
             channel: "MTN",
             acctNo: "652856398",
             acctName: "BELTUS EBOB",
-            note: "After payment, click “Submit Payment Proof” to send your screenshot for confirmation.",
-            footer: "After Payment: Send a screenshot of your payment slip for confirmation.",
+            note: "Use the Telegram button below to speak with @streamvendor and complete your foreign payment.",
+            footer: "All foreign payments are processed via @streamvendor on Telegram.",
             pending: false
           }
         },
@@ -796,8 +796,8 @@
             channel: "AIRTEL MONEY",
             acctNo: "0107494918",
             acctName: "MOHAMED HADID",
-            note: "After payment, click “Submit Payment Proof” to send your screenshot for confirmation.",
-            footer: "After Payment: Send a screenshot of your payment slip for confirmation.",
+            note: "Use the Telegram button below to speak with @streamvendor and complete your foreign payment.",
+            footer: "All foreign payments are processed via @streamvendor on Telegram.",
             pending: false
           }
         },
@@ -810,8 +810,8 @@
             channel: "FNB",
             acctNo: "63096232756",
             acctName: "Tegha digital (pty) Ltd",
-            note: "Use IMMEDIATE TRANSACTION option to ensure payment is processed instantly and without delay.",
-            footer: "After Payment: Send a screenshot of your payment slip and Sender's name for confirmation.",
+            note: "Use the Telegram button below to speak with @streamvendor and complete your foreign payment.",
+            footer: "All foreign payments are processed via @streamvendor on Telegram.",
             pending: false
           }
         },
@@ -824,8 +824,8 @@
             channel: "AIRTEL UGANDA",
             acctNo: "+256753668856",
             acctName: "ERIAB WAKABI",
-            note: "After payment, click “Submit Payment Proof” to send your screenshot for confirmation.",
-            footer: "After Payment: Send a screenshot of your payment slip for confirmation.",
+            note: "Use the Telegram button below to speak with @streamvendor and complete your foreign payment.",
+            footer: "All foreign payments are processed via @streamvendor on Telegram.",
             pending: false
           }
         },
@@ -838,13 +838,17 @@
             channel: "ORANGE MONEY",
             acctNo: "073190703",
             acctName: "Mohamed Santigie Kamara",
-            note: "After payment, click “Submit Payment Proof” to send your screenshot for confirmation.",
-            footer: "After Payment: Send a screenshot of your payment slip for confirmation.",
+            note: "Use the Telegram button below to speak with @streamvendor and complete your foreign payment.",
+            footer: "All foreign payments are processed via @streamvendor on Telegram.",
             pending: false
           }
         }
       ]
     };
+
+    // Fixed Telegram link for ALL proof-of-payment submissions (after payment)
+    const TELEGRAM_PROOF_URL =
+      "https://t.me/Streamvendor?text=I%20have%20made%20payments%20for%20stream%20Africa.%20How%20do%20I%20get%20started%3F";
 
     let selectedCountry = null;
     let selectedPackage = null;
@@ -969,26 +973,6 @@
       return country.payment || {};
     }
 
-    function buildPrefilledMessage(country, planName, payCfg){
-      const amountText = country.packages[planName]?.amountText || "—";
-      const usedLine = (payCfg.mode === "paystack")
-        ? `Payment Method: Paystack\nPay Link: ${payCfg.paystackUrl}`
-        : `Channel: ${payCfg.channel}\nAccount / Wallet: ${payCfg.acctNo}\nAccount / Wallet Name: ${payCfg.acctName}`;
-
-      return `Hello, please confirm my ${DATA.brand} payment.
-
-Country: ${country.label}
-Package: ${DATA.brand} ${planName}
-Amount: ${amountText}
-
-Payment Details Used:
-${usedLine}${payCfg.note ? `
-
-Note: ${payCfg.note}` : ""}
-
-I am about to upload my proof of payment now (screenshot) and my sender name.`;
-    }
-
     function fillPaymentModal(country, planName){
       const pay = getPaymentConfig(country);
       const amountText = country.packages[planName]?.amountText || "—";
@@ -998,28 +982,38 @@ I am about to upload my proof of payment now (screenshot) and my sender name.`;
       $("#pfAmount").textContent = amountText;
 
       const isPaystack = (pay.mode === "paystack" && pay.paystackUrl);
+      const isForeign = country.key !== "NG";
+      const shouldShowDetailsRows = !isPaystack && !isForeign;
 
-      // Toggle UI (Paystack vs Bank/Mobile details)
+      // Toggle UI
       $("#payModalTitle").textContent = isPaystack ? "Pay Now (Paystack)" : "Payment Details";
-      $("#detailsRows").style.display = isPaystack ? "none" : "block";
+      $("#detailsRows").style.display = shouldShowDetailsRows ? "block" : "none";
 
-      if (!isPaystack){
+      if (shouldShowDetailsRows){
         $("#pfChannel").textContent = pay.channel || "—";
         $("#pfAcctNo").textContent = pay.acctNo || "—";
         $("#pfAcctName").textContent = pay.acctName || "—";
       } else {
-        // Clear just in case
+        // Hide/clear details for Paystack + foreign Telegram flow
         $("#pfChannel").textContent = "—";
         $("#pfAcctNo").textContent = "—";
         $("#pfAcctName").textContent = "—";
       }
 
-      const noteText = pay.pending
-        ? (pay.note || "Payment is not yet available for this country. Please do not send any money yet.")
-        : (pay.note || `After payment, click "Submit Payment Proof" to message ${DATA.proofPhone} on WhatsApp.`);
+      let noteText;
+      if (pay.pending){
+        noteText = pay.note || "Payment is not yet available for this country. Please do not send any money yet.";
+      } else if (isForeign){
+        noteText = `To complete your ${DATA.brand} registration from ${country.label}, tap "Message @streamvendor on Telegram" below and say: "I am from ${country.label} and I want to make foreign payments."`;
+      } else {
+        noteText = pay.note || `After payment, click "Submit Payment Proof" to message @streamvendor on Telegram.`;
+      }
 
       $("#pfNote").textContent = noteText;
-      $("#footerNote").textContent = pay.footer || "After payment, send your proof for confirmation.";
+
+      const footerDefaultForeign = `Tap the button above to message @streamvendor on Telegram and complete your foreign payment.`;
+      const footerDefault = `After payment, send your proof for confirmation via Telegram.`;
+      $("#footerNote").textContent = pay.footer || (isForeign ? footerDefaultForeign : footerDefault);
 
       const primaryBtn = $("#primaryPayBtn");
       const secondaryBtn = $("#secondaryBtn");
@@ -1031,9 +1025,10 @@ I am about to upload my proof of payment now (screenshot) and my sender name.`;
         primaryBtn.style.opacity = "0.6";
         primaryBtn.onclick = null;
 
-        secondaryBtn.textContent = "Copy All Details";
+        secondaryBtn.textContent = "Copy Info";
         secondaryBtn.onclick = () => showToast("Not available");
       } else if (isPaystack) {
+        // Nigeria (Paystack) flow
         primaryBtn.disabled = false;
         primaryBtn.style.opacity = "1";
         primaryBtn.textContent = "Pay Now (Paystack)";
@@ -1041,42 +1036,54 @@ I am about to upload my proof of payment now (screenshot) and my sender name.`;
           window.location.href = pay.paystackUrl;
         };
 
-        secondaryBtn.textContent = "Submit Payment Proof (WhatsApp)";
+        secondaryBtn.textContent = "Submit Payment Proof (Telegram)";
         secondaryBtn.onclick = () => {
-          const msg = buildPrefilledMessage(country, planName, pay);
-          const waDigits = DATA.proofPhone.replace(/\D/g,"");
-          const to = waDigits.startsWith("0") ? ("234" + waDigits.slice(1)) : waDigits;
-          window.location.href = "https://wa.me/" + to + "?text=" + encodeURIComponent(msg);
+          window.location.href = TELEGRAM_PROOF_URL;
         };
       } else {
-        // Default (bank/mobile) behavior
-        primaryBtn.disabled = false;
-        primaryBtn.style.opacity = "1";
-        primaryBtn.textContent = "Submit Payment Proof (WhatsApp)";
-        primaryBtn.onclick = () => {
-          const msg = buildPrefilledMessage(country, planName, pay);
-          const waDigits = DATA.proofPhone.replace(/\D/g,"");
-          const to = waDigits.startsWith("0") ? ("234" + waDigits.slice(1)) : waDigits;
-          window.location.href = "https://wa.me/" + to + "?text=" + encodeURIComponent(msg);
-        };
+        // Non-Paystack: foreign countries now use Telegram only
+        if (isForeign){
+          const foreignMsg = `I am from ${country.label} and I want to make foreign payments.`;
 
-        secondaryBtn.textContent = "Copy All Details";
-        secondaryBtn.onclick = () => {
-          const lines = [];
-          lines.push(`${country.label} ${DATA.brand.toUpperCase()} REG INFO`);
-          lines.push("");
-          Object.keys(country.packages).forEach(k => {
-            lines.push(`🎁 SIGNUP FEE = ${country.packages[k]?.amountText || "—"}`);
-          });
-          lines.push("");
-          lines.push("🏮 PAYMENT DETAILS");
-          lines.push(`${(pay.channel || "—")}`);
-          lines.push(`${(pay.acctNo || "—")}`);
-          lines.push(`${(pay.acctName || "—")}`);
-          if (pay.note) lines.push(`\nℹ️ ${pay.note}`);
-          if (pay.footer) lines.push(`\n${pay.footer}`);
-          copyText(lines.join("\n"));
-        };
+          primaryBtn.disabled = false;
+          primaryBtn.style.opacity = "1";
+          primaryBtn.textContent = "Message @streamvendor on Telegram";
+          primaryBtn.onclick = () => {
+            const url = "https://t.me/Streamvendor?text=" + encodeURIComponent(foreignMsg);
+            window.location.href = url;
+          };
+
+          secondaryBtn.textContent = "Copy Telegram Message";
+          secondaryBtn.onclick = () => {
+            copyText(foreignMsg);
+          };
+        } else {
+          // Fallback for any future non-paystack Nigeria config
+          primaryBtn.disabled = false;
+          primaryBtn.style.opacity = "1";
+          primaryBtn.textContent = "Submit Payment Proof (Telegram)";
+          primaryBtn.onclick = () => {
+            window.location.href = TELEGRAM_PROOF_URL;
+          };
+
+          secondaryBtn.textContent = "Copy All Details";
+          secondaryBtn.onclick = () => {
+            const lines = [];
+            lines.push(`${country.label} ${DATA.brand.toUpperCase()} REG INFO`);
+            lines.push("");
+            Object.keys(country.packages).forEach(k => {
+              lines.push(`🎁 SIGNUP FEE = ${country.packages[k]?.amountText || "—"}`);
+            });
+            lines.push("");
+            lines.push("🏮 PAYMENT DETAILS");
+            lines.push(`${(pay.channel || "—")}`);
+            lines.push(`${(pay.acctNo || "—")}`);
+            lines.push(`${(pay.acctName || "—")}`);
+            if (pay.note) lines.push(`\nℹ️ ${pay.note}`);
+            if (pay.footer) lines.push(`\n${pay.footer}`);
+            copyText(lines.join("\n"));
+          };
+        }
       }
     }
 
