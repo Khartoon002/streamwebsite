@@ -11,6 +11,7 @@
   <link rel="manifest" href="/manifest.webmanifest" />
 
   <title>Stream — Register &amp; Earn</title>
+
   <meta name="title" content="Stream — Register &amp; Earn from Gigs, Games, and Social Tasks" />
   <meta name="description" content="Stream Website is a trusted earning platform in Nigeria where users make money through gigs, games, and social posts. Register today and start earning safely." />
   <meta name="keywords" content="Stream, stream official, stream registration, earn money online, social platform Nigeria, streamwebsite.com.ng" />
@@ -22,6 +23,7 @@
   <link rel="alternate" href="https://streamwebsite.com.ng/" hreflang="en-ng" />
   <link rel="alternate" href="https://streamwebsite.com.ng/" hreflang="en" />
   <link rel="alternate" href="https://streamwebsite.com.ng/" hreflang="x-default" />
+
   <meta name="geo.region" content="NG" />
   <meta name="geo.placename" content="Nigeria" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -50,16 +52,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&display=swap" rel="stylesheet" />
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Stream","url":"https://streamwebsite.com.ng/","logo":"https://streamwebsite.com.ng/img/stream-logo.png","image":"https://streamwebsite.com.ng/img/stream-logo.png","sameAs":["https://facebook.com/stream","https://twitter.com/stream","https://instagram.com/stream"]}
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Stream",
+      "url": "https://streamwebsite.com.ng/",
+      "logo": "https://streamwebsite.com.ng/img/stream-logo.png",
+      "image": "https://streamwebsite.com.ng/img/stream-logo.png",
+      "sameAs": [
+        "https://facebook.com/stream",
+        "https://twitter.com/stream",
+        "https://instagram.com/stream"
+      ]
+    }
   </script>
+
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"Stream Website","url":"https://streamwebsite.com.ng/","potentialAction":{"@type":"SearchAction","target":"https://streamwebsite.com.ng/blog?q={search_term_string}","query-input":"required name=search_term_string"}}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Stream","applicationCategory":["LifestyleApplication","SocialNetworkingApplication"],"operatingSystem":"Android, iOS, Web","offers":{"@type":"Offer","price":0,"priceCurrency":"NGN"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"ratingCount":1320},"url":"https://streamwebsite.com.ng/","image":"https://streamwebsite.com.ng/img/stream-logo.png","description":"Stream is a fast-growing lifestyle and social networking platform in Nigeria."}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Stream Website?","acceptedAnswer":{"@type":"Answer","text":"Stream Website is an online platform in Nigeria where you earn rewards through gigs, games, and social activities."}},{"@type":"Question","name":"How do I register on Stream?","acceptedAnswer":{"@type":"Answer","text":"Visit streamwebsite.com.ng, click Register, fill in your details and complete verification."}},{"@type":"Question","name":"Is Stream safe to use?","acceptedAnswer":{"@type":"Answer","text":"Stream is designed with user safety in mind. Always use the official domain streamwebsite.com.ng."}},{"@type":"Question","name":"What is the official Stream site?","acceptedAnswer":{"@type":"Answer","text":"The official Stream website is streamwebsite.com.ng."}}]}
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Stream Website",
+      "url": "https://streamwebsite.com.ng/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://streamwebsite.com.ng/blog?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
   </script>
 
   <style>
@@ -73,8 +92,6 @@
       --stroke: rgba(52,255,150,.2);
       --radius: 28px;
       --font: 'Poppins', system-ui, sans-serif;
-
-      /* Liquid glass */
       --glass-bg: rgba(255,255,255,.07);
       --glass-border: rgba(255,255,255,.18);
       --glass-shine: rgba(255,255,255,.12);
@@ -82,8 +99,16 @@
       --glass-blur: blur(22px) saturate(1.6);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
 
     body {
       font-family: var(--font);
@@ -94,7 +119,15 @@
       padding-bottom: env(safe-area-inset-bottom);
     }
 
-    /* Ambient background orbs */
+    .icon {
+      width: 22px;
+      height: 22px;
+      display: block;
+      color: #ffffff;
+      position: relative;
+      z-index: 2;
+    }
+
     .orb {
       position: fixed;
       border-radius: 50%;
@@ -104,21 +137,57 @@
       z-index: 0;
       animation: breathe 8s ease-in-out infinite;
     }
-    .orb1 { width: 500px; height: 500px; top: -100px; left: -100px; background: radial-gradient(circle, rgba(52,255,150,.35), transparent 65%); }
-    .orb2 { width: 400px; height: 400px; bottom: -80px; right: -80px; background: radial-gradient(circle, rgba(18,216,112,.28), transparent 65%); animation-delay: 4s; }
-    .orb3 { width: 300px; height: 300px; top: 50%; left: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(52,255,150,.10), transparent 65%); animation-delay: 2s; }
+
+    .orb1 {
+      width: 500px;
+      height: 500px;
+      top: -100px;
+      left: -100px;
+      background: radial-gradient(circle, rgba(52,255,150,.35), transparent 65%);
+    }
+
+    .orb2 {
+      width: 400px;
+      height: 400px;
+      bottom: -80px;
+      right: -80px;
+      background: radial-gradient(circle, rgba(18,216,112,.28), transparent 65%);
+      animation-delay: 4s;
+    }
+
+    .orb3 {
+      width: 300px;
+      height: 300px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background: radial-gradient(circle, rgba(52,255,150,.10), transparent 65%);
+      animation: breathe3 8s ease-in-out infinite;
+      animation-delay: 2s;
+    }
 
     @keyframes breathe {
-      0%, 100% { transform: scale(1); opacity: .45; }
-      50% { transform: scale(1.12); opacity: .55; }
-    }
-    .orb3 { animation: breathe3 8s ease-in-out infinite; }
-    @keyframes breathe3 {
-      0%,100% { transform: translate(-50%,-50%) scale(1); }
-      50% { transform: translate(-50%,-50%) scale(1.1); }
+      0%, 100% {
+        transform: scale(1);
+        opacity: .45;
+      }
+
+      50% {
+        transform: scale(1.12);
+        opacity: .55;
+      }
     }
 
-    /* ─── LAYOUT ─── */
+    @keyframes breathe3 {
+      0%, 100% {
+        transform: translate(-50%,-50%) scale(1);
+      }
+
+      50% {
+        transform: translate(-50%,-50%) scale(1.1);
+      }
+    }
+
     .page {
       min-height: 100vh;
       display: flex;
@@ -134,12 +203,12 @@
       text-align: center;
     }
 
-    /* ─── LOGO ─── */
     .logo-wrap {
       position: relative;
       display: inline-block;
       margin-bottom: clamp(18px,4vw,28px);
     }
+
     .logo-ring {
       width: clamp(100px,28vw,130px);
       height: clamp(100px,28vw,130px);
@@ -155,15 +224,19 @@
       position: relative;
       overflow: hidden;
     }
+
     .logo-ring::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 50%;
       background: linear-gradient(180deg, rgba(255,255,255,.14), transparent);
       border-radius: 32px 32px 0 0;
       pointer-events: none;
     }
+
     .logo-ring img {
       width: 80%;
       height: 80%;
@@ -173,7 +246,6 @@
       z-index: 1;
     }
 
-    /* ─── HEADING ─── */
     h1 {
       font-size: clamp(26px,7vw,38px);
       font-weight: 900;
@@ -185,6 +257,7 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .sub {
       font-size: clamp(13px,3.4vw,15px);
       color: var(--muted);
@@ -192,19 +265,26 @@
       margin-bottom: clamp(28px,6vw,40px);
       font-weight: 400;
     }
+
     .amount-badge {
       display: inline-block;
-      padding: 3px 10px;
+      padding: 6px 13px;
       border-radius: 999px;
-      background: rgba(52,255,150,.12);
+      background: linear-gradient(135deg, rgba(52,255,150,.15), rgba(255,255,255,.05));
       border: 1px solid rgba(52,255,150,.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
       color: var(--green);
       font-weight: 800;
       font-size: 13px;
       margin-bottom: 14px;
     }
 
-    /* ─── LIQUID GLASS BUTTON ─── */
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
     .glass-btn {
       width: 100%;
       display: flex;
@@ -214,7 +294,7 @@
       padding: clamp(16px,4vw,20px) clamp(18px,4.5vw,24px);
       border-radius: clamp(20px,5vw,24px);
       border: 1.5px solid var(--glass-border);
-      background: var(--glass-bg);
+      background: linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.045));
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       box-shadow: var(--glass-shadow);
@@ -223,70 +303,137 @@
       font-family: var(--font);
       position: relative;
       overflow: hidden;
-      transition: transform .3s cubic-bezier(.16,1,.3,1), border-color .3s ease, box-shadow .3s ease;
+      transition: transform .3s cubic-bezier(.16,1,.3,1), border-color .3s ease, box-shadow .3s ease, background .3s ease;
       text-decoration: none;
     }
+
     .glass-btn::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 50%;
       background: linear-gradient(180deg, var(--glass-shine), transparent);
       pointer-events: none;
     }
+
     .glass-btn:hover {
       transform: translateY(-2px);
       border-color: rgba(52,255,150,.5);
+      background: linear-gradient(135deg, rgba(52,255,150,.1), rgba(255,255,255,.05));
       box-shadow: var(--glass-shadow), 0 16px 50px rgba(52,255,150,.15);
     }
-    .glass-btn:active { transform: scale(.98); }
+
+    .glass-btn:active {
+      transform: scale(.98);
+    }
 
     .btn-ico {
       width: clamp(44px,11vw,50px);
       height: clamp(44px,11vw,50px);
       border-radius: clamp(14px,3.5vw,16px);
-      background: linear-gradient(135deg,rgba(52,255,150,.2),rgba(18,216,112,.1));
+      background: linear-gradient(135deg, rgba(52,255,150,.22), rgba(18,216,112,.09));
       border: 1px solid rgba(52,255,150,.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 8px 24px rgba(0,0,0,.22);
       display: grid;
       place-items: center;
-      font-size: clamp(20px,5vw,22px);
+      font-size: 0;
       flex: 0 0 auto;
     }
-    .btn-text { text-align: left; flex: 1; min-width: 0; }
-    .btn-label { font-weight: 800; font-size: clamp(14px,3.8vw,16px); display: block; }
-    .btn-note { font-size: clamp(11px,2.9vw,12px); color: var(--muted); margin-top: 2px; display: block; }
-    .btn-arrow { font-size: 18px; opacity: .7; flex: 0 0 auto; }
 
-    /* CTA big button */
-    .cta-btn {
+    .btn-ico .icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .btn-text {
+      text-align: left;
+      flex: 1;
+      min-width: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-label {
+      font-weight: 800;
+      font-size: clamp(14px,3.8vw,16px);
+      display: block;
+    }
+
+    .btn-note {
+      font-size: clamp(11px,2.9vw,12px);
+      color: var(--muted);
+      margin-top: 2px;
+      display: block;
+    }
+
+    .btn-arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.82);
+      font-size: 0;
+      flex: 0 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-arrow .icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .cta-btn,
+    .ghost-btn {
       width: 100%;
+      font-family: var(--font);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .cta-btn {
       padding: clamp(16px,4vw,19px);
       border-radius: clamp(20px,5vw,24px);
       border: none;
       background: linear-gradient(135deg, rgba(52,255,150,.95), rgba(18,216,112,.85));
       color: #04110a;
-      font-family: var(--font);
       font-weight: 900;
       font-size: clamp(15px,4vw,17px);
-      cursor: pointer;
       box-shadow: 0 12px 40px rgba(52,255,150,.25), inset 0 1px 0 rgba(255,255,255,.3);
-      position: relative;
-      overflow: hidden;
       transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s ease;
     }
+
     .cta-btn::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 50%;
       background: linear-gradient(180deg, rgba(255,255,255,.22), transparent);
       pointer-events: none;
     }
-    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 20px 60px rgba(52,255,150,.35), inset 0 1px 0 rgba(255,255,255,.3); }
-    .cta-btn:active { transform: scale(.98); }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 60px rgba(52,255,150,.35), inset 0 1px 0 rgba(255,255,255,.3);
+    }
+
+    .cta-btn:active {
+      transform: scale(.98);
+    }
 
     .ghost-btn {
-      width: 100%;
       padding: clamp(14px,3.5vw,17px);
       border-radius: clamp(20px,5vw,24px);
       border: 1.5px solid rgba(52,255,150,.22);
@@ -294,29 +441,36 @@
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       color: var(--text);
-      font-family: var(--font);
       font-weight: 800;
       font-size: clamp(13px,3.6vw,15px);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
       transition: transform .25s ease, border-color .25s ease;
     }
+
     .ghost-btn::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 50%;
       background: linear-gradient(180deg, rgba(255,255,255,.08), transparent);
       pointer-events: none;
     }
-    .ghost-btn:hover { transform: translateY(-1px); border-color: rgba(52,255,150,.45); }
 
-    .stack { display: flex; flex-direction: column; gap: 12px; }
+    .ghost-btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(52,255,150,.45);
+    }
 
-    /* ─── MODAL ─── */
+    .cta-btn .icon,
+    .ghost-btn .icon {
+      width: 20px;
+      height: 20px;
+    }
+
     .modal-overlay {
-      position: fixed; inset: 0;
+      position: fixed;
+      inset: 0;
       background: rgba(0,0,0,.65);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -326,8 +480,16 @@
       justify-content: center;
       padding: clamp(10px,3vw,16px);
     }
-    .modal-overlay.open { display: flex; }
-    @media (min-width: 600px) { .modal-overlay { align-items: center; } }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    @media (min-width: 600px) {
+      .modal-overlay {
+        align-items: center;
+      }
+    }
 
     .modal-sheet {
       width: min(520px,100%);
@@ -344,26 +506,40 @@
       position: relative;
       animation: slideUp .35s cubic-bezier(.16,1,.3,1) both;
     }
-    @media (min-width: 600px) { .modal-sheet { border-radius: clamp(22px,5.5vw,28px); } }
+
+    @media (min-width: 600px) {
+      .modal-sheet {
+        border-radius: clamp(22px,5.5vw,28px);
+      }
+    }
 
     @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     .modal-sheet::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 50%;
       background: linear-gradient(180deg, rgba(255,255,255,.10), transparent);
       pointer-events: none;
       border-radius: inherit;
     }
 
-    /* Pill handle */
     .modal-handle {
-      width: 36px; height: 4px;
+      width: 36px;
+      height: 4px;
       background: rgba(255,255,255,.22);
       border-radius: 999px;
       margin: 10px auto 0;
@@ -377,8 +553,15 @@
       padding: 14px clamp(16px,4vw,22px) 12px;
       border-bottom: 1px solid rgba(255,255,255,.07);
       flex: 0 0 auto;
+      position: relative;
+      z-index: 2;
     }
-    .modal-title { font-weight: 900; font-size: clamp(14px,3.8vw,16px); }
+
+    .modal-title {
+      font-weight: 900;
+      font-size: clamp(14px,3.8vw,16px);
+    }
+
     .close-btn {
       border: 1.5px solid rgba(255,255,255,.15);
       background: rgba(255,255,255,.08);
@@ -396,9 +579,10 @@
       padding: clamp(14px,3.5vw,20px) clamp(16px,4vw,22px) clamp(16px,4vw,22px);
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
+      position: relative;
+      z-index: 2;
     }
 
-    /* Info rows */
     .info-row {
       display: flex;
       align-items: center;
@@ -412,29 +596,28 @@
       position: relative;
       overflow: hidden;
     }
+
     .info-row::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 50%;
       background: linear-gradient(180deg, rgba(255,255,255,.05), transparent);
       pointer-events: none;
     }
-    .info-row .k { font-size: 11.5px; color: var(--muted); margin-bottom: 3px; }
-    .info-row .v { font-weight: 800; font-size: clamp(13px,3.5vw,14px); word-break: break-all; }
 
-    .copy-btn {
-      border: 1.5px solid rgba(52,255,150,.2);
-      background: rgba(52,255,150,.08);
-      color: var(--green);
-      border-radius: 10px;
-      padding: 8px 12px;
-      font-family: var(--font);
-      font-size: 11px;
+    .info-row .k {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .info-row .v {
       font-weight: 800;
-      cursor: pointer;
-      flex: 0 0 auto;
-      white-space: nowrap;
+      font-size: clamp(13px,3.5vw,14px);
+      word-break: break-all;
     }
 
     .note-box {
@@ -444,12 +627,31 @@
       background: rgba(52,255,150,.05);
       margin-bottom: 14px;
     }
-    .note-box p { font-size: clamp(12px,3.2vw,13px); color: var(--muted); line-height: 1.5; }
-    .countdown { font-weight: 900; color: var(--green); font-size: 13px; margin-top: 6px; }
 
-    /* ─── TELEGRAM POPUP ─── */
+    .note-box p {
+      font-size: clamp(12px,3.2vw,13px);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .countdown {
+      font-weight: 900;
+      color: var(--green);
+      font-size: 13px;
+      margin-top: 9px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .countdown .icon {
+      width: 15px;
+      height: 15px;
+    }
+
     .tg-overlay {
-      position: fixed; inset: 0;
+      position: fixed;
+      inset: 0;
       background: rgba(0,0,0,.72);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -459,6 +661,7 @@
       justify-content: center;
       padding: 20px;
     }
+
     .tg-card {
       width: min(400px,100%);
       border-radius: 32px;
@@ -473,40 +676,87 @@
       overflow: hidden;
       animation: popIn .45s cubic-bezier(.16,1,.3,1) both;
     }
+
     @keyframes popIn {
-      from { transform: scale(.88); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+      from {
+        transform: scale(.88);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
+
     .tg-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 55%;
       background: linear-gradient(180deg, rgba(255,255,255,.12), transparent);
       border-radius: 32px 32px 0 0;
       pointer-events: none;
     }
+
     .tg-icon {
-      width: 72px; height: 72px;
+      width: 72px;
+      height: 72px;
       border-radius: 20px;
       background: linear-gradient(135deg, #27a7e3, #1a8bcf);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0 auto 16px;
       box-shadow: 0 12px 40px rgba(39,167,227,.4), inset 0 1px 0 rgba(255,255,255,.25);
       position: relative;
+      font-size: 0;
     }
+
     .tg-icon::before {
       content: '';
-      position: absolute; top: 0; left: 0; right: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 50%;
       background: linear-gradient(180deg, rgba(255,255,255,.2), transparent);
       border-radius: 20px 20px 0 0;
     }
-    .tg-card h2 { font-size: clamp(18px,5vw,22px); font-weight: 900; margin-bottom: 8px; }
-    .tg-card p { font-size: clamp(12px,3.2vw,13.5px); color: var(--muted); line-height: 1.55; margin-bottom: 20px; }
 
-    .tg-btns { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .tg-icon .icon {
+      width: 38px;
+      height: 38px;
+    }
+
+    .tg-card h2 {
+      font-size: clamp(18px,5vw,22px);
+      font-weight: 900;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tg-card p {
+      font-size: clamp(12px,3.2vw,13.5px);
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tg-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
     .tg-store-btn {
       display: flex;
       align-items: center;
@@ -525,41 +775,107 @@
       overflow: hidden;
       transition: border-color .2s, transform .2s;
     }
+
     .tg-store-btn::before {
       content: '';
-      position: absolute; top: 0; left: 0; right: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 50%;
       background: linear-gradient(180deg, rgba(255,255,255,.09), transparent);
       pointer-events: none;
     }
-    .tg-store-btn:hover { border-color: rgba(52,255,150,.45); transform: translateY(-1px); }
-    .tg-store-btn .si { font-size: 22px; flex: 0 0 auto; }
-    .tg-store-btn .st { text-align: left; }
-    .tg-store-btn .st small { display: block; font-size: 10px; color: var(--muted); font-weight: 400; }
-    .tg-store-btn .st strong { display: block; font-size: 14px; font-weight: 800; }
-    .tg-store-btn .st-right { margin-left: auto; font-size: 13px; opacity: .5; }
+
+    .tg-store-btn:hover {
+      border-color: rgba(52,255,150,.45);
+      transform: translateY(-1px);
+    }
+
+    .tg-store-btn .si {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      flex: 0 0 auto;
+      font-size: 0;
+    }
+
+    .tg-store-btn .si .icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .tg-store-btn .st {
+      text-align: left;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tg-store-btn .st small {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .tg-store-btn .st strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .tg-store-btn .st-right {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.62);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      margin-left: auto;
+      font-size: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tg-store-btn .st-right .icon {
+      width: 14px;
+      height: 14px;
+    }
 
     .tg-skip {
-      background: none; border: none;
+      background: none;
+      border: none;
       color: var(--muted);
       font-family: var(--font);
       font-size: 12px;
       cursor: pointer;
       text-decoration: underline;
       underline-offset: 2px;
+      position: relative;
+      z-index: 2;
     }
+
     .tg-timer {
       display: inline-block;
       font-size: 11px;
       color: rgba(52,255,150,.7);
       font-weight: 800;
       margin-top: 4px;
+      position: relative;
+      z-index: 2;
     }
 
-    /* ─── TOAST ─── */
     .toast {
       position: fixed;
-      left: 50%; bottom: calc(20px + env(safe-area-inset-bottom));
+      left: 50%;
+      bottom: calc(20px + env(safe-area-inset-bottom));
       transform: translateX(-50%) translateY(12px);
       opacity: 0;
       pointer-events: none;
@@ -575,52 +891,98 @@
       transition: opacity .3s ease, transform .3s ease;
       white-space: nowrap;
     }
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
 
     @media (hover: none) {
-      .glass-btn:hover { transform: none; box-shadow: var(--glass-shadow); }
-      .cta-btn:hover { transform: none; }
+      .glass-btn:hover {
+        transform: none;
+        box-shadow: var(--glass-shadow);
+      }
+
+      .cta-btn:hover {
+        transform: none;
+      }
     }
   </style>
 </head>
-<body>
 
-  <!-- Ambient orbs -->
+<body>
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="i-card" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2 1.5v2h14v-2H5Zm1.5 6.25a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-4Z"/>
+    </symbol>
+
+    <symbol id="i-upload" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 3.25c.28 0 .55.11.75.31l4.25 4.25a1.06 1.06 0 0 1-1.5 1.5l-2.44-2.44V15a1.06 1.06 0 0 1-2.12 0V6.87L8.5 9.31A1.06 1.06 0 1 1 7 7.81l4.25-4.25c.2-.2.47-.31.75-.31ZM5.5 15.75c.58 0 1.06.48 1.06 1.06v1.13h10.88v-1.13a1.06 1.06 0 0 1 2.12 0V19A1.94 1.94 0 0 1 17.63 21H6.38A1.94 1.94 0 0 1 4.44 19v-2.19c0-.58.48-1.06 1.06-1.06Z"/>
+    </symbol>
+
+    <symbol id="i-telegram" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M21.75 4.66 18.6 19.5c-.24 1.05-.86 1.31-1.74.82l-4.8-3.54-2.32 2.23c-.26.26-.47.47-.96.47l.34-4.9 8.92-8.06c.39-.34-.08-.53-.6-.19L6.42 13.27 1.67 11.8C.64 11.48.62 10.77 1.88 10.28L20.46 3.1c.86-.32 1.62.2 1.29 1.56Z"/>
+    </symbol>
+
+    <symbol id="i-external" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M14 4.75c0-.41.34-.75.75-.75h4.5c.41 0 .75.34.75.75v4.5a.75.75 0 0 1-1.5 0V6.56l-7.22 7.22a.75.75 0 0 1-1.06-1.06l7.22-7.22h-2.69A.75.75 0 0 1 14 4.75ZM5.75 6A2.75 2.75 0 0 0 3 8.75v9.5A2.75 2.75 0 0 0 5.75 21h9.5A2.75 2.75 0 0 0 18 18.25V14a1 1 0 1 0-2 0v4.25c0 .41-.34.75-.75.75h-9.5a.75.75 0 0 1-.75-.75v-9.5c0-.41.34-.75.75-.75H10a1 1 0 1 0 0-2H5.75Z"/>
+    </symbol>
+
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M8 2.5h8A2.5 2.5 0 0 1 18.5 5v14A2.5 2.5 0 0 1 16 21.5H8A2.5 2.5 0 0 1 5.5 19V5A2.5 2.5 0 0 1 8 2.5Zm2.5 16a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2h-3Z"/>
+    </symbol>
+
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M6.2 3.78c-.76.43-1.2 1.24-1.2 2.18v12.08c0 .94.44 1.75 1.2 2.18.77.43 1.7.36 2.55-.2l9.4-6.04c.74-.48 1.17-1.2 1.17-1.98s-.43-1.5-1.17-1.98l-9.4-6.04c-.85-.56-1.78-.63-2.55-.2Z"/>
+    </symbol>
+
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2.25A9.75 9.75 0 1 0 12 21.75 9.75 9.75 0 0 0 12 2.25Zm4.53 7.28-5.25 5.25a1 1 0 0 1-1.41 0l-2.4-2.4a1 1 0 0 1 1.41-1.41l1.69 1.69 4.54-4.54a1 1 0 0 1 1.42 1.41Z"/>
+    </symbol>
+
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2.25A9.75 9.75 0 1 0 12 21.75 9.75 9.75 0 0 0 12 2.25Zm1 5.75v3.58l2.38 2.38a1 1 0 0 1-1.42 1.42l-2.67-2.67A1 1 0 0 1 11 12V8a1 1 0 1 1 2 0Z"/>
+    </symbol>
+  </svg>
+
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
   <div class="orb orb3"></div>
 
-  <!-- ─── TELEGRAM POPUP ─── -->
   <div class="tg-overlay" id="tgOverlay" role="dialog" aria-modal="true" aria-label="Install Telegram">
     <div class="tg-card">
-      <div class="tg-icon">✈️</div>
+      <div class="tg-icon">
+        <svg class="icon"><use href="#i-telegram"></use></svg>
+      </div>
+
       <h2>Install Telegram First</h2>
-      <p>You'll need Telegram to send your payment receipt and get confirmed quickly.</p>
+      <p>You’ll need Telegram to send your payment receipt and get confirmed quickly.</p>
 
       <div class="tg-btns">
         <a class="tg-store-btn" href="https://apps.apple.com/app/telegram-messenger/id686449807" target="_blank" rel="noopener">
-          <span class="si">🍎</span>
+          <span class="si"><svg class="icon"><use href="#i-phone"></use></svg></span>
           <span class="st"><small>Download on the</small><strong>App Store</strong></span>
-          <span class="st-right">↗</span>
+          <span class="st-right"><svg class="icon"><use href="#i-external"></use></svg></span>
         </a>
+
         <a class="tg-store-btn" href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank" rel="noopener">
-          <span class="si">▶️</span>
+          <span class="si"><svg class="icon"><use href="#i-play"></use></svg></span>
           <span class="st"><small>Get it on</small><strong>Google Play</strong></span>
-          <span class="st-right">↗</span>
+          <span class="st-right"><svg class="icon"><use href="#i-external"></use></svg></span>
         </a>
-        <button class="tg-store-btn" onclick="closeTg()">
-          <span class="si">✅</span>
+
+        <button class="tg-store-btn" type="button" onclick="closeTg()">
+          <span class="si"><svg class="icon"><use href="#i-check"></use></svg></span>
           <span class="st"><small>Already installed</small><strong>I have Telegram</strong></span>
-          <span class="st-right">→</span>
+          <span class="st-right"><svg class="icon"><use href="#i-external"></use></svg></span>
         </button>
       </div>
 
-      <button class="tg-skip" onclick="closeTg()">Skip for now</button><br>
+      <button class="tg-skip" type="button" onclick="closeTg()">Skip for now</button><br>
       <span class="tg-timer" id="tgTimer">Closes in 10s</span>
     </div>
   </div>
 
-  <!-- ─── MAIN PAGE ─── -->
   <main class="page">
     <div class="card">
       <div class="logo-wrap">
@@ -629,40 +991,54 @@
         </div>
       </div>
 
-      <div class="amount-badge">🇳🇬 Nigeria — ₦12,000</div>
+      <div class="amount-badge">Nigeria — ₦12,000</div>
+
       <h1>Stream Registration</h1>
       <p class="sub">Pay your signup fee and send proof via Telegram to get started.</p>
 
       <div class="stack">
-        <button class="glass-btn" id="payNowBtn">
-          <div class="btn-ico">💳</div>
+        <button class="glass-btn" id="payNowBtn" type="button">
+          <div class="btn-ico">
+            <svg class="icon"><use href="#i-card"></use></svg>
+          </div>
+
           <div class="btn-text">
             <span class="btn-label">Pay Now</span>
             <span class="btn-note">Paystack — fast &amp; secure</span>
           </div>
-          <span class="btn-arrow">↗</span>
+
+          <span class="btn-arrow">
+            <svg class="icon"><use href="#i-external"></use></svg>
+          </span>
         </button>
 
-        <button class="glass-btn" id="proofBtn">
-          <div class="btn-ico">📤</div>
+        <button class="glass-btn" id="proofBtn" type="button">
+          <div class="btn-ico">
+            <svg class="icon"><use href="#i-upload"></use></svg>
+          </div>
+
           <div class="btn-text">
             <span class="btn-label">Send Payment Proof</span>
-            <span class="btn-note">Message @streamvendor on Telegram</span>
+            <span class="btn-note">Message @stream_vendor on Telegram</span>
           </div>
-          <span class="btn-arrow">↗</span>
+
+          <span class="btn-arrow">
+            <svg class="icon"><use href="#i-external"></use></svg>
+          </span>
         </button>
       </div>
     </div>
   </main>
 
-  <!-- ─── PAYMENT DETAILS MODAL ─── -->
   <div class="modal-overlay" id="payModal">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
+
       <div class="modal-head">
         <span class="modal-title">Payment Details</span>
-        <button class="close-btn" id="closePayModal">Close</button>
+        <button class="close-btn" id="closePayModal" type="button">Close</button>
       </div>
+
       <div class="modal-body">
         <div class="info-row">
           <div>
@@ -679,13 +1055,27 @@
         </div>
 
         <div class="note-box">
-          <p>Click <strong>Pay via Paystack</strong> below to complete your payment securely. After payment, tap <strong>Send Proof</strong> to message @streamvendor on Telegram with your screenshot.</p>
-          <div class="countdown" id="payCountdown">⏳ 01:00:00</div>
+          <p>
+            Click <strong>Pay via Paystack</strong> below to complete your payment securely.
+            After payment, tap <strong>Send Proof</strong> to message @stream_vendor on Telegram with your screenshot.
+          </p>
+
+          <div class="countdown" id="payCountdown">
+            <svg class="icon"><use href="#i-clock"></use></svg>
+            <span id="payCountdownText">01:00:00</span>
+          </div>
         </div>
 
         <div class="stack">
-          <button class="cta-btn" id="paystackBtn">Pay via Paystack ↗</button>
-          <button class="ghost-btn" id="sendProofBtn">Send Proof on Telegram ✈️</button>
+          <button class="cta-btn" id="paystackBtn" type="button">
+            <svg class="icon"><use href="#i-card"></use></svg>
+            Pay via Paystack
+          </button>
+
+          <button class="ghost-btn" id="sendProofBtn" type="button">
+            <svg class="icon"><use href="#i-telegram"></use></svg>
+            Send Proof on Telegram
+          </button>
         </div>
       </div>
     </div>
@@ -695,9 +1085,8 @@
 
   <script>
     const PAYSTACK_URL = "https://paystack.shop/pay/9of4mu-xdo";
-    const TELEGRAM_URL = "https://t.me/Streamvendor?text=I%20have%20made%20payments%20for%20stream%20Africa.%20How%20do%20I%20get%20started%3F";
+    const TELEGRAM_URL = "https://t.me/stream_vendor?text=I%20have%20made%20payment%20for%20Stream.%20How%20do%20I%20get%20started%3F";
 
-    // ─── TELEGRAM POPUP ───
     let tgSecs = 10;
     const tgTimerEl = document.getElementById("tgTimer");
     const tgOverlay = document.getElementById("tgOverlay");
@@ -710,12 +1099,18 @@
     const tgInterval = setInterval(() => {
       tgSecs--;
       tgTimerEl.textContent = `Closes in ${tgSecs}s`;
-      if (tgSecs <= 0) closeTg();
+
+      if (tgSecs <= 0) {
+        closeTg();
+      }
     }, 1000);
 
-    tgOverlay.addEventListener("click", e => { if (e.target === tgOverlay) closeTg(); });
+    tgOverlay.addEventListener("click", function (e) {
+      if (e.target === tgOverlay) {
+        closeTg();
+      }
+    });
 
-    // ─── MODAL ───
     const payModal = document.getElementById("payModal");
 
     function openPayModal() {
@@ -723,6 +1118,7 @@
       document.body.style.overflow = "hidden";
       startCountdown();
     }
+
     function closePayModal() {
       payModal.classList.remove("open");
       document.body.style.overflow = "";
@@ -731,42 +1127,66 @@
 
     document.getElementById("payNowBtn").addEventListener("click", openPayModal);
     document.getElementById("closePayModal").addEventListener("click", closePayModal);
-    payModal.addEventListener("click", e => { if (e.target === payModal) closePayModal(); });
 
-    document.getElementById("paystackBtn").addEventListener("click", () => {
+    payModal.addEventListener("click", function (e) {
+      if (e.target === payModal) {
+        closePayModal();
+      }
+    });
+
+    document.getElementById("paystackBtn").addEventListener("click", function () {
       window.location.href = PAYSTACK_URL;
     });
-    document.getElementById("sendProofBtn").addEventListener("click", () => {
-      window.location.href = TELEGRAM_URL;
-    });
-    document.getElementById("proofBtn").addEventListener("click", () => {
+
+    document.getElementById("sendProofBtn").addEventListener("click", function () {
       window.location.href = TELEGRAM_URL;
     });
 
-    // ─── COUNTDOWN ───
+    document.getElementById("proofBtn").addEventListener("click", function () {
+      window.location.href = TELEGRAM_URL;
+    });
+
     let cdInterval = null;
+
     function startCountdown() {
       clearInterval(cdInterval);
+
       let s = 3600;
-      const el = document.getElementById("payCountdown");
+      const el = document.getElementById("payCountdownText");
+      const wrapper = document.getElementById("payCountdown");
+
+      wrapper.style.color = "var(--green)";
+
       function tick() {
-        const h = String(Math.floor(s / 3600)).padStart(2,'0');
-        const m = String(Math.floor((s % 3600) / 60)).padStart(2,'0');
-        const sec = String(s % 60).padStart(2,'0');
-        el.textContent = `⏳ ${h}:${m}:${sec}`;
-        if (s <= 0) { clearInterval(cdInterval); el.textContent = "⏰ Expired"; el.style.color = "rgba(255,77,109,.9)"; return; }
+        const h = String(Math.floor(s / 3600)).padStart(2, "0");
+        const m = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
+        const sec = String(s % 60).padStart(2, "0");
+
+        el.textContent = `${h}:${m}:${sec}`;
+
+        if (s <= 0) {
+          clearInterval(cdInterval);
+          el.textContent = "Payment window expired";
+          wrapper.style.color = "rgba(255,77,109,.9)";
+          return;
+        }
+
         s--;
       }
+
       tick();
       cdInterval = setInterval(tick, 1000);
     }
 
-    // ─── TOAST ───
     const toastEl = document.getElementById("toast");
+
     function showToast(msg) {
       toastEl.textContent = msg;
       toastEl.classList.add("show");
-      setTimeout(() => toastEl.classList.remove("show"), 1400);
+
+      setTimeout(function () {
+        toastEl.classList.remove("show");
+      }, 1400);
     }
   </script>
 </body>
