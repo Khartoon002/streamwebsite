@@ -1,874 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Stream — Join the WhatsApp Community</title>
-  <meta name="theme-color" content="#040a07" />
-  <meta name="description" content="Join the Stream WhatsApp community and start earning from Day 1. Free entry, real earnings, Nigeria only." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Join Stream WhatsApp Group</title>
+<meta name="theme-color" content="#25D366">
+<meta name="description" content="You're in! Tap to join the Stream WhatsApp community now.">
 
-  <link rel="icon" type="image/png" href="stream-brand.png" />
-  <link rel="apple-touch-icon" href="stream-brand.png" />
-  <link rel="preload" as="image" href="stream-brand.png" />
+<!-- Auto-redirect after 3 seconds in case user doesn't tap -->
+<meta http-equiv="refresh" content="3;url=https://chat.whatsapp.com/HJ4bS879p9DFHSxASTrr1G">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+body{
+  background:linear-gradient(135deg,#0a1f0e 0%,#062814 100%);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:24px;
+  text-align:center;
+}
+.box{max-width:420px;width:100%}
 
-  <style>
-    :root {
-      --bg: #040a07;
-      --green: #34ff96;
-      --green2: #12d870;
-      --red: #ff4d6d;
-      --red2: #ff7050;
-      --text: #eafff2;
-      --muted: rgba(234,255,242,.65);
-      --panel: rgba(255,255,255,.06);
-      --stroke: rgba(52,255,150,.2);
-      --radius: 28px;
-      --font: 'Poppins', system-ui, -apple-system, sans-serif;
-      --glass-bg: rgba(255,255,255,.07);
-      --glass-border: rgba(255,255,255,.18);
-      --glass-shine: rgba(255,255,255,.12);
-      --glass-shadow: 0 8px 32px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.15);
-      --glass-blur: blur(22px) saturate(1.6);
-    }
+.check{
+  width:88px;height:88px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+  box-shadow:0 8px 32px rgba(37,211,102,.45);
+}
+.check svg{width:44px;height:44px;color:#fff}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+h1{
+  font-size:32px;
+  font-weight:800;
+  margin-bottom:12px;
+  line-height:1.2;
+  letter-spacing:-0.5px;
+}
+.sub{
+  font-size:17px;
+  color:rgba(255,255,255,.85);
+  margin-bottom:8px;
+  line-height:1.5;
+}
+.urgent{
+  font-size:15px;
+  color:#FFD93D;
+  margin-bottom:32px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.urgent svg{width:18px;height:18px;flex:0 0 auto}
 
-    html, body { height: 100%; }
+.cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  background:#25D366;
+  color:#fff;
+  padding:22px 24px;
+  border-radius:16px;
+  font-size:19px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 6px 24px rgba(37,211,102,.5);
+  margin-bottom:16px;
+  transition:transform .15s, box-shadow .15s;
+}
+.cta:active{transform:scale(.98);box-shadow:0 4px 16px rgba(37,211,102,.4)}
+.cta svg{width:24px;height:24px;flex:0 0 auto}
+.cta .arrow{width:20px;height:20px}
 
-    body {
-      font-family: var(--font);
-      background: #020309;
-      color: var(--text);
-      overflow-x: hidden;
-      -webkit-tap-highlight-color: transparent;
-      padding-bottom: env(safe-area-inset-bottom);
-      font-feature-settings: "ss01", "cv11";
-    }
+.warning{
+  font-size:13px;
+  color:rgba(255,255,255,.6);
+  margin-top:20px;
+  line-height:1.5;
+}
+.timer{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,77,109,.15);
+  border:1px solid rgba(255,77,109,.4);
+  color:#ff8a9b;
+  padding:8px 16px;
+  border-radius:100px;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:24px;
+}
+.timer svg{width:14px;height:14px;flex:0 0 auto}
 
-    /* ── Icons ── */
-    .icon { width: 22px; height: 22px; display: block; color: #fff; position: relative; z-index: 2; flex: 0 0 auto; }
-
-    /* ── Orbs ── */
-    .orb {
-      position: fixed; border-radius: 50%; filter: blur(80px);
-      opacity: .45; pointer-events: none; z-index: 0;
-      animation: breathe 8s ease-in-out infinite;
-      will-change: transform, opacity;
-    }
-    .orb1 { width:500px;height:500px;top:-100px;left:-100px;background:radial-gradient(circle,rgba(52,255,150,.35),transparent 65%); }
-    .orb2 { width:400px;height:400px;bottom:-80px;right:-80px;background:radial-gradient(circle,rgba(18,216,112,.28),transparent 65%);animation-delay:4s; }
-    .orb3 { width:300px;height:300px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(52,255,150,.10),transparent 65%);animation:breathe3 8s ease-in-out infinite;animation-delay:2s; }
-
-    @keyframes breathe {
-      0%,100% { transform:scale(1);opacity:.45; }
-      50% { transform:scale(1.12);opacity:.55; }
-    }
-    @keyframes breathe3 {
-      0%,100% { transform:translate(-50%,-50%) scale(1); }
-      50% { transform:translate(-50%,-50%) scale(1.1); }
-    }
-
-    /* ── Page / Card ── */
-    .page {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      padding: clamp(20px,5vw,40px) clamp(16px,4vw,24px);
-      position: relative; z-index: 1;
-    }
-
-    .card { width: min(480px,100%); text-align: center; }
-
-    /* ── Logo ── */
-    .logo-wrap { position: relative; display: inline-block; margin-bottom: clamp(18px,4vw,28px); }
-
-    .logo-ring {
-      width: clamp(100px,28vw,130px); height: clamp(100px,28vw,130px);
-      border-radius: 32px;
-      background: var(--glass-bg);
-      border: 1.5px solid var(--glass-border);
-      backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
-      box-shadow: var(--glass-shadow), 0 0 40px rgba(52,255,150,.18);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-      animation: logoFloat 6s ease-in-out infinite;
-    }
-    @keyframes logoFloat {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
-    .logo-ring::before {
-      content:''; position:absolute; top:0; left:0; right:0; height:50%;
-      background: linear-gradient(180deg,rgba(255,255,255,.14),transparent);
-      border-radius: 32px 32px 0 0; pointer-events:none;
-    }
-    .logo-ring img {
-      width:100%;height:100%;object-fit:cover;border-radius:24px;
-      position:relative;z-index:1;
-      transform: scale(1.02);
-    }
-
-    /* ── Pulse ring on logo ── */
-    .pulse-ring {
-      position: absolute; inset: -8px;
-      border-radius: 38px;
-      border: 1.5px solid rgba(52,255,150,.35);
-      animation: pulseRing 2.4s ease-out infinite;
-      pointer-events: none;
-    }
-    .pulse-ring2 {
-      position: absolute; inset: -16px;
-      border-radius: 44px;
-      border: 1px solid rgba(52,255,150,.18);
-      animation: pulseRing 2.4s ease-out infinite;
-      animation-delay: .8s;
-      pointer-events: none;
-    }
-    @keyframes pulseRing {
-      0% { opacity: .8; transform: scale(.96); }
-      100% { opacity: 0; transform: scale(1.08); }
-    }
-
-    /* ── Badge ── */
-    .badge {
-      display: inline-flex; align-items: center;
-      padding: 6px 13px;
-      border-radius: 999px;
-      background: linear-gradient(135deg,rgba(52,255,150,.15),rgba(255,255,255,.05));
-      border: 1px solid rgba(52,255,150,.28);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-      color: var(--green);
-      font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 14px;
-      animation: badgePulse 2.6s ease-in-out infinite;
-    }
-    @keyframes badgePulse {
-      0%,100% { box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 0 0 rgba(52,255,150,.0); }
-      50% { box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 0 6px rgba(52,255,150,.06); }
-    }
-
-    /* ── Live dot ── */
-    .live-dot {
-      display: inline-block;
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 6px var(--green);
-      margin-right: 6px;
-      animation: blink 1.4s ease-in-out infinite;
-      vertical-align: middle;
-      position: relative;
-      top: -1px;
-    }
-    @keyframes blink {
-      0%,100% { opacity:1; }
-      50% { opacity:.3; }
-    }
-
-    h1 {
-      font-size: clamp(26px,7vw,38px);
-      font-weight: 900;
-      line-height: 1.08;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-      background: linear-gradient(135deg, var(--text) 40%, var(--green) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .sub {
-      font-size: clamp(13px,3.4vw,15px);
-      color: var(--muted);
-      line-height: 1.55;
-      margin-bottom: clamp(18px,4vw,22px);
-      font-weight: 400;
-    }
-
-    /* ── PRIMARY CTA STACK (top of card, urgency-first) ── */
-    .top-stack {
-      display: flex; flex-direction: column; gap: 10px;
-      margin-bottom: clamp(20px,4.5vw,26px);
-      animation: fadeUp .5s .05s cubic-bezier(.16,1,.3,1) both;
-    }
-
-    .cta-btn {
-      width:100%;
-      font-family: var(--font);
-      cursor:pointer;
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: clamp(16px,4.2vw,20px);
-      border-radius: clamp(18px,4.5vw,22px);
-      border: none;
-      background: linear-gradient(135deg,rgba(52,255,150,.95),rgba(18,216,112,.85));
-      color: #04110a;
-      font-weight: 900;
-      font-size: clamp(15px,4vw,17px);
-      box-shadow: 0 12px 40px rgba(52,255,150,.3), inset 0 1px 0 rgba(255,255,255,.3);
-      transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s ease;
-      text-decoration: none;
-      letter-spacing: -.2px;
-    }
-    .cta-btn::before {
-      content:''; position:absolute; top:0;left:0;right:0; height:50%;
-      background: linear-gradient(180deg,rgba(255,255,255,.22),transparent); pointer-events:none;
-    }
-    /* Shine sweep */
-    .cta-btn::after {
-      content:''; position:absolute; top:0; left:-150%; width:50%; height:100%;
-      background: linear-gradient(120deg,transparent,rgba(255,255,255,.45),transparent);
-      transform: skewX(-20deg);
-      animation: shine 3.4s ease-in-out infinite;
-      pointer-events:none;
-    }
-    @keyframes shine {
-      0% { left:-60%; }
-      60%,100% { left: 140%; }
-    }
-    .cta-btn:hover { transform:translateY(-2px); box-shadow: 0 20px 60px rgba(52,255,150,.4), inset 0 1px 0 rgba(255,255,255,.3); }
-    .cta-btn:active { transform:scale(.98); }
-    .cta-btn .icon { width:22px;height:22px; }
-    .cta-btn .wa-icon { color: #04110a; }
-
-    /* Secondary (Learn More) */
-    .cta-btn.secondary {
-      background: linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
-      color: var(--text);
-      border: 1.5px solid var(--glass-border);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      box-shadow: var(--glass-shadow);
-    }
-    .cta-btn.secondary::after { display:none; }
-    .cta-btn.secondary .icon { color: var(--green); }
-    .cta-btn.secondary:hover { transform:translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.18); }
-
-    .cta-sub {
-      font-size: clamp(11px,2.8vw,12px);
-      color: var(--muted);
-      display:block;
-      margin-top: 2px;
-    }
-
-    /* ── Benefits list ── */
-    .benefits {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: clamp(20px,4.5vw,26px);
-      text-align: left;
-    }
-
-    .benefit-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: clamp(13px,3.5vw,16px) clamp(16px,4vw,20px);
-      border-radius: clamp(18px,4.5vw,22px);
-      background: linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
-      border: 1.5px solid var(--glass-border);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      box-shadow: var(--glass-shadow);
-      position: relative;
-      overflow: hidden;
-      animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both;
-    }
-    .benefit-row:nth-child(1) { animation-delay:.18s; }
-    .benefit-row:nth-child(2) { animation-delay:.24s; }
-    .benefit-row:nth-child(3) { animation-delay:.30s; }
-    .benefit-row:nth-child(4) { animation-delay:.36s; }
-
-    @keyframes fadeUp {
-      from { opacity:0; transform: translateY(16px); }
-      to   { opacity:1; transform: translateY(0); }
-    }
-
-    .benefit-row::before {
-      content:''; position:absolute; top:0; left:0; right:0; height:50%;
-      background: linear-gradient(180deg,var(--glass-shine),transparent);
-      pointer-events:none;
-    }
-
-    .benefit-icon {
-      width: clamp(40px,10vw,46px);
-      height: clamp(40px,10vw,46px);
-      border-radius: clamp(13px,3.2vw,15px);
-      background: linear-gradient(135deg,rgba(52,255,150,.22),rgba(18,216,112,.09));
-      border: 1px solid rgba(52,255,150,.22);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 8px 24px rgba(0,0,0,.22);
-      display: grid; place-items: center;
-      flex: 0 0 auto; font-size: 0;
-    }
-    .benefit-icon .icon { width:20px;height:20px; color:#fff; }
-
-    .benefit-text { flex:1; min-width:0; position:relative; z-index:2; }
-    .benefit-label { font-weight:800; font-size: clamp(13px,3.5vw,15px); display:block; }
-    .benefit-note  { font-size: clamp(11px,2.8vw,12px); color:var(--muted); margin-top:2px; display:block; line-height: 1.4; }
-
-    /* ── Slots bar ── */
-    .slots-wrap {
-      margin-bottom: clamp(20px,4.5vw,26px);
-      padding: clamp(14px,3.5vw,18px) clamp(16px,4vw,20px);
-      border-radius: clamp(18px,4.5vw,22px);
-      background: linear-gradient(135deg,rgba(255,77,109,.08),rgba(255,255,255,.04));
-      border: 1.5px solid rgba(255,77,109,.25);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      box-shadow: var(--glass-shadow);
-      position: relative;
-      overflow: hidden;
-      animation: fadeUp .5s .42s cubic-bezier(.16,1,.3,1) both;
-    }
-    .slots-wrap::before {
-      content:''; position:absolute; top:0;left:0;right:0; height:50%;
-      background: linear-gradient(180deg,rgba(255,255,255,.07),transparent);
-      pointer-events:none;
-    }
-
-    .slots-top {
-      display: flex; align-items: center; justify-content: space-between; gap: 10px;
-      margin-bottom: 10px; position:relative; z-index:2;
-    }
-    .slots-label {
-      font-size: clamp(12px,3.2vw,13px); font-weight:700; color:rgba(255,180,180,.92);
-      display:inline-flex; align-items:center; gap:6px;
-    }
-    .slots-label .icon { width:14px;height:14px; color: var(--red); animation: warnPulse 1.6s ease-in-out infinite; }
-    @keyframes warnPulse {
-      0%,100% { opacity: .85; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.12); }
-    }
-    .slots-count {
-      font-size: clamp(11px,2.9vw,12px); font-weight:800;
-      color: rgba(255,77,109,.95);
-      background: rgba(255,77,109,.12);
-      border: 1px solid rgba(255,77,109,.22);
-      padding: 3px 9px; border-radius: 999px;
-      white-space: nowrap;
-      transition: transform .3s ease;
-    }
-    .slots-count.bump { transform: scale(1.08); }
-
-    .bar-track {
-      width:100%; height:8px; border-radius:999px;
-      background: rgba(255,255,255,.08);
-      overflow:hidden; position:relative; z-index:2;
-    }
-    .bar-fill {
-      height:100%; border-radius:999px;
-      background: linear-gradient(90deg,rgba(255,77,109,.7),rgba(255,120,80,.85));
-      box-shadow: 0 0 10px rgba(255,77,109,.4);
-      width: 0%;
-      transition: width 1.2s cubic-bezier(.16,1,.3,1);
-      position: relative;
-    }
-    .bar-fill::after {
-      content:''; position:absolute; top:0; left:-30%; width:30%; height:100%;
-      background: linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
-      animation: barShine 2.2s ease-in-out infinite;
-    }
-    @keyframes barShine {
-      0% { left:-30%; }
-      100% { left: 110%; }
-    }
-
-    /* ── Testimonials ── */
-    .testimonials {
-      position: relative;
-      margin-bottom: clamp(20px,4.5vw,26px);
-      padding: clamp(16px,4vw,20px);
-      border-radius: clamp(18px,4.5vw,22px);
-      background: linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-      border: 1.5px solid var(--glass-border);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      box-shadow: var(--glass-shadow);
-      overflow: hidden;
-      min-height: 110px;
-      animation: fadeUp .5s .48s cubic-bezier(.16,1,.3,1) both;
-    }
-    .testimonials::before {
-      content:''; position:absolute; top:0;left:0;right:0; height:50%;
-      background: linear-gradient(180deg,var(--glass-shine),transparent);
-      pointer-events:none;
-    }
-
-    .t-head {
-      display:flex; align-items:center; gap:6px;
-      font-size: clamp(10px,2.6vw,11px);
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 10px;
-      position: relative; z-index:2;
-    }
-    .t-head .icon { width:13px;height:13px; color:var(--green); }
-
-    .t-track {
-      position: relative;
-      min-height: 64px;
-    }
-    .t-item {
-      position: absolute; inset: 0;
-      opacity: 0;
-      transition: opacity .8s ease;
-      text-align: left;
-    }
-    .t-item.active { opacity: 1; }
-    .t-quote {
-      font-size: clamp(12.5px,3.3vw,14px);
-      font-weight: 500;
-      line-height: 1.45;
-      color: var(--text);
-    }
-    .t-quote::before { content:'"'; color: var(--green); margin-right: 2px; font-weight:800; }
-    .t-quote::after  { content:'"'; color: var(--green); margin-left: 2px; font-weight:800; }
-    .t-meta {
-      margin-top: 6px;
-      display:flex; align-items:center; gap:8px;
-      font-size: clamp(10.5px,2.8vw,11.5px);
-      color: var(--muted);
-      font-weight: 600;
-    }
-    .t-avatar {
-      width: 22px; height: 22px; border-radius: 50%;
-      display: grid; place-items: center;
-      font-size: 10px; font-weight: 800;
-      color: #04110a;
-      background: linear-gradient(135deg,#34ff96,#12d870);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.3);
-    }
-    .t-name { color: var(--text); font-weight: 700; }
-    .t-verified .icon { width:11px;height:11px; color: var(--green); }
-
-    /* Bottom CTA — secondary mention */
-    .bottom-cta {
-      margin-bottom: clamp(16px,4vw,20px);
-      animation: fadeUp .5s .56s cubic-bezier(.16,1,.3,1) both;
-    }
-
-    /* ── Trust strip ── */
-    .trust-strip {
-      display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap: wrap;
-      margin-top: clamp(8px,2vw,12px);
-      animation: fadeUp .5s .62s cubic-bezier(.16,1,.3,1) both;
-    }
-    .trust-item {
-      display:flex; align-items:center; gap:5px;
-      font-size: clamp(10px,2.6vw,11px);
-      color: var(--muted);
-      font-weight:700;
-    }
-    .trust-item .icon { width:14px;height:14px; color:var(--green); }
-    .trust-sep { width:3px;height:3px; border-radius:50%; background:rgba(255,255,255,.18); }
-
-    /* ── Live joiner notification ── */
-    .live-toast {
-      position: fixed;
-      left: 50%;
-      bottom: calc(20px + env(safe-area-inset-bottom));
-      transform: translateX(-50%) translateY(140%);
-      display: flex; align-items: center; gap: 10px;
-      padding: 10px 14px 10px 10px;
-      border-radius: 999px;
-      background: rgba(10,20,14,.92);
-      border: 1px solid rgba(52,255,150,.3);
-      box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 24px rgba(52,255,150,.12);
-      backdrop-filter: blur(14px) saturate(1.4);
-      -webkit-backdrop-filter: blur(14px) saturate(1.4);
-      z-index: 9999;
-      max-width: calc(100vw - 32px);
-      transition: transform .55s cubic-bezier(.16,1,.3,1), opacity .4s ease;
-      opacity: 0;
-      pointer-events: none;
-    }
-    .live-toast.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
-    }
-    .lt-avatar {
-      width: 30px; height: 30px; border-radius: 50%;
-      display: grid; place-items: center;
-      font-size: 12px; font-weight: 800;
-      color: #04110a;
-      background: linear-gradient(135deg,#34ff96,#12d870);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.3);
-      flex: 0 0 auto;
-    }
-    .lt-text {
-      font-size: 12px; font-weight: 600; color: var(--text);
-      line-height: 1.3;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 64vw;
-    }
-    .lt-text strong { font-weight: 800; }
-    .lt-text .lt-time { color: var(--muted); font-weight: 500; margin-left: 4px; font-size: 10.5px; }
-    .lt-pulse {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 8px var(--green);
-      animation: blink 1.2s ease-in-out infinite;
-      flex: 0 0 auto;
-    }
-
-    /* ── Click toast ── */
-    .toast {
-      position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom));
-      transform:translateX(-50%) translateY(12px); opacity:0; pointer-events:none;
-      padding:10px 16px; border-radius:14px;
-      background:rgba(10,20,14,.9); border:1px solid rgba(52,255,150,.25);
-      color:var(--text); font-size:12.5px; font-weight:700;
-      backdrop-filter:blur(14px); z-index:99999;
-      transition: opacity .3s ease, transform .3s ease;
-      white-space:nowrap;
-    }
-    .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
-
-    @media (hover:none) {
-      .cta-btn:hover { transform:none; box-shadow:0 12px 40px rgba(52,255,150,.3), inset 0 1px 0 rgba(255,255,255,.3); }
-      .cta-btn.secondary:hover { transform:none; box-shadow: var(--glass-shadow); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+#count{font-variant-numeric:tabular-nums}
+</style>
 </head>
 <body>
-
-  <!-- SVG sprite (inline so it never 404s) -->
-  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
-    <symbol id="i-check" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2.25A9.75 9.75 0 1 0 12 21.75 9.75 9.75 0 0 0 12 2.25Zm4.53 7.28-5.25 5.25a1 1 0 0 1-1.41 0l-2.4-2.4a1 1 0 0 1 1.41-1.41l1.69 1.69 4.54-4.54a1 1 0 0 1 1.42 1.41Z"/>
-    </symbol>
-    <symbol id="i-music" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M9 3.75a.75.75 0 0 0-.75.75v9.89A3.25 3.25 0 1 0 10.75 17.5V8.5l7.5-1.5V14.89a3.25 3.25 0 1 0 1.5 2.61V6.25a.75.75 0 0 0-.9-.735l-9 1.8A.75.75 0 0 0 9 8.05V4.5A.75.75 0 0 0 9 3.75Z"/>
-    </symbol>
-    <symbol id="i-video" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M3 8.25A3.25 3.25 0 0 1 6.25 5h7.5A3.25 3.25 0 0 1 17 8.25v.572l2.553-1.703A1.25 1.25 0 0 1 21.5 8.25v7.5a1.25 1.25 0 0 1-1.947 1.04L17 15.178v.572A3.25 3.25 0 0 1 13.75 19h-7.5A3.25 3.25 0 0 1 3 15.75v-7.5Z"/>
-    </symbol>
-    <symbol id="i-users" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-6.5 9.5a6.5 6.5 0 0 1 13 0H2.5ZM17 10.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm2.5 2.25a5.76 5.76 0 0 1 2.98 5.75H17v-.5a8.01 8.01 0 0 0-2.5-5.85A5.5 5.5 0 0 1 19.5 12.75Z"/>
-    </symbol>
-    <symbol id="i-bolt" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M13.5 2.25a.75.75 0 0 0-1.356-.452l-7.5 10.5A.75.75 0 0 0 5.25 13.5h5.3l-1.3 8.25a.75.75 0 0 0 1.356.452l7.5-10.5A.75.75 0 0 0 18.75 10.5h-5.3l1.3-8.25Z"/>
-    </symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2.25 3.5 5.97v5.53c0 4.72 3.6 9.14 8.5 10.25 4.9-1.11 8.5-5.53 8.5-10.25V5.97L12 2.25Zm4.53 8.28-5.25 5.25a1 1 0 0 1-1.41 0l-2.4-2.4a1 1 0 0 1 1.41-1.41l1.69 1.69 4.54-4.54a1 1 0 0 1 1.42 1.41Z"/>
-    </symbol>
-    <symbol id="i-warn" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12.005 2.25a2.25 2.25 0 0 0-1.95 1.124L1.39 18.376A2.25 2.25 0 0 0 3.34 21.75h17.32a2.25 2.25 0 0 0 1.95-3.374L13.95 3.374A2.25 2.25 0 0 0 12.005 2.25ZM12 8.25a.75.75 0 0 1 .75.75v5a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 9.75a1.05 1.05 0 1 0 0-2.1 1.05 1.05 0 0 0 0 2.1Z"/>
-    </symbol>
-    <symbol id="i-quote" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M7.17 6A5.17 5.17 0 0 0 2 11.17V18a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H5.5A2.5 2.5 0 0 1 8 9.5V8a1 1 0 0 0-.83-1.99Zm10 0A5.17 5.17 0 0 0 12 11.17V18a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-2.5A2.5 2.5 0 0 1 18 9.5V8a1 1 0 0 0-.83-1.99Z"/>
-    </symbol>
-    <symbol id="i-spark" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2 9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5L12 2Z"/>
-    </symbol>
-    <symbol id="i-info" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2.25A9.75 9.75 0 1 0 12 21.75 9.75 9.75 0 0 0 12 2.25Zm0 4.5a1.125 1.125 0 1 1 0 2.25 1.125 1.125 0 0 1 0-2.25Zm1 10.25a1 1 0 1 1-2 0V11a1 1 0 1 1 2 0v6Z"/>
-    </symbol>
-    <!-- WhatsApp -->
-    <symbol id="i-wa" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l4.93-1.37A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.09 13.91c-.21.59-1.24 1.14-1.7 1.18-.44.04-.86.2-2.87-.6-2.42-.96-3.96-3.44-4.08-3.6-.12-.16-.98-1.31-.98-2.5 0-1.19.62-1.77.84-2.01.22-.24.48-.3.64-.3l.46.01c.15 0 .35-.06.54.42l.7 1.8c.07.17.03.37-.08.52l-.37.48c-.12.15-.25.31-.11.6.14.29.63 1.04 1.35 1.68.93.83 1.71 1.09 2 1.21.29.12.46.1.63-.06l.5-.59c.17-.2.34-.13.57-.08l1.68.79c.24.11.39.17.45.27.06.1.06.58-.15 1.18Z"/>
-    </symbol>
-  </svg>
-
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
-
-  <main class="page">
-    <div class="card">
-
-      <!-- Logo -->
-      <div class="logo-wrap">
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring2"></div>
-        <div class="logo-ring">
-          <img src="stream-brand.png" alt="Stream — Life in Motion, Income in Continuous Flow" loading="eager" decoding="async" />
-        </div>
-      </div>
-
-      <!-- Badge -->
-      <div class="badge">
-        <span class="live-dot"></span>Group Filling Now —&nbsp;<span id="slotsLeft">247</span>&nbsp;Slots Left
-      </div>
-
-      <h1>Get Paid to Listen<br>&amp; Watch on Stream</h1>
-      <p class="sub">Join the free WhatsApp community. We'll walk you through setup so you start earning from Day 1.</p>
-
-      <!-- TOP CTA STACK — shown first so visitors don't bounce -->
-      <div class="top-stack">
-        <a class="cta-btn" href="https://chat.whatsapp.com/HJ4bS879p9DFHSxASTrr1G" target="_blank" rel="noopener" id="joinBtnTop">
-          <svg class="icon wa-icon"><use href="#i-wa"/></svg>
-          Join the WhatsApp Group Now
-        </a>
-        <a class="cta-btn secondary" href="https://chat.whatsapp.com/HJ4bS879p9DFHSxASTrr1G" target="_blank" rel="noopener" id="learnBtn">
-          <svg class="icon"><use href="#i-info"/></svg>
-          Learn More About Stream
-        </a>
-        <span class="cta-sub">Free to join · Takes 30 seconds · Closes once full</span>
-      </div>
-
-      <!-- Benefits -->
-      <div class="benefits">
-        <div class="benefit-row">
-          <div class="benefit-icon"><svg class="icon"><use href="#i-music"/></svg></div>
-          <div class="benefit-text">
-            <span class="benefit-label">Audio Collaboration</span>
-            <span class="benefit-note">Earn every time you engage with an artist's sound</span>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon"><svg class="icon"><use href="#i-video"/></svg></div>
-          <div class="benefit-text">
-            <span class="benefit-label">Video Collaboration</span>
-            <span class="benefit-note">Earn every time you watch movies &amp; series on Stream</span>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon"><svg class="icon"><use href="#i-bolt"/></svg></div>
-          <div class="benefit-text">
-            <span class="benefit-label">₦30,000 – ₦90,000/month possible</span>
-            <span class="benefit-note">From your phone. No skill required. Setup in 10 minutes.</span>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon"><svg class="icon"><use href="#i-users"/></svg></div>
-          <div class="benefit-text">
-            <span class="benefit-label">Step-by-step onboarding</span>
-            <span class="benefit-note">We show you exactly what to do inside the group</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slots progress bar -->
-      <div class="slots-wrap">
-        <div class="slots-top">
-          <span class="slots-label">
-            <svg class="icon"><use href="#i-warn"/></svg>
-            Group closing when full — 1,020 max
-          </span>
-          <span class="slots-count" id="pctFilled">76% filled</span>
-        </div>
-        <div class="bar-track">
-          <div class="bar-fill" id="barFill"></div>
-        </div>
-      </div>
-
-      <!-- Testimonials (rotating, fade) -->
-      <div class="testimonials" aria-live="polite">
-        <div class="t-head">
-          <svg class="icon"><use href="#i-quote"/></svg>
-          What Members Are Saying
-        </div>
-        <div class="t-track" id="tTrack">
-          <!-- Items injected by JS -->
-        </div>
-      </div>
-
-      <!-- Bottom CTA repeat -->
-      <div class="bottom-cta">
-        <a class="cta-btn" href="https://chat.whatsapp.com/HJ4bS879p9DFHSxASTrr1G" target="_blank" rel="noopener" id="joinBtnBottom">
-          <svg class="icon wa-icon"><use href="#i-wa"/></svg>
-          Claim Your Slot Before It Closes
-        </a>
-      </div>
-
-      <!-- Trust strip -->
-      <div class="trust-strip">
-        <div class="trust-item">
-          <svg class="icon"><use href="#i-shield"/></svg>
-          Free Entry
-        </div>
-        <div class="trust-sep"></div>
-        <div class="trust-item">
-          <svg class="icon"><use href="#i-check"/></svg>
-          Real Earnings
-        </div>
-        <div class="trust-sep"></div>
-        <div class="trust-item">
-          <svg class="icon"><use href="#i-check"/></svg>
-          Nigeria Only
-        </div>
-      </div>
-
+  <div class="box">
+    <div class="check">
+      <!-- Checkmark icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
     </div>
-  </main>
 
-  <!-- Live joiner notification -->
-  <div class="live-toast" id="liveToast" role="status" aria-live="polite">
-    <span class="lt-pulse"></span>
-    <span class="lt-avatar" id="ltAvatar">A</span>
-    <span class="lt-text" id="ltText">Someone just joined</span>
+    <div class="timer">
+      <!-- Clock icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      <span>Redirecting in <span id="count">3</span>s...</span>
+    </div>
+
+    <h1>You're In!</h1>
+    <p class="sub">Your spot is reserved. Tap below to join the WhatsApp group NOW.</p>
+    <p class="urgent">
+      <!-- Warning icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+        <line x1="12" y1="9" x2="12" y2="13"></line>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      </svg>
+      Class starts when group fills (1,020 spots)
+    </p>
+
+    <a class="cta" href="https://chat.whatsapp.com/HJ4bS879p9DFHSxASTrr1G">
+      <!-- WhatsApp icon (official brand) -->
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </svg>
+      <span>JOIN WHATSAPP GROUP</span>
+      <!-- Arrow icon -->
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+
+    <p class="warning">If WhatsApp doesn't open automatically, tap the green button above.</p>
   </div>
 
-  <!-- Click toast -->
-  <div class="toast" id="toast"></div>
+<script>
+// Live countdown
+var n=3,c=document.getElementById('count');
+var t=setInterval(function(){
+  n--;
+  if(n<0){clearInterval(t);return}
+  c.textContent=n;
+},1000);
 
-  <script>
-    /* ─────────────────────────────────────────────────────────
-       1. SLOT COUNTER + PROGRESS BAR
-       ───────────────────────────────────────────────────────── */
-    const TOTAL_SLOTS = 1020;
-    let slots = 247;
-
-    const slotsEl  = document.getElementById('slotsLeft');
-    const pctEl    = document.getElementById('pctFilled');
-    const barEl    = document.getElementById('barFill');
-
-    function refreshBar(animate = true) {
-      const filled = Math.round(((TOTAL_SLOTS - slots) / TOTAL_SLOTS) * 100);
-      slotsEl.textContent = slots;
-      pctEl.textContent   = filled + '% filled';
-      barEl.style.width   = filled + '%';
-      if (animate) {
-        pctEl.classList.add('bump');
-        setTimeout(() => pctEl.classList.remove('bump'), 320);
-      }
-    }
-
-    // Initial fill animation on load
-    window.addEventListener('load', () => {
-      setTimeout(() => refreshBar(false), 500);
-    });
-
-    /* ─────────────────────────────────────────────────────────
-       2. LIVE "X JUST JOINED" NOTIFICATION
-          - Decrements slot count
-          - Fires every 8–18 seconds
-       ───────────────────────────────────────────────────────── */
-    const NIGERIAN_NAMES = [
-      'Chioma O.', 'Tunde A.', 'Aisha B.', 'Emeka N.', 'Funke A.',
-      'Ifeanyi O.', 'Bisi T.', 'Kelechi M.', 'Folake A.', 'Yusuf I.',
-      'Adaeze U.', 'Sodiq B.', 'Ngozi C.', 'Damilola O.', 'Halima S.',
-      'Chukwudi E.', 'Tobi A.', 'Zainab L.', 'Obinna K.', 'Chinyere P.',
-      'Segun O.', 'Amaka I.', 'Tochukwu N.', 'Oluwaseun A.', 'Hadiza M.',
-      'Nnamdi C.', 'Blessing E.', 'Kunle A.', 'Rukayat O.', 'Ebuka J.',
-      'Adunni B.', 'Ifeoma S.', 'Babatunde I.', 'Chiamaka U.', 'Lekan T.',
-      'Maryam K.', 'Onyeka R.', 'Tijani M.', 'Uche P.', 'Yetunde A.',
-      'Kingsley E.', 'Toluwani O.', 'Ada U.', 'Femi B.', 'Hauwa I.'
-    ];
-    const CITIES = [
-      'Lagos', 'Abuja', 'Port Harcourt', 'Ibadan', 'Kano',
-      'Benin City', 'Enugu', 'Owerri', 'Uyo', 'Calabar',
-      'Asaba', 'Warri', 'Abeokuta', 'Ilorin', 'Jos',
-      'Akure', 'Kaduna', 'Onitsha', 'Aba', 'Lokoja'
-    ];
-    const TIME_AGOS = [
-      'just now', 'just now', 'just now',
-      '12 seconds ago', '34 seconds ago', '1 minute ago',
-      '2 minutes ago', '3 minutes ago'
-    ];
-
-    const liveToast = document.getElementById('liveToast');
-    const ltText    = document.getElementById('ltText');
-    const ltAvatar  = document.getElementById('ltAvatar');
-
-    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-
-    function showJoinNotice() {
-      if (slots <= 5) return;
-
-      // Drop slots by 1–3
-      const drop = Math.floor(Math.random() * 3) + 1;
-      slots = Math.max(5, slots - drop);
-      refreshBar(true);
-
-      // Build notification
-      const name = pick(NIGERIAN_NAMES);
-      const city = pick(CITIES);
-      const ago  = pick(TIME_AGOS);
-      ltAvatar.textContent = name.charAt(0);
-      ltText.innerHTML = `<strong>${name}</strong> from ${city} just joined<span class="lt-time">· ${ago}</span>`;
-
-      liveToast.classList.add('show');
-      setTimeout(() => liveToast.classList.remove('show'), 4200);
-
-      // Schedule next notice (8–18s)
-      setTimeout(showJoinNotice, 8000 + Math.random() * 10000);
-    }
-
-    // First notification fires shortly after load
-    setTimeout(showJoinNotice, 3500);
-
-    /* ─────────────────────────────────────────────────────────
-       3. ROTATING TESTIMONIALS (fade in/out)
-       ───────────────────────────────────────────────────────── */
-    const TESTIMONIALS = [
-      { q: "Cashed out ₦42,000 my first month. I just listen to music while I work — that's it.", n: "Chioma O.", c: "Lagos" },
-      { q: "Thought it was a scam at first. 3 weeks in I've made more than my salary at my old gig.", n: "Tunde A.", c: "Abuja" },
-      { q: "The setup took 8 minutes. I was earning the same evening. No skill, just my phone.", n: "Aisha B.", c: "Kano" },
-      { q: "Pulled ₦67k in 5 weeks watching shows I'd watch anyway. This shouldn't be legal.", n: "Emeka N.", c: "Port Harcourt" },
-      { q: "I was sceptical until my first payout hit. Now I tell every friend in my hostel.", n: "Funke A.", c: "Ibadan" },
-      { q: "Best decision I made this year. The community actually responds when you ask questions.", n: "Ifeanyi O.", c: "Enugu" },
-      { q: "Made ₦18k in my first week without changing anything about my routine. Insane.", n: "Bisi T.", c: "Abeokuta" },
-      { q: "I doubted it. Joined anyway. Three payouts in. My data subscription pays for itself now.", n: "Kelechi M.", c: "Owerri" },
-      { q: "The onboarding is actually clear. No long talk — they show you exactly what to click.", n: "Folake A.", c: "Akure" },
-      { q: "₦55,000 last month. From my couch. I keep waiting for the catch and there isn't one.", n: "Yusuf I.", c: "Kaduna" },
-      { q: "My sister joined after seeing my withdrawal. She's earning too. Now we both push it.", n: "Adaeze U.", c: "Asaba" },
-      { q: "Easiest side income I've ever had. The group keeps you motivated daily.", n: "Sodiq B.", c: "Ilorin" }
-    ];
-
-    const tTrack = document.getElementById('tTrack');
-    let tIndex = 0;
-
-    function buildTestimonials() {
-      TESTIMONIALS.forEach((t, i) => {
-        const div = document.createElement('div');
-        div.className = 't-item' + (i === 0 ? ' active' : '');
-        div.innerHTML = `
-          <div class="t-quote">${t.q}</div>
-          <div class="t-meta">
-            <span class="t-avatar">${t.n.charAt(0)}</span>
-            <span class="t-name">${t.n}</span>
-            <span>· ${t.c}</span>
-            <span class="t-verified" title="Verified member"><svg class="icon"><use href="#i-check"/></svg></span>
-          </div>
-        `;
-        tTrack.appendChild(div);
-      });
-    }
-    buildTestimonials();
-
-    function rotateTestimonials() {
-      const items = tTrack.querySelectorAll('.t-item');
-      items[tIndex].classList.remove('active');
-      tIndex = (tIndex + 1) % items.length;
-      items[tIndex].classList.add('active');
-    }
-    setInterval(rotateTestimonials, 4200);
-
-    /* ─────────────────────────────────────────────────────────
-       4. CTA TOAST
-       ───────────────────────────────────────────────────────── */
-    const toastEl = document.getElementById('toast');
-    function showToast(msg) {
-      toastEl.textContent = msg;
-      toastEl.classList.add('show');
-      setTimeout(() => toastEl.classList.remove('show'), 1600);
-    }
-    document.getElementById('joinBtnTop').addEventListener('click', () => showToast('Opening WhatsApp…'));
-    document.getElementById('joinBtnBottom').addEventListener('click', () => showToast('Opening WhatsApp…'));
-    document.getElementById('learnBtn').addEventListener('click', () => showToast('Opening WhatsApp…'));
-  </script>
+// Backup auto-redirect via JS
+setTimeout(function(){
+  window.location.href="https://chat.whatsapp.com/HJ4bS879p9DFHSxASTrr1G";
+},2800);
+</script>
 </body>
 </html>
